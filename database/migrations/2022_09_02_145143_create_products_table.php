@@ -19,6 +19,7 @@ class CreateProductsTable extends Migration
             $table->text('description');
             $table->double('cost_price');
             $table->double('price');
+            $table->string('image')->nullable();
             $table->integer('unit');
             $table->foreignId('category_id');
             $table->timestamps();

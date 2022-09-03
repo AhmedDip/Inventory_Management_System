@@ -21,6 +21,7 @@ class CreateUsersTable extends Migration
             $table->string('password',100);
             $table->string('phone',15);
             $table->string('address',200)->nullable();
+            $table->string('image')->nullable();
             $table->integer('status')->default(0);
             $table->foreignId('group_id');
             $table->rememberToken();

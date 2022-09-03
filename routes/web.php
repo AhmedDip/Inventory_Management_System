@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\UserGroupsController;
+use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +16,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('Layout/admin');
 });
+
+
+Route::get('/users',[UsersController::class,'index']);
+
+Route::get('/groups',[UserGroupsController::class,'index']);
+
+Route::get('create/groups',[UserGroupsController::class,'createGroup'])->name('create.groups');
+
+Route::post('create/groups',[UserGroupsController::class,'storeGroup'])->name('create.groups');
