@@ -10,7 +10,7 @@ class UserGroupsController extends Controller
 {
     public function index()
     {
-        $group = Group ::all();
+        $group = Group ::where('id','!=',1)->get();
 
        // dd($user);
          return view('Groups.group',[ 'groups'=>$group ]);
@@ -33,10 +33,20 @@ class UserGroupsController extends Controller
 
       if($save)
       {
-        Session::flash('message', 'Group Created Successfully');
+        Session::flash('create', 'Group Created Successfully');
+      }        
+        return redirect('groups');
+    }
+
+    public function destroyGroup($id)
+    {
+      $destroy = Group::find($id)->delete();
+
+      if($destroy)
+      {
+        Session::flash('delete', 'Group deleted Successsfully');
       }
 
-        
-        return redirect('groups');
+      return redirect('/groups');
     }
 }

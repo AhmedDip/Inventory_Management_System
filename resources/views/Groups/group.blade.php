@@ -30,10 +30,19 @@
 
                         @foreach ($groups as $group )
                         <tr>
-                            <td>{{$group->id}}</td>
+                            <td>{{$loop->iteration}}</td>
                             <td>{{$group->title}}</td>
                             <td>{{$group->created_at}}</td>
-                            <td class="text-right"><a class="btn btn-danger"  href="">  <i class="fa fa-trash"></i> Delete</a> </td>                       
+                            <td class="text-right">
+                                <form action="/groups/{{$group->id}}" method="post">
+                                    @csrf
+                                    @method('DELETE')
+
+                                <button onclick="return confirm('Are You Sure?')" type="submit" class="btn btn-outline-danger btn-sm"><i class="fa fa-trash"></i> Delete</button>
+                                
+                                </form>
+                            </td>
+                            {{-- <td class="text-right"><a class="btn btn-danger"  href="">  <i class="fa fa-trash"></i> Delete</a> </td>                        --}}
                         </tr>
                         @endforeach
                 

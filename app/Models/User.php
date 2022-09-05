@@ -21,7 +21,14 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'phone',
+        'image'
     ];
+
+    public function group()
+    {
+        return $this->belongsTo(Group::class,'group_id','id');
+    }
 
     /**
      * The attributes that should be hidden for serialization.

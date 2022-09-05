@@ -20,10 +20,16 @@ Route::get('/', function () {
 });
 
 
-Route::get('/users',[UsersController::class,'index']);
 
-Route::get('/groups',[UserGroupsController::class,'index']);
 
 Route::get('create/groups',[UserGroupsController::class,'createGroup'])->name('create.groups');
 
-Route::post('create/groups',[UserGroupsController::class,'storeGroup'])->name('create.groups');
+Route::get('groups',[UserGroupsController::class,'index']);
+
+Route::post('groups',[UserGroupsController::class,'storeGroup'])->name('created.groups');
+
+Route::delete('groups/{id}',[UserGroupsController::class,'destroyGroup'])->name('destroy.groups');
+
+
+//Resource Routing
+Route::resource('users',UsersController::class);

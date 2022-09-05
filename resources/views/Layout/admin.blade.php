@@ -8,6 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
+    
+
 
     <title>Inventory Management System</title>
 
@@ -20,10 +22,17 @@
     <!-- Custom styles for this template-->
     <link href="{{asset('template/vendor/datatables/dataTables.bootstrap4.min.css')}}" rel="stylesheet">
     <link href="{{asset('template/css/sb-admin-2.min.css')}}" rel="stylesheet">
+    <link href="{{asset('template/css/style.css')}}" rel="stylesheet">
 
 </head>
 
 <body id="page-top">
+    @include('sweetalert::alert')
+    @php
+        header("Cache-Control: private, no-store, max-age=0, no-cache, must-revalidate, post-check=0, pre-check=0");
+        header("Pragma: no-cache");
+    @endphp
+
 
     <!-- Page Wrapper -->
     <div id="wrapper">
@@ -46,11 +55,18 @@
                 <div class="container-fluid">
                     
                     <!-- Page Heading -->
-                    @if(Session::get('message'))
+                    {{-- create message --}}
+                    @if(Session::get('create'))
                         <div class="alert alert-success" role="alert">
-                            {{Session::get('message')}}
+                            {{Session::get('create')}}
                         </div>                 
                     @endif
+
+                    @if(Session::get('delete'))
+                    <div class="alert alert-danger" role="alert">
+                        {{Session::get('delete')}}
+                    </div>                 
+                @endif
 
                     @yield('main_content')
 
@@ -95,6 +111,18 @@
   
       <!-- Page level custom scripts -->
       <script src="{{asset('template/js/demo/datatables-demo.js')}}"></script>
+
+      <script>             //JS for Image Preview
+        img.onchange = evt => {
+          const [file] = img.files
+          if (file) {
+            prview.style.visibility = 'visible';
+        
+            prview.src = URL.createObjectURL(file)
+          }
+        }
+        </script>
+    
 
 </body>
 
