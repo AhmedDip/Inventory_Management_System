@@ -94,8 +94,7 @@
                       <img  class="img-fluid img-thumbnail" max-height="200px" id="prview" src="{{asset(Storage::url($users->image))}}" >
                         {{-- <img  style="visibility:hidden" class="img-fluid img-thumbnail" max-height="200px" id="prview" src=""/>   
                          --}}
-                     
-                    
+                  
                       </div> 
                 
                 </div>               

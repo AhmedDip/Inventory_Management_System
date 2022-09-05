@@ -14,11 +14,7 @@ use Illuminate\Support\Facades\Storage;
 
 class UsersController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+  
     public function index()
     {
         $user = User::all();
@@ -29,26 +25,13 @@ class UsersController extends Controller
         return view('Users.user',['users'=>$user]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-
         $group = Group::all();
-
-
         return view('Users.create',['groups'=>$group]);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+ 
     public function store(UserRequest $request)
     {
         $user = new User();
@@ -80,23 +63,12 @@ class UsersController extends Controller
 
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function show($id)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
         $user = User::findorFail($id);
@@ -105,13 +77,7 @@ class UsersController extends Controller
 
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+  
     public function update(UserEditRequest $request, $id)
     {
         $id = $request->id;
@@ -131,34 +97,28 @@ class UsersController extends Controller
    
         if($request->hasFile('image'))
         {
-            $des= 'public/' . $user->image;
-            if (File::exists($des))
+            $des='public/' . $user->image;
+            if (Storage::exists($des))
             {
-                Storage::delete('public/' .$user->image);
-                File::delete($des);
+                // unlink($des);
+                Storage::delete($des);
+                // File::delete($des);
+                
+             
               
             }
-            $std = $request->file('image')->store('Image', 'public');
-            $user->image = $std;
+            $users = $request->file('image')->store('Image', 'public');
+            $user->image = $users;
           
     
         }
         $user->save();
        
-        // $user->image = $user;
-        // dd($student);
-     
         Alert::toast('You\'ve Successfully Registered', 'success');
         return redirect()->route('users.index');
  
     }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    
     public function destroy($id)
     {
         $user = User::find($id);
