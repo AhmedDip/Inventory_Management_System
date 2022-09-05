@@ -126,7 +126,7 @@ class UsersController extends Controller
         $user->address = $request->address;
         $user->group_id = $request->group_id;
         $user->status = $request->status;
-        Storage::delete('public/' .$user->image);
+      
 
    
         if($request->hasFile('image'))
@@ -134,6 +134,7 @@ class UsersController extends Controller
             $des= 'public/' . $user->image;
             if (File::exists($des))
             {
+                Storage::delete('public/' .$user->image);
                 File::delete($des);
               
             }
@@ -142,7 +143,6 @@ class UsersController extends Controller
           
     
         }
-        // Storage::delete('public/' .$user->image);
         $user->save();
        
         // $user->image = $user;
@@ -167,7 +167,7 @@ class UsersController extends Controller
       {
         // File::delete($des);
         Storage::delete('public/' .$user->image);
-            $user->delete();
+        $user->delete();
         Session::flash('delete', 'User deleted Successsfully');
       }
 
