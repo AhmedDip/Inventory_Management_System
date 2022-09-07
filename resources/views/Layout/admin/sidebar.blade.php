@@ -7,9 +7,10 @@
             <i class="fas fa-home"></i>
         </div> --}}
 
-        <div class="sidebar-brand-icon rotate-n-0">
-            <img src="{{asset('template/img/main_logo.png')}}" style="max-width:100%" alt="">
+        <div class="sidebar-brand-icon rotate-n-15">
+            <i class="fas fa-laugh-wink"></i>
         </div>
+        <div class="sidebar-brand-text mx-3">Hisab Kitab</div>
      
     </a>
 
