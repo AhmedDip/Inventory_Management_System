@@ -58,12 +58,14 @@
                     {{-- create message --}}
                     @if(Session::get('create'))
                         <div class="alert alert-success" role="alert">
+                            <img src="{{asset('template/img/checkmark.gif')}}" alt="" height="40px">
                             {{Session::get('create')}}
                         </div>                 
                     @endif
 
                     @if(Session::get('delete'))
                     <div class="alert alert-danger" role="alert">
+                        <img src="{{asset('template/img/cross.gif')}}" alt="" height="40px">
                         {{Session::get('delete')}}
                     </div>                 
                 @endif

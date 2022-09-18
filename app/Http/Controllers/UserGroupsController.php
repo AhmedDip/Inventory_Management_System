@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\TitleRequest;
+use App\Http\Requests\UserRequest;
 use App\Models\Group;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
@@ -23,7 +25,7 @@ class UserGroupsController extends Controller
 
     }
 
-    public function storeGroup(Request $request)
+    public function storeGroup(TitleRequest $request)
     {
        $group = new Group();
 

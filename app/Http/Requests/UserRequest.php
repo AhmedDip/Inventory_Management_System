@@ -26,11 +26,13 @@ class UserRequest extends FormRequest
         return [
             'name' => 'required',
             'email' => 'required|unique:users',
-            'phone' => 'required|unique:users',
+            'phone' => 'required|unique:users|numeric',
             'password' => 'required',
+            'address' => 'required',
             'status' => 'required',
             'group_id'=> 'required',
             'image' =>  'mimes:jpeg,png,jpg,gif|max:3000|required'
+        
             
         ];
     }

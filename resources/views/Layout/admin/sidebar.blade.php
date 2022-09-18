@@ -42,7 +42,7 @@
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Custom Components:</h6>
-                <a class="collapse-item" href={{url('users')}}>Users</a>
+                <a class="collapse-item" href={{route('users.index')}}>Users</a>
                 <a class="collapse-item" href={{url('groups')}}>Groups</a>
             </div>
         </div>
@@ -66,7 +66,7 @@
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Custom Components:</h6>
                 <a class="collapse-item" href={{url('products')}}>Products</a>
-                <a class="collapse-item" href={{url('categories')}}>categories</a>
+                <a class="collapse-item" href={{route('categories.index')}}>Categories</a>
             </div>
         </div>
     </li>

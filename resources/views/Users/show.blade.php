@@ -92,6 +92,8 @@
                                         <div class="col-md-4">
                                             <img class="img-fluid img-thumbnail" max-height="220px" id="prview"
                                                 src="{{ asset(Storage::url($users->image)) }}">
+
+                                               
                                         </div>
                                         <!-- / column -->
                                     </div>

@@ -23,6 +23,15 @@ class CreateProductsTable extends Migration
             $table->integer('unit');
             $table->foreignId('category_id');
             $table->timestamps();
+
+       
+            $table->foreign('category_id')
+            ->references('id')
+            ->on('categories');
+ 
+
+
+           
         });
     }
 

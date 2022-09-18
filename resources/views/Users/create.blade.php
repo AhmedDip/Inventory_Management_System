@@ -2,6 +2,9 @@
 @section('main_content')
 
 <div class="d-sm-flex align-items-center justify-content-between mb-3">
+    <a href="{{ route('users.index') }}" class="d-none d-sm-inline-block btn btn-primary btn-sm"><i
+            class="fas fa-arrow-alt-circle-left"></i>
+        Back </a>
     {{-- <h1 class="h3 mb-0 text-gray-800">Create New User</h1> --}}
 </div>
     <div class="card shadow mb-4">
@@ -58,8 +61,8 @@
                                 <div class="col-sm-9">              
                                 <select class="form-control mb-2" name="status" id="status" >
                                   <option >Select An Option</option>
-                                  <option value="0" {{ old('status') == '0'? 'selected' : '' }}>Active</option>
-                                  <option value="1" {{ old('status') == '1'? 'selected' : '' }}>Suspend</option>                                 
+                                  <option value="0" {{ old('status') == '0'? 'selected' : '' }}> Active</option>
+                                  <option value="1" {{ old('status') == '1'? 'selected' : '' }}> Suspend</option>                                 
                                 </select>
                               </div>
 

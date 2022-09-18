@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Storage;
 
+
 class UsersController extends Controller
 {
 
@@ -78,7 +79,6 @@ class UsersController extends Controller
     public function update(UserEditRequest $request, $id)
     {
         $id = $request->id;
-
         $user = User::find($id);
 
 
