@@ -82,6 +82,12 @@
                                                                     @error('email')
                                                                        <p class="text-danger">*{{$message}}</p> 
                                                                     @enderror
+
+                                                                    @if (Session::has('invalid'))
+                                                                 
+                                                                     <p class="text-danger">*{!! Session::get('invalid') !!}</p>
+                                                                        
+                                                                @endif  
                                                                 </div>
                                                         </div>
                                                         <div class="form-group">

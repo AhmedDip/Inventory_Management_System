@@ -1,9 +1,17 @@
 @extends('Layout.admin')
 @section('main_content')
-
-    <div class="d-sm-flex align-items-center justify-content-between mb-3">
+  
+<div class="row">
+    <div class="col-md-3 mb-2">
+        <a href="{{ route('users.index') }}" class="d-sm-inline-block btn btn-primary btn-sm"><i
+                class="fas fa-arrow-alt-circle-left"></i>
+            Back </a>
     </div>
-    <div class="card shadow mb-4">
+
+</div>
+        
+   
+    <div class="card shadow mb-2">
         <div class="card-header py-3">
             <h4 class="m-0 font-weight-bold text-primary">Edit User - {{ $users->name }}</h4>
         </div>
@@ -22,6 +30,8 @@
 
                             </div>
 
+                            @if ($users->id!=1)
+
                             <label for="email" class="col-sm-3 col-form-label">Email</label>
                             <div class="col-sm-9">
                                 <input type="email" name="email" value="{{ $users->email }}" class="form-control mb-2"
@@ -33,6 +43,8 @@
                                 <input type="password" name="password" value="{{ $users->password }}"
                                     class="form-control mb-2" id="password" placeholder="Enter the password">
                             </div>
+
+                            @endif
 
                             <label for="Phone" class="col-sm-3 col-form-label">Phone</label>
                             <div class="col-sm-9">
@@ -47,6 +59,7 @@
                             </div>
 
 
+                            @if ($users->id!=1)
 
                             <label for="group" class="col-sm-3 col-form-label">Group</label>
                             <div class="col-sm-9">
@@ -61,6 +74,8 @@
                                 </select>
                             </div>
 
+                         
+
                             <label for="status" class="col-sm-3 col-form-label">Status</label>
                             <div class="col-sm-9">
                                 <select class="form-control mb-2" name="status" id="status">
@@ -69,6 +84,8 @@
                                     <option value="1" {{ $users->status == '1' ? 'selected' : '' }}>Suspend</option>
                                 </select>
                             </div>
+
+                            @endif
 
                             <label for="img" class="col-sm-3 col-form-label">Image</label>
                             <div class="col-sm-9">

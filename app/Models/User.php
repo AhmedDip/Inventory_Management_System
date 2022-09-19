@@ -23,7 +23,8 @@ class User extends Authenticatable
         'password',
         'phone',
         'image',
-        'group_id'
+        'group_id',
+         'status'
     ];
 
     public function group()
@@ -31,6 +32,30 @@ class User extends Authenticatable
         return $this->belongsTo(Group::class);
     }
 
+    public function sales()
+    {
+        return $this->hasMany(SaleInvoice::class);
+    }
+
+    public function purchases()
+    {
+        return $this->hasMany(PurchaseInvoice::class);
+    }
+
+    public function payments()
+    {
+        return $this->hasMany(Payment::class);
+    }
+
+    
+    public function receipts()
+    {
+        return $this->hasMany(Receipt::class);
+    }
+
+
+
+    
     /**
      * The attributes that should be hidden for serialization.
      *

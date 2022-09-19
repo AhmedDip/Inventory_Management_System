@@ -45,9 +45,9 @@
                                 </td>
 
                                 <td>
-                                    @if ($user->status == 0)
+                                    @if ($user->status == 1)
                                         <p class="badge badge-success"> Active </p>
-                                    @elseif ($user->status == 1)
+                                    @elseif ($user->status == 0)
                                         <p class="badge badge-danger">Suspend</p>
                                     @endif
 
@@ -63,10 +63,16 @@
 
                                         @csrf
                                         @method('DELETE')
+                                        
+                                        @if ($user->id!=1)
 
                                         <button onclick="return confirm('Are You Sure?')" type="submit"
-                                            class="btn btn-outline-danger btn-sm"><i class="fa fa-trash"></i></button>
+                                        class="btn btn-outline-danger btn-sm"><i class="fa fa-trash"></i></button>
 
+                                            
+                                        @endif
+
+                                     
                                     </form>
                                 </td>
                             </tr>
