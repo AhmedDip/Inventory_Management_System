@@ -22,7 +22,8 @@ class User extends Authenticatable
         'email',
         'password',
         'phone',
-        'image'
+        'image',
+        'group_id'
     ];
 
     public function group()
