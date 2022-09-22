@@ -13,8 +13,14 @@
                     <a href="{{ route('users.create') }}" class="btn btn-warning btn-sm"><i class="fas fa-plus-circle"></i> New
                         Purchase </a>
         
-                    <a href="{{ route('users.create') }}" class="btn btn-success btn-sm"><i class="fas fa-plus-circle"></i> New
-                        Payment </a>
+            
+
+                                        
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#PaymentexampleModal"> <i class="fas fa-plus-circle"></i>
+                        New
+                        Payment
+                    </button>
         
                     <a href="{{ route('users.create') }}" class="btn btn-dark btn-sm"><i class="fas fa-plus-circle"></i> New Receipt
                     </a>
@@ -36,13 +42,13 @@
                         >Sales</a>
 
   
-                    <a class="nav-link @if($tab == 'purchases') active @endif"  href="{{route('user.purchase',$users->id)}}" >Purchase</a>
+                    <a class="nav-link @if($tab == 'purchases') active @endif"  href="{{route('user.purchase',$users->id)}}" >Purchases</a>
 
                     
-                    <a class="nav-link @if($tab == 'payments') active @endif"  href="{{route('user.payment',$users->id)}}"  >Payment</a>
+                    <a class="nav-link @if($tab == 'payments') active @endif"  href="{{route('user.payment',$users->id)}}"  >Payments</a>
 
 
-                    <a class="nav-link @if($tab == 'receipts') active @endif"  href="{{route('user.receipt',$users->id)}}" >Receipt</a> 
+                    <a class="nav-link @if($tab == 'receipts') active @endif"  href="{{route('user.receipt',$users->id)}}" >Receipts</a> 
 
             </div>
         </div>
@@ -55,4 +61,6 @@
 
         </div>
     </div>
+
+
 @endsection

@@ -12,70 +12,122 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
-                    
+
                             <th>SL No.</th>
-                            <th>Invoice No.</th>
-                            <th>Customer</th>
+                            <th>User</th>
                             <th>Date</th>
                             <th>Total</th>
+                            <th>Note</th>
                             <th>Action</th>
                         </tr>
                     </thead>
                     <tfoot>
-                        <tr>                
-                            <th>SL No.</th>
-                            <th>Invoice No.</th>
-                            <th>Customer</th>
-                            <th>Date</th>
-                            <th>Total</th>
-                            <th>Action</th>
+                        <tr style="background-color:rgb(226, 232, 235); color:rgb(52, 89, 253);">
+                            <th colspan="3" class="text-right">Total: </th>
+                            <th colspan="3">{{$users->payments->sum('amount')}} Taka</th>
                         </tr>
                     </tfoot>
                     <tbody>
 
                         @foreach ($users->payments as $payment)
+                            <tr>
+                                <td>{{ $loop->iteration }}</td>
+                                <td>{{ $users->name }}</td>
+                        <td>{{date('d-M-Y', strtotime($payment->date))}}</td>
+                                <td>{{ $payment->amount }}</td>
+                                <td>{{ Str::substr($payment->note , 0, 10) }}</td>
+                                <td>
+                                    <form action="/users/{{ $users->id }}/payments/{{$payment->id}}" method="post">
 
-                        <tr>      
-                            <td>{{$loop->iteration}}</td>              
-                            <td>{{ $payment->invoice_no }}</td>
-                            <td>{{ $users->name}}</td>
-                            <td>{{$payment->date}}</td>
+                                        @csrf
+                                        @method('DELETE')
 
-                        
-                            <td>{{ $payment->total }}</td>
-                            <td>
-                                <form action="/users/{{ $users->id }}" method="post">
-                                    <a href="{{ route('users.show', ['user' => $users->id]) }}"
-                                        class="btn btn-outline-primary btn-sm"><i class="fa fa-eye"></i></a>
-
-                                    <a href="{{ route('users.edit', ['user' => $users->id]) }}"
-                                        class="btn btn-outline-info btn-sm"><i class="fa fa-edit"></i></a>
-
-                                    @csrf
-                                    @method('DELETE')
+                                            <button onclick="return confirm('Are You Sure?')" type="submit"
+                                                class="btn btn-outline-danger btn-sm"><i class="fa fa-trash"></i></button>
                                     
-                                    @if ($users->id!=1)
-
-                                    <button onclick="return confirm('Are You Sure?')" type="submit"
-                                    class="btn btn-outline-danger btn-sm"><i class="fa fa-trash"></i></button>
-
-                                        
-                                    @endif
-
-                                 
-                                </form>
-                            </td>
-                        </tr>
-                            
+                                    </form>
+                                </td>
+                            </tr>
                         @endforeach
-                
-                        
-          
-
 
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
+
+    {{-- Modal For Adding New Payment --}}
+
+    <!-- Modal -->
+    <div class="modal fade" id="PaymentexampleModal" tabindex="-1" role="dialog"
+        aria-labelledby="PaymentexampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="PaymentexampleModalLabel">Add New Payment</h5>
+                </div>
+                <div class="modal-body">
+
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <form action="{{ route('user.payment.store', $users->id) }}" method="post">
+                                    {{ csrf_field() }}
+
+                                    <div class="form-group row">
+                                        <label for="date" class="col-sm-3 col-form-label">Date</label>
+                                        <div class="col-sm-9">
+                                            <input type="date" required name="date" value="{{ old('date') }}"
+                                                class="form-control mb-2" id="date" placeholder="Enter the date">
+
+                                        </div>
+
+                                        <label for="amount" class="col-sm-3 col-form-label">Amount</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" required name="amount" value="{{ old('amount') }}"
+                                                class="form-control mb-2" id="amount" placeholder="Enter the amount">
+                                        </div>
+
+
+                                        <label for="note" class="col-sm-3 col-form-label">Note</label>
+                                        <div class="col-sm-9">
+                                            <textarea name="note" required id="note" cols="25" rows="2" value="{{ old('note') }}">
+                                   
+                                            </textarea>
+
+                                        </div>
+
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
+                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                    </div>
+                                </form>
+                            </div>
+
+                            <div class="col-md-4">
+                                @if ($errors->any())
+                                    <div class="alert alert-danger">
+                                        <ul>
+                                            @foreach ($errors->all() as $error)
+                                                <li>{{ $error }}</li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                @endif
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
 @endsection

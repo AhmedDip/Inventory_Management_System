@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Storage;
-
+use RealRashid\SweetAlert\Facades\Alert as EditAlert;
 
 class UsersController extends Controller
 {
@@ -87,7 +87,7 @@ class UsersController extends Controller
 
         $user->name = $request->name;
         $user->email = $request->email;
-        $user->password = $request->password;
+        $user->password = Hash::make($request->password) ;
         $user->phone = $request->phone;
         $user->address = $request->address;
         $user->group_id = $request->group_id;
@@ -110,7 +110,7 @@ class UsersController extends Controller
         }
         $user->save();
 
-        Alert::toast('You\'ve Successfully Registered', 'success');
+        EditAlert::toast('You\'ve Successfully Edited', 'success');
         return redirect()->route('users.index');
     }
 

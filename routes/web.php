@@ -53,8 +53,17 @@ Route::delete('groups/{id}',[UserGroupsController::class,'destroyGroup'])->name(
 // User Sales 
 
 Route::get('users/{id}/sales',[UserSalesController::class,'index'])->name('user.sale');
+
 Route::get('users/{id}/purchases',[UserPurchasesController::class,'index'])->name('user.purchase');
+
 Route::get('users/{id}/payments',[UserPaymentsController::class,'index'])->name('user.payment');
+
+
+Route::post('users/{id}/payments',[UserPaymentsController::class,'store'])->name('user.payment.store');
+
+Route::delete('users/{id}/payments/{payment_id}',[UserPaymentsController::class,'destroy'])->name('user.payment.destroy');
+
+
 Route::get('users/{id}/receipts',[UserReceiptsController::class,'index'])->name('user.receipt');
 
 

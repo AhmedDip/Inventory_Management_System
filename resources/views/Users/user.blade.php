@@ -45,18 +45,21 @@
                                 </td>
 
                                 <td>
-                                    @if ($user->status == 1)
+                                    @if ($user->status == 0)
                                         <p class="badge badge-success"> Active </p>
-                                    @elseif ($user->status == 0)
+                                    @elseif ($user->status == 1)
                                         <p class="badge badge-danger">Suspend</p>
                                     @endif
 
                                 </td>
                                 <td>{{ $user->group->title }}</td>
                                 <td>
+                                   
                                     <form action="/users/{{ $user->id }}" method="post">
                                         <a href="{{ route('users.show', ['user' => $user->id]) }}"
                                             class="btn btn-outline-primary btn-sm"><i class="fa fa-eye"></i></a>
+
+                                            @if ($user->id!=1)
 
                                         <a href="{{ route('users.edit', ['user' => $user->id]) }}"
                                             class="btn btn-outline-info btn-sm"><i class="fa fa-edit"></i></a>
@@ -64,7 +67,7 @@
                                         @csrf
                                         @method('DELETE')
                                         
-                                        @if ($user->id!=1)
+                                        
 
                                         <button onclick="return confirm('Are You Sure?')" type="submit"
                                         class="btn btn-outline-danger btn-sm"><i class="fa fa-trash"></i></button>

@@ -25,12 +25,8 @@ class UserEditRequest extends FormRequest
     {
         return [
             'name' => 'required',
-            'email' => 'required',
             'phone' => 'required|numeric',
             'address' => 'required',
-            'password' => 'required',
-            'status' => 'required',
-            'group_id'=> 'required',
             'image' =>  'mimes:jpeg,png,jpg,gif|max:3000'
             
         ];

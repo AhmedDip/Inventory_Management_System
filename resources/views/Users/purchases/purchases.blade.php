@@ -15,7 +15,7 @@
                     
                             <th>SL No.</th>
                             <th>Invoice No.</th>
-                            <th>Customer</th>
+                            <th>User</th>
                             <th>Date</th>
                             <th>Total</th>
                             <th>Action</th>
@@ -25,7 +25,7 @@
                         <tr>                
                             <th>SL No.</th>
                             <th>Invoice No.</th>
-                            <th>Customer</th>
+                            <th>User</th>
                             <th>Date</th>
                             <th>Total</th>
                             <th>Action</th>

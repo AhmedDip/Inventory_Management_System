@@ -30,7 +30,7 @@
 
                             </div>
 
-                            @if ($users->id!=1)
+                    
 
                             <label for="email" class="col-sm-3 col-form-label">Email</label>
                             <div class="col-sm-9">
@@ -38,13 +38,13 @@
                                     id="email" placeholder="Enter the email">
                             </div>
 
-                            <label for="password" class="col-sm-3 col-form-label">Password</label>
+                            {{-- <label for="password" class="col-sm-3 col-form-label">Password</label>
                             <div class="col-sm-9">
-                                <input type="password" name="password" value="{{ $users->password }}"
+                                <input type="text" name="password" value="{{ $users->password }}"
                                     class="form-control mb-2" id="password" placeholder="Enter the password">
-                            </div>
+                            </div> --}}
 
-                            @endif
+        
 
                             <label for="Phone" class="col-sm-3 col-form-label">Phone</label>
                             <div class="col-sm-9">
@@ -59,7 +59,7 @@
                             </div>
 
 
-                            @if ($users->id!=1)
+              
 
                             <label for="group" class="col-sm-3 col-form-label">Group</label>
                             <div class="col-sm-9">
@@ -85,7 +85,6 @@
                                 </select>
                             </div>
 
-                            @endif
 
                             <label for="img" class="col-sm-3 col-form-label">Image</label>
                             <div class="col-sm-9">
