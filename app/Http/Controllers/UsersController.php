@@ -19,7 +19,7 @@ class UsersController extends Controller
 
     public function index()
     {
-        $user = User::all();
+        $user = User::all()->except(1);
 
 
         // dd($user);
@@ -108,7 +108,7 @@ class UsersController extends Controller
             $users = $request->file('image')->store('Image', 'public');
             $user->image = $users;
         }
-        $user->save();
+        $user->update();
 
         EditAlert::toast('You\'ve Successfully Edited', 'success');
         return redirect()->route('users.index');

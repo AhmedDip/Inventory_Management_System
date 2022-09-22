@@ -59,8 +59,7 @@
                             </div>
 
 
-              
-
+                            
                             <label for="group" class="col-sm-3 col-form-label">Group</label>
                             <div class="col-sm-9">
 
@@ -84,6 +83,11 @@
                                     <option value="1" {{ $users->status == '1' ? 'selected' : '' }}>Suspend</option>
                                 </select>
                             </div>
+                                
+
+
+              
+
 
 
                             <label for="img" class="col-sm-3 col-form-label">Image</label>

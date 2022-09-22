@@ -21,9 +21,10 @@
                         New
                         Payment
                     </button>
-        
-                    <a href="{{ route('users.create') }}" class="btn btn-dark btn-sm"><i class="fas fa-plus-circle"></i> New Receipt
-                    </a>
+
+                    <button type="button" class="btn btn-dark btn-sm" data-toggle="modal" data-target="#receiptexampleModal"> <i class="fas fa-plus-circle"></i>
+                        New Receipt
+                    </button>
                
         </div>
 
@@ -61,6 +62,155 @@
 
         </div>
     </div>
+
+     {{-- Modal For Adding New receipt --}}
+
+    <!-- Modal -->
+    <div class="modal fade" id="receiptexampleModal" tabindex="-1" role="dialog"
+        aria-labelledby="receiptexampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="receiptexampleModalLabel">Add New receipt</h5>
+                </div>
+                <div class="modal-body">
+
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <form action="{{ route('user.receipt.store', $users->id) }}" method="post">
+                                    {{ csrf_field() }}
+
+                                    <div class="form-group row">
+                                        <label for="date" class="col-sm-3 col-form-label">Date</label>
+                                        <div class="col-sm-9">
+                                            <input type="date" required name="date" value="{{ old('date') }}"
+                                                class="form-control mb-2" id="date" placeholder="Enter the date">
+
+                                        </div>
+
+                                        <label for="amount" class="col-sm-3 col-form-label">Amount</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" required name="amount" value="{{ old('amount') }}"
+                                                class="form-control mb-2" id="amount" placeholder="Enter the amount">
+                                        </div>
+
+
+                                        <label for="note" class="col-sm-3 col-form-label">Note</label>
+                                        <div class="col-sm-9">
+                                            <textarea name="note" required id="note" cols="25" rows="2" value="{{ old('note') }}">
+                                   
+                                            </textarea>
+
+                                        </div>
+
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
+                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                    </div>
+                                </form>
+                            </div>
+
+                            <div class="col-md-4">
+                                @if ($errors->any())
+                                    <div class="alert alert-danger">
+                                        <ul>
+                                            @foreach ($errors->all() as $error)
+                                                <li>{{ $error }}</li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                @endif
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+     {{-- Modal For Adding New Payment --}}
+
+    <!-- Modal -->
+    <div class="modal fade" id="PaymentexampleModal" tabindex="-1" role="dialog"
+        aria-labelledby="PaymentexampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="PaymentexampleModalLabel">Add New Payment</h5>
+                </div>
+                <div class="modal-body">
+
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <form action="{{ route('user.payment.store', $users->id) }}" method="post">
+                                    {{ csrf_field() }}
+
+                                    <div class="form-group row">
+                                        <label for="date" class="col-sm-3 col-form-label">Date</label>
+                                        <div class="col-sm-9">
+                                            <input type="date" required name="date" value="{{ old('date') }}"
+                                                class="form-control mb-2" id="date" placeholder="Enter the date">
+
+                                        </div>
+
+                                        <label for="amount" class="col-sm-3 col-form-label">Amount</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" required name="amount" value="{{ old('amount') }}"
+                                                class="form-control mb-2" id="amount" placeholder="Enter the amount">
+                                        </div>
+
+
+                                        <label for="note" class="col-sm-3 col-form-label">Note</label>
+                                        <div class="col-sm-9">
+                                            <textarea name="note" required id="note" cols="25" rows="2" value="{{ old('note') }}">
+                                   
+                                            </textarea>
+
+                                        </div>
+
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
+                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                    </div>
+                                </form>
+                            </div>
+
+                            <div class="col-md-4">
+                                @if ($errors->any())
+                                    <div class="alert alert-danger">
+                                        <ul>
+                                            @foreach ($errors->all() as $error)
+                                                <li>{{ $error }}</li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                @endif
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
 
 
 @endsection

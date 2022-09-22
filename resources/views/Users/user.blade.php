@@ -59,7 +59,7 @@
                                         <a href="{{ route('users.show', ['user' => $user->id]) }}"
                                             class="btn btn-outline-primary btn-sm"><i class="fa fa-eye"></i></a>
 
-                                            @if ($user->id!=1)
+                            
 
                                         <a href="{{ route('users.edit', ['user' => $user->id]) }}"
                                             class="btn btn-outline-info btn-sm"><i class="fa fa-edit"></i></a>
@@ -73,7 +73,7 @@
                                         class="btn btn-outline-danger btn-sm"><i class="fa fa-trash"></i></button>
 
                                             
-                                        @endif
+                             
 
                                      
                                     </form>
