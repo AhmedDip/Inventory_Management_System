@@ -8,7 +8,11 @@
             </div>
         
                 <div class="col-md-8 mb-2 text-right">
-                    <a href="{{ route('users.create') }}" class="btn btn-info btn-sm"><i class="fas fa-plus-circle"></i> New Sale </a>
+
+                    <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#SaleexampleModal"> <i class="fas fa-plus-circle"></i>
+                        New
+                        Sale
+                    </button>
         
                     <a href="{{ route('users.create') }}" class="btn btn-warning btn-sm"><i class="fas fa-plus-circle"></i> New
                         Purchase </a>
@@ -39,7 +43,7 @@
 
                     <a class="nav-link @if($tab == 'show') active @endif "  href="{{ route('users.show', $users->id) }}" >User Details</a>
 
-                    <a class="nav-link @if($tab == 'sales') active @endif"  href="{{route('user.sale',$users->id)}}" 
+                    <a class="nav-link @if($tab == 'sales') active @endif"  href="{{route('user.sales',$users->id)}}" 
                         >Sales</a>
 
   
@@ -112,18 +116,6 @@
                                 </form>
                             </div>
 
-                            <div class="col-md-4">
-                                @if ($errors->any())
-                                    <div class="alert alert-danger">
-                                        <ul>
-                                            @foreach ($errors->all() as $error)
-                                                <li>{{ $error }}</li>
-                                            @endforeach
-                                        </ul>
-                                    </div>
-                                @endif
-
-                            </div>
 
                         </div>
                     </div>
@@ -185,18 +177,7 @@
                                 </form>
                             </div>
 
-                            <div class="col-md-4">
-                                @if ($errors->any())
-                                    <div class="alert alert-danger">
-                                        <ul>
-                                            @foreach ($errors->all() as $error)
-                                                <li>{{ $error }}</li>
-                                            @endforeach
-                                        </ul>
-                                    </div>
-                                @endif
-
-                            </div>
+                    
 
                         </div>
                     </div>
@@ -208,6 +189,77 @@
     </div>
 
 
+       {{-- Modal For Adding New Sale --}}
+
+    <!-- Modal -->
+    <div class="modal fade" id="SaleexampleModal" tabindex="-1" role="dialog"
+        aria-labelledby="SaleexampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="SaleexampleModalLabel">Add New Sale</h5>
+                </div>
+                <div class="modal-body">
+
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <form action="{{ route('user.sales.store', $users->id) }}" method="post">
+                                    {{ csrf_field() }}
+
+                                    <div class="form-group row">
+                                        <label for="date" class="col-sm-3 col-form-label">Date</label>
+                                        <div class="col-sm-9">
+                                            <input type="date" required name="date" value="{{ old('date') }}"
+                                                class="form-control mb-2" id="date" placeholder="Enter the date">
+
+                                        </div>
+
+                                        <label for="invoice_no" class="col-sm-3 col-form-label">Invoice Number</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" required name="invoice_no" value="{{ old('invoice_no') }}"
+                                                class="form-control mb-2" id="invoice_no" placeholder="Enter the Invoice Number">
+                                        </div>
+
+
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
+                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                    </div>
+                                </form>
+                            </div>
+
+                            <div class="col-md-12">
+                                @if ($errors->any())
+                                    <div class="alert alert-danger">
+                                        <ul>
+                                            @foreach ($errors->all() as $error)
+                                                <li>{{ $error }}</li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                @endif
+
+                               
+
+                            </div>
+
+                                
+
+      
+
+
+
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
 
 
 

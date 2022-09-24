@@ -13,4 +13,9 @@ class SaleInvoice extends Model
     // {
     //     return $this->belongsTo(SaleInvoice::class);
     // }
+
+    public function items()
+    {
+        return $this->hasMany( SaleItem::class);
+    }
 }

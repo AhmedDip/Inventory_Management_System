@@ -19,7 +19,11 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
-        'email'
+        'email',
+        'password',
+        'phone',
+        'group_id',
+        'status'
     ];
 
     public function group()

@@ -46,7 +46,7 @@ class UserReceiptsController extends Controller
 
         if(Receipt::destroy($receipt_id))
         {
-            toast('receipt Deleted Successfully!', 'error');
+            toast('Receipt Deleted Successfully!', 'error');
             // Alert::error('Deleted!', 'Receipt Deleted Successfully!');
 
             return redirect()->to(route('user.receipt',['id'=>$id]));

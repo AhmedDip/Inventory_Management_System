@@ -42,10 +42,10 @@
                             <td>{{$sale->date}}</td>
 
                         
-                            <td>{{ $sale->total }}</td>
+                            <td>{{ $sale->items()->sum('total') }}</td>
                             <td>
-                                <form action="/users/{{ $users->id }}" method="post">
-                                    <a href="{{ route('users.show', ['user' => $users->id]) }}"
+                                <form method="POST" action=" {{ route('user.sales.destroy', ['id' => $users->id, 'invoice_id' => $sale->id ]) }} ">
+                                    <a href="{{ route('user.sales.invoice_details', ['id' => $users->id,'invoice_id'=>$sale->id]) }}"
                                         class="btn btn-outline-primary btn-sm"><i class="fa fa-eye"></i></a>
 
                                     <a href="{{ route('users.edit', ['user' => $users->id]) }}"

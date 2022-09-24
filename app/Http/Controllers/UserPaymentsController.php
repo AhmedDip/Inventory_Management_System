@@ -16,17 +16,18 @@ class UserPaymentsController extends Controller
         $users = User::findorFail($id);
         $tab = 'payments';
 
+        // dd($users->payments);
+
         return view('Users.payments.payments', ['users'=>$users])->with('tab',$tab);
 
     }
 
-    public function store(Request $request, $id)
+    public function store(Request $request, $user_id)
     {
   
-       
         $payment = new Payment();
 
-        $payment->user_id = $id;
+        $payment->user_id = $user_id;
         $payment->amount = $request->amount;
         $payment->date = $request->date;
         $payment->note = $request->note;
@@ -37,7 +38,7 @@ class UserPaymentsController extends Controller
             toast('Payment Added Successfully!', 'success');
             // Alert::success('Success!', 'Payment Added Successfully!');
 
-            return redirect()->to(route('user.payment',['id'=>$id]));
+            return redirect()->to(route('user.payment',['id'=>$user_id]));
 
         }
 

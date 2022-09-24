@@ -23,7 +23,7 @@
                     </thead>
                     <tfoot>
                         <tr style="background-color:rgb(226, 232, 235); color:rgb(52, 89, 253);">
-                            <th colspan="3" class="text-right">Total: </th>
+                            <th colspan="3" class="text-right">Total =</th>
                             <th colspan="3">{{$users->receipts->sum('amount')}} Taka</th>
                         </tr>
                     </tfoot>
