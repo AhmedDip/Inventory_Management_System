@@ -17,13 +17,17 @@ class UserReceiptsController extends Controller
 
     }
 
-    public function store(Request $request, $id)
+    public function store(Request $request, $id, $invoice_id = null)
     {
   
        
         $receipt = new Receipt();
 
         $receipt->user_id = $id;
+
+        if ($invoice_id) {
+            $receipt->sale_invoice_id = $invoice_id;
+        }
         $receipt->amount = $request->amount;
         $receipt->date = $request->date;
         $receipt->note = $request->note;
@@ -34,7 +38,17 @@ class UserReceiptsController extends Controller
             toast('Receipt Added Successfully!', 'success');
             // Alert::success('Success!', 'receipt Added Successfully!');
 
+            if($invoice_id)
+            {
+                return redirect()->route('user.sales.invoice_details', ['id' => $id,'invoice_id'=>$invoice_id]);
+            }
+
+            else
+            {
+                
             return redirect()->to(route('user.receipt',['id'=>$id]));
+            }
+
 
         }
 
