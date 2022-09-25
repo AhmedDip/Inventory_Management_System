@@ -37,13 +37,13 @@ Route::get('/', function () {
 Route::get('logout',[LoginController::class,'logout'])->name('logout');
 
 
-//Resource Routing
+//Routes For Resource Routing
 Route::resource('users',UsersController::class); 
 Route::resource('categories',CategoriesController::class);
 Route::resource('products',ProductController::class);
 
 
-//User Groups
+//Routes For User Groups
 
 Route::get('create/groups',[UserGroupsController::class,'createGroup'])->name('create.groups');
 Route::get('groups',[UserGroupsController::class,'index']);
@@ -51,7 +51,7 @@ Route::post('groups',[UserGroupsController::class,'storeGroup'])->name('created.
 Route::delete('groups/{id}',[UserGroupsController::class,'destroyGroup'])->name('destroy.groups');
 
 
-// User Sales 
+//Routes For User Sales 
 
 Route::get('users/{id}/sales', 	[UserSalesController::class,'index'])->name('user.sales');
 Route::post('users/{id}/invoices',	[UserSalesController::class,'createInvoice'])->name('user.sales.store');
@@ -62,13 +62,26 @@ Route::delete('users/{id}/invoices/{invoice_id}/{item_id}', [UserSalesController
 
 
 
+
+
+
+
+//// Routes For Purchase
+
 Route::get('users/{id}/purchases',[UserPurchasesController::class,'index'])->name('user.purchase');
+
+Route::post('users/{id}/purchases',	[UserPurchasesController::class,'createInvoice'])->name('user.purchase.store');
+Route::get('users/{id}/purchases/{invoice_id}',	[UserPurchasesController::class,'invoice'])->name('user.purchase.invoice_details');
+Route::delete('users/{id}/purchases/{invoice_id}',[UserPurchasesController::class,'destroy'])->name('user.purchase.destroy');
+Route::post('users/{id}/purchases/{invoice_id}',	[UserPurchasesController::class,'addItem'])->name('user.purchase.add_item');
+Route::delete('users/{id}/purchases/{invoice_id}/{item_id}', [UserPurchasesController::class,'destroyItem'])->name('user.purchase.delete_item');
+
 
 
 
 Route::get('users/{id}/payments',[UserPaymentsController::class,'index'])->name('user.payment');
 
-Route::post('users/{id}/payments',[UserPaymentsController::class,'store'])->name('user.payment.store');
+Route::post('users/{id}/payments/{invoice_id?}',[UserPaymentsController::class,'store'])->name('user.payment.store');
 
 Route::delete('users/{id}/payments/{payment_id}',[UserPaymentsController::class,'destroy'])->name('user.payment.destroy');
 

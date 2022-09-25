@@ -64,6 +64,8 @@
                                         <a href="{{ route('users.edit', ['user' => $user->id]) }}"
                                             class="btn btn-outline-info btn-sm"><i class="fa fa-edit"></i></a>
 
+                                    @if($user->sales()->count()==0 && $user->purchases()->count()==0 && $user->payments()->count()==0 && $user->receipts()->count()==0)
+
                                         @csrf
                                         @method('DELETE')
                                         
@@ -72,7 +74,7 @@
                                         <button onclick="return confirm('Are You Sure?')" type="submit"
                                         class="btn btn-outline-danger btn-sm"><i class="fa fa-trash"></i></button>
 
-                                            
+                                        @endif 
                              
 
                                      

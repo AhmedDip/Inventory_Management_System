@@ -16,45 +16,57 @@
                             <th>SL No.</th>
                             <th>Invoice No.</th>
                             <th>User</th>
-                            <th>Date</th>
+                            <th>Items</th>
+                            <th>Date</th>                           
                             <th>Total</th>
                             <th>Action</th>
                         </tr>
                     </thead>
-                    <tfoot>
-                        <tr>                
-                            <th>SL No.</th>
-                            <th>Invoice No.</th>
-                            <th>User</th>
-                            <th>Date</th>
-                            <th>Total</th>
-                            <th>Action</th>
-                        </tr>
-                    </tfoot>
+               
                     <tbody>
-
+                        @php
+                        $grandTotal = 0;
+                        $totalItem = 0;
+                    @endphp
                         @foreach ($users->purchases as $purchase)
 
                         <tr>      
                             <td>{{$loop->iteration}}</td>              
                             <td>{{ $purchase->invoice_no }}</td>
                             <td>{{ $users->name}}</td>
-                            <td>{{$purchase->date}}</td>
-
-                        
-                            <td>{{ $purchase->total }}</td>
+                            <td> 
+                                @php
+                                    $itemQty = $purchase->items()->sum('quantity');
+                                    $totalItem += $itemQty;  
+                                 @endphp
+                                 {{ $itemQty}}
+                            </td>
+                            <td>{{date('d-M-Y', strtotime($purchase->date))}}</td>
                             <td>
-                                <form action="/users/{{ $users->id }}" method="post">
-                                    <a href="{{ route('users.show', ['user' => $users->id]) }}"
-                                        class="btn btn-outline-primary btn-sm"><i class="fa fa-eye"></i></a>
 
-                                    <a href="{{ route('users.edit', ['user' => $users->id]) }}"
-                                        class="btn btn-outline-info btn-sm"><i class="fa fa-edit"></i></a>
+                                @php
+
+                                $total = $purchase->items()->sum('total');
+                                $grandTotal += $total;       
+                                @endphp
+                               
+                            {{$total}}
+
+
+                            </td>
+                            <td>
+
+                         
+
+                                <form method="POST" action=" {{ route('user.purchase.destroy', ['id' => $users->id, 'invoice_id' => $purchase->id ]) }} ">
+                                    <a href="{{ route('user.purchase.invoice_details', ['id' => $users->id,'invoice_id'=>$purchase->id]) }}"
+                                        class="btn btn-outline-primary btn-sm"><i class="fa fa-eye"></i></a>
 
                                     @csrf
                                     @method('DELETE')
                                     
-                                    @if ($users->id!=1)
+
+                                    @if ($purchase->items()->sum('total')==0 && $users->id!=1)
 
                                     <button onclick="return confirm('Are You Sure?')" type="submit"
                                     class="btn btn-outline-danger btn-sm"><i class="fa fa-trash"></i></button>
@@ -70,6 +82,15 @@
                         @endforeach
                 
                     </tbody>
+
+                    <tfoot class="thead-light" >
+                        <tr>       
+                            <th class="text-right" colspan="3">Total Items =</th>
+                            <th colspan="1"> {{$totalItem}} </th>
+                            <th class="text-right">Grand Total = </th>         
+                            <th colspan="2">{{$grandTotal}} Taka</th>
+                        </tr>
+                    </tfoot>
                 </table>
             </div>
         </div>

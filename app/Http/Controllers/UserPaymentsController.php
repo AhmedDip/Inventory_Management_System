@@ -22,12 +22,16 @@ class UserPaymentsController extends Controller
 
     }
 
-    public function store(Request $request, $user_id)
+    public function store(Request $request, $user_id, $invoice_id = null)
     {
   
         $payment = new Payment();
 
         $payment->user_id = $user_id;
+
+        if ($invoice_id) {
+            $payment->purchase_invoice_id = $invoice_id;
+        }
         $payment->amount = $request->amount;
         $payment->date = $request->date;
         $payment->note = $request->note;
@@ -38,7 +42,19 @@ class UserPaymentsController extends Controller
             toast('Payment Added Successfully!', 'success');
             // Alert::success('Success!', 'Payment Added Successfully!');
 
-            return redirect()->to(route('user.payment',['id'=>$user_id]));
+            if($invoice_id)
+            {
+                return redirect()->route('user.purchase.invoice_details', ['id' => $user_id,'invoice_id'=>$invoice_id]);
+            }
+
+            else
+            {
+                
+                return redirect()->to(route('user.payment',['id'=>$user_id]));
+            }
+ 
+
+          
 
         }
 

@@ -10,12 +10,13 @@
         <div class="card-body">
             <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                    <thead class="thead-dark">
+                    <thead>
                         <tr>
                     
                             <th>SL No.</th>
                             <th>Invoice No.</th>
                             <th>Customer</th>
+                            <th>Items</th>
                             <th>Date</th>
                             <th>Total</th>
                             <th>Action</th>
@@ -25,6 +26,7 @@
                     <tbody>
 
                         @php
+                            $totalItem = 0;
                             $grandTotal = 0;
                         @endphp
 
@@ -34,6 +36,13 @@
                             <td>{{$loop->iteration}}</td>              
                             <td>{{ $sale->invoice_no }}</td>
                             <td>{{ $users->name}}</td>
+                            <td> 
+                                <?php 
+                                    $itemQty = $sale->items()->sum('quantity');
+                                    $totalItem += $itemQty;
+                                 ?>
+                                 {{$itemQty}}
+                            </td>
                             <td>{{date('d-M-Y', strtotime($sale->date))}}</td>
 
                         
@@ -75,7 +84,9 @@
 
                     <tfoot class="thead-light" >
                         <tr>       
-                            <th colspan="4" class="text-right">Grand Total = </th>         
+                            <th class="text-right" colspan="3">Total Items =</th>
+                            <th colspan="1"> {{$totalItem}} </th>
+                            <th class="text-right">Grand Total = </th>         
                             <th colspan="2">{{$grandTotal}} Taka</th>
                         </tr>
                     </tfoot>

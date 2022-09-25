@@ -6,12 +6,12 @@
 
 <div class="card shadow mb-4">
     <div class="card-header py-3">
-        <h5 class="m-0 font-weight-bold text-primary">Sale Invoice Details </h5>
+        <h5 class="m-0 font-weight-bold text-primary">Purchase Invoice Details </h5>
     </div>
     <div class="card-body">
         <div class="row">
             <div class="col-md-6">
-                <div><b>Customer:</b>  {{$users->name}}</div>
+                <div><b>Supplier:</b>  {{$users->name}}</div>
                 <div><b>Customer Image: </b>
                     <br>
                   
@@ -53,11 +53,7 @@
                     </thead>
                     <tbody>
 
-                        
-                        @php
-                        $grandTotal = 0;
-                    @endphp
-
+             
                         @foreach ($invoice->items as $item)
 
                         <tr>
@@ -70,7 +66,7 @@
                             <td>{{$item->total}}</td>
                             <td>
 
-                                <form action="{{route('user.sales.invoices.delete_item',['id'=>$users->id, 'invoice_id'=>$invoice->id, 'item_id'=>$item->id])}}" method="post">
+                                <form action="{{route('user.purchase.delete_item',['id'=>$users->id, 'invoice_id'=>$invoice->id, 'item_id'=>$item->id])}}" method="post">
                                     @csrf
                                     @method('DELETE')
                                     
@@ -98,7 +94,7 @@
                                 <th colspan="4" ><button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#productexampleModal">Add Product</button>
                          
 
-                               <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#receiptInvoiceexampleModal">Add Receipt</button></th>
+                               <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#paymentInvoiceexampleModal">Add Payment</button></th>
 
                               <th scope="col" class="text-right">Total =</th>
                               @php
@@ -124,7 +120,7 @@
                                 <th scope="col" class="text-right">Paid =</th>
                               <th scope="col" colspan="2">
                                 @php
-                                  $amount = $invoice->receipts()->sum('amount');
+                                  $amount = $invoice->payments()->sum('amount');
                            
                                 @endphp
                               
@@ -147,7 +143,7 @@
                                 <th scope="col" class="text-right">Due =</th>
                               <th scope="col" colspan="2">
                                 @php
-                                  $amount = $invoice->receipts()->sum('amount');
+                                  $amount = $invoice->payments()->sum('amount');
                            
                                 @endphp
                               
@@ -200,7 +196,7 @@
                   <div class="card-body">
                       <div class="row">
                           <div class="col-md-12">
-                              <form action="{{ route('user.sales.invoices.add_item', ['id'=> $users->id,'invoice_id'=> $invoice->id]) }}" method="post">
+                              <form action="{{ route('user.purchase.add_item', ['id'=> $users->id,'invoice_id'=> $invoice->id]) }}" method="post">
                                   {{ csrf_field() }}
 
                                   <div class="form-group row">
@@ -233,7 +229,7 @@
                                       </div>
 
 
-                                      <label for="total" class="col-sm-3 col-form-label">Total</label>
+                                      <label for="total" class="col-sm-3 col-form-label">total</label>
                                       <div class="col-sm-9">
                                         <input type="number" required name="total" value="{{ old('total') }}"
                                         class="form-control mb-2" id="total" placeholder="Enter the total Amount">
@@ -261,22 +257,22 @@
 
 
 
-   {{-- Modal For Adding New receiptInvoice --}}
+   {{-- Modal For Adding New paymentInvoice --}}
 
     <!-- Modal -->
-    <div class="modal fade" id="receiptInvoiceexampleModal" tabindex="-1" role="dialog"
-        aria-labelledby="receiptInvoiceexampleModalLabel" aria-hidden="true">
+  <div class="modal fade" id="paymentInvoiceexampleModal" tabindex="-1" role="dialog"
+        aria-labelledby="paymentInvoiceexampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="receiptInvoiceexampleModalLabel">New Receipt For This Invoice</h5>
+                    <h5 class="modal-title" id="paymentInvoiceexampleModalLabel">New Payment For This Invoice</h5>
                 </div>
                 <div class="modal-body">
 
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-12">
-                                <form action="{{ route('user.receipt.store', [$users->id, $invoice->id]) }}" method="post">
+                                <form action="{{ route('user.payment.store', [$users->id, $invoice->id]) }}" method="post">
                                     {{ csrf_field() }}
 
                                     <div class="form-group row">
@@ -316,5 +312,5 @@
 
             </div>
         </div>
-    </div>
+    </div> 
 

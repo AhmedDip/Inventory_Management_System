@@ -91,9 +91,7 @@
 
                                         <label for="note" class="col-sm-3 col-form-label">Note</label>
                                         <div class="col-sm-9">
-                                            <textarea name="note" required id="note" cols="25" rows="2" value="{{ old('note') }}">
-                                   
-                                            </textarea>
+                                            <textarea name="note" required id="note" cols="25" rows="2" value="{{ old('note') }}"></textarea>
 
                                         </div>
 

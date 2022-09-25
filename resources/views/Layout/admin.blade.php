@@ -70,6 +70,10 @@
                     </div>                 
                 @endif
 
+                   
+                        @yield('user_card')
+                   
+
                     @yield('main_content')
 
                 </div>
