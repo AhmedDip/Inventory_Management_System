@@ -44,12 +44,12 @@
 <!-- Cards -->
 <div class="row">
 
-   <div class="col-xl-2 col-md-4 mb-4">
+   <div class="col-xl-4 col-md-4 mb-4">
        <div class="card border-info border-left-info shadow h-100 py-2">
            <div class="card-body">
                <div class="row no-gutters align-items-center">
                    <div class="col mr-2">
-                       <div class="text-xs font-weight-bold text-dark text-uppercase mb-1">Sales</div>
+                       <div class="text-xs font-weight-bold text-dark text-uppercase mb-1">Total Sales</div>
                        <div class="h5 mb-0 font-weight-bold text-gray-800"><b style="font-size: 30px">৳</b>
                        
                            @php
@@ -65,19 +65,23 @@
                        </div>
 
                    </div>
+
+                   <div class="col-auto">
+                    <i class="fas fa-comment-dollar fa-4x text-gray-300"></i>
+                </div>
       
                </div>
            </div>
        </div>
    </div>
 
-   <div class="col-xl-2 col-md-4 mb-4">
+   <div class="col-xl-4 col-md-4 mb-4">
        <div class="card border-warning border-left-warning shadow h-100 py-2">
            <div class="card-body">
                <div class="row no-gutters align-items-center">
                    <div class="col mr-2">
                        <div class="text-xs font-weight-bold text-dark text-uppercase mb-1">
-                          Purchases</div>
+                        Total Purchases</div>
                            <div class="h5 mb-0 font-weight-bold text-gray-800"><b style="font-size: 30px">৳</b>
                            
                            
@@ -91,13 +95,15 @@
                               @endphp
                                                
                            {{ $totalPurchases }}
-                           
-                           
-                           </div>
+                                            
+                           </div>      
                    </div>
 
                    
-                             
+                        
+                   <div class="col-auto">
+                    <i class="fas fa-comments-dollar fa-4x text-gray-300"></i>
+                </div>     
     
                
                </div>
@@ -105,18 +111,21 @@
        </div>
    </div>
 
-   <div class="col-xl-2 col-md-4 mb-4"> 
+   <div class="col-xl-4 col-md-4 mb-4"> 
        <div class="card border-success border-left-success shadow h-100 py-2">
            <div class="card-body">
                <div class="row no-gutters align-items-center">
                    <div class="col mr-2">
                        <div class="text-xs font-weight-bold text-dark text-uppercase mb-1">
-                          Payments</div>
+                        Total Payments</div>
                            <div class="h5 mb-0 font-weight-bold text-gray-800"><b style="font-size: 30px">৳ </b>{{ $totalPayments =  $users->payments()->sum('amount') }}
                         </div>
                         
                    </div>
-
+                   <div class="col-auto">
+                    <i class="fas fa-hand-holding-usd fa-4x text-gray-300"></i>
+                </div>
+      
                    
                              
     
@@ -126,15 +135,20 @@
        </div>
    </div>
 
-   <div class="col-xl-2 col-md-4 mb-4">
+   <div class="col-xl-4 col-md-4 mb-4">
        <div class="card border-dark border-left-dark shadow h-100 py-2">
            <div class="card-body">
                <div class="row no-gutters align-items-center">
                    <div class="col mr-2">
                        <div class="text-xs font-weight-bold text-dark text-uppercase mb-1">
-                          Receipts</div>
+                        Total Receipts</div>
                            <div class="h5 mb-0 font-weight-bold text-gray-800"><b style="font-size: 30px">৳ </b>{{ $totalReceipts = $users->receipts()->sum('amount')}} </div>
                    </div>
+
+                   <div class="col-auto">
+                    <i class="fas fa-file-invoice-dollar fa-4x text-gray-300"></i>
+                </div>
+      
                  
         
                </div>
@@ -150,7 +164,7 @@
    
 
 
-   <div class="col-xl-2 col-md-4 mb-4">
+   <div class="col-xl-4 col-md-4 mb-4">
     <div class="card border-primary border-left-primary shadow h-100 py-2">
         <div class="card-body">
 
@@ -166,6 +180,11 @@
                             0
                         @endif </div>
                 </div>
+
+                <div class="col-auto">
+                    <i class="fas fa-money-check-alt fa-4x text-gray-300"></i>
+                </div>
+      
     
         
             </div>
@@ -174,7 +193,7 @@
     </div>
 </div>
 
-<div class="col-xl-2 col-md-4 mb-4">
+<div class="col-xl-4 col-md-4 mb-4">
     <div class="card border-danger border-left-danger shadow h-100 py-2">
         <div class="card-body">
 
@@ -190,6 +209,11 @@
                         0
                     @endif </div>
                 </div>
+
+                <div class="col-auto">
+                    <i class="fas fa-donate fa-4x text-gray-300"></i>
+                </div>
+      
     
         
             </div>
