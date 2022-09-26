@@ -29,7 +29,6 @@ class ProductEditRequest extends FormRequest
             'description' => 'required',
             'cost_price' => 'required|numeric',
             'price' => 'required|numeric',
-            'unit' => 'required|numeric',
             'image' =>  'mimes:jpeg,png,jpg,gif|max:3000'
         ];
         
@@ -42,7 +41,6 @@ class ProductEditRequest extends FormRequest
             'category_id.required'=> "Category is required",
             'title.required'=> "Brand Name is required",          
             'price.required'=> "Sale Price is required",
-            'unit.required'=> "The Stock field is required",
         ];
         
     }

@@ -20,7 +20,7 @@ class CreateProductsTable extends Migration
             $table->double('cost_price');
             $table->double('price');
             $table->string('image')->nullable();
-            $table->integer('unit');
+            $table->string('unit')->nullable();
             $table->foreignId('category_id');
             $table->timestamps();
 

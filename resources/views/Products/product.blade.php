@@ -17,7 +17,6 @@
                             <th>Category</th>
                             <th>Brand</th>
                             <th>Image</th>
-                            <th>In Stocks</th>
                             <th>Cost Price (৳)</th>
                             <th>Sale Price (৳)</th>
                             <th>Actions</th>
@@ -29,7 +28,6 @@
                             <th>Category</th>
                             <th>Brand</th>
                             <th>Image</th>
-                            <th>In Stocks</th>
                             <th>Cost Price</th>
                             <th>Sale Price</th>
                             <th>Actions</th>
@@ -44,7 +42,6 @@
                                 <td>{{ $product->title }}</td>
                                 <td><img style="height: 60px; width: 80px;" src="{{ asset(Storage::url($product->image)) }}">
                                 </td>
-                                <td>{{ $product->unit}}</td>
                                 <td>{{ $product->cost_price }}</td>
                                 <td>{{ $product->price }}</td>
 

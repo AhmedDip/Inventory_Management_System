@@ -1,14 +1,14 @@
 @extends('Layout.admin')
 @section('main_content')
     <div class="row">
-        <div class="col-md-4 mb-3">
+        <div class="col-md-12 mb-3">
             <a href="{{ route('products.index') }}" class="d-none d-sm-inline-block btn btn-primary btn-sm"><i
                     class="fas fa-arrow-alt-circle-left"></i>
                 Back </a>
         </div>
 
 
-        <div class="col-md-8 text-right">
+        {{-- <div class="col-md-8 text-right">
             <a href="{{ route('products.create') }}" class="btn btn-info btn-sm"><i class="fas fa-plus-circle"></i> New Sale
             </a>
 
@@ -21,8 +21,8 @@
             <a href="{{ route('products.create') }}" class="btn btn-dark btn-sm"><i class="fas fa-plus-circle"></i> New
                 Receipt
             </a>
-        </div>
-    </div>
+        </div> --}}
+    </div> 
 
 
     <div class="row">
@@ -63,9 +63,6 @@
                                                             class="font-weight-bold text-primary">Sale Price:
                                                         </span> ৳{{ $products->price }}</li>
 
-                                                        <li class="list-group-item"><span
-                                                            class="font-weight-bold text-primary">In Stock:</span>
-                                                        {{ $products->unit }}</li>
                                                   
                                                 </ul>
                                             </div>

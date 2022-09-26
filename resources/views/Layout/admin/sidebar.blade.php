@@ -32,7 +32,7 @@
         Interface
     </div>
 
-    <!-- Nav Item - Pages Collapse Menu -->
+    <!-- Nav Item - Users Pages Collapse Menu -->
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
             aria-expanded="true" aria-controls="collapseTwo">
@@ -41,7 +41,7 @@
         </a>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Custom Components:</h6>
+                <h6 class="collapse-header">Components:</h6>
                 <a class="collapse-item" href={{route('users.index')}}>Users</a>
                 <a class="collapse-item" href={{url('groups')}}>Groups</a>
             </div>
@@ -51,25 +51,72 @@
     <hr class="sidebar-divider">
 
     <!-- Heading -->
-    <div class="sidebar-heading">
+    {{-- <div class="sidebar-heading">
         Interface
-    </div>
+    </div> --}}
 
-    <!-- Nav Item - Pages Collapse Menu -->
+    <!-- Nav Item - Products Pages Collapse Menu -->
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseOne"
             aria-expanded="true" aria-controls="collapseOne">
-            <i class="fas fa-fw fa-folder"></i>
+            <i class="fas fa-shopping-bag"></i>
             <span>Products</span>
         </a>
         <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Custom Components:</h6>
+                <h6 class="collapse-header">Components:</h6>
                 <a class="collapse-item" href={{url('products')}}>Products</a>
                 <a class="collapse-item" href={{route('categories.index')}}>Categories</a>
             </div>
         </div>
     </li>
+
+
+    <hr class="sidebar-divider">
+
+    <!-- Heading -->
+    {{-- <div class="sidebar-heading">
+        Interface
+    </div> --}}
+
+    <!-- Nav Item - Stocks Pages Collapse Menu -->
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsethree"
+            aria-expanded="true" aria-controls="collapsethree">
+            <i class="fas fa-cart-arrow-down"></i>
+            <span>Stocks</span>
+        </a>
+        <div id="collapsethree" class="collapse" aria-labelledby="headingthree" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">Components:</h6>
+                <a class="collapse-item" href={{route('stocks')}}>Products Stock</a>
+            </div>
+        </div>
+    </li>
+
+
+    <hr class="sidebar-divider">
+
+
+       <!-- Nav Item - Reports Pages Collapse Menu -->
+       <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsefour"
+            aria-expanded="true" aria-controls="collapsefour">
+            <i class="fas fa-file-alt"></i>
+            <span>Reports</span>
+        </a>
+        <div id="collapsefour" class="collapse" aria-labelledby="headingthree" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">Components:</h6>
+                <a class="collapse-item" href={{route('stocks')}}>Sales</a>
+                <a class="collapse-item" href={{route('stocks')}}>Purchases</a>
+                <a class="collapse-item" href={{route('stocks')}}>Payments</a>
+                <a class="collapse-item" href={{route('stocks')}}>Receipts</a>
+            </div>
+        </div>
+    </li>
+
+
 
 
     <!-- Divider -->

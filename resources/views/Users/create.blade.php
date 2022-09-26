@@ -13,7 +13,7 @@
           </div>
         <div class="card-body">
                 <div class="row">                  
-                    <div class="col-md-7">
+                    <div class="col-md-8">
                         <form action="{{route('users.store')}}" method="post" enctype="multipart/form-data">
                             {{ csrf_field() }}
                 
@@ -32,6 +32,11 @@
                                 <label for="password" class="col-sm-3 col-form-label">Password</label>
                                 <div class="col-sm-9">
                                   <input type="password" name="password" value="{{old('password')}}" class="form-control mb-2" id="password" placeholder="Enter the password">
+                                </div>
+
+                                <label for="password" class="col-sm-3 col-form-label">Confirm Password</label>
+                                <div class="col-sm-9">
+                                  <input id="password" value="{{old('password')}}" class="form-control mb-2" type="password" name="password_confirmation" placeholder="Enter the Confirm password" required>
                                 </div>
 
                                 <label for="Phone" class="col-sm-3 col-form-label">Phone</label>

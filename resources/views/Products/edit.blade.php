@@ -54,9 +54,9 @@
                     
 
                         <div class="form-group row">
-                            <label for="unit" class="col-sm-3 col-form-label">In Stock</label>
+                            <label for="unit" class="col-sm-3 col-form-label">Unit Name</label>
                             <div class="col-sm-9">
-                                <input type="number" name="unit" value="{{ $products->unit }}"
+                                <input type="text" name="unit" value="{{ $products->unit }}"
                                     class="form-control mb-2" id="unit" placeholder="Enter The Unit">
 
                             </div>

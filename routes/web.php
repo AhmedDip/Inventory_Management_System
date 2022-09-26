@@ -3,6 +3,7 @@
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ProductsStockController;
 use App\Http\Controllers\UserGroupsController;
 use App\Http\Controllers\UserPaymentsController;
 use App\Http\Controllers\UserProfileController;
@@ -23,9 +24,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Routes For Login
 
 Route::get('login',[LoginController::class,'login'])->name('login');
 Route::post('login',[LoginController::class,'authenticate'])->name('login.confirm');
+
+
 
 Route::group(['middleware'=>'auth'],function()
 {
@@ -51,6 +55,8 @@ Route::post('groups',[UserGroupsController::class,'storeGroup'])->name('created.
 Route::delete('groups/{id}',[UserGroupsController::class,'destroyGroup'])->name('destroy.groups');
 
 
+
+
 //Routes For User Sales 
 
 Route::get('users/{id}/sales', 	[UserSalesController::class,'index'])->name('user.sales');
@@ -66,7 +72,7 @@ Route::delete('users/{id}/invoices/{invoice_id}/{item_id}', [UserSalesController
 
 
 
-//// Routes For Purchase
+// Routes For Purchase
 
 Route::get('users/{id}/purchases',[UserPurchasesController::class,'index'])->name('user.purchase');
 
@@ -79,11 +85,18 @@ Route::delete('users/{id}/purchases/{invoice_id}/{item_id}', [UserPurchasesContr
 
 
 
+// Routes For Payments
+
 Route::get('users/{id}/payments',[UserPaymentsController::class,'index'])->name('user.payment');
 
 Route::post('users/{id}/payments/{invoice_id?}',[UserPaymentsController::class,'store'])->name('user.payment.store');
 
 Route::delete('users/{id}/payments/{payment_id}',[UserPaymentsController::class,'destroy'])->name('user.payment.destroy');
+
+
+
+
+// Routes For Receipts
 
 
 Route::get('users/{id}/receipts',[UserReceiptsController::class,'index'])->name('user.receipt');
@@ -95,6 +108,9 @@ Route::delete('users/{id}/receipts/{payment_id}',[UserReceiptsController::class,
 });
 
 
+// Routes For Stocks
+
+Route::get('stocks',[ProductsStockController::class,'index'])->name('stocks');
 
 
 

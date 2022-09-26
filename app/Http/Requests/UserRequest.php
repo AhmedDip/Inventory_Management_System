@@ -27,7 +27,7 @@ class UserRequest extends FormRequest
             'name' => 'required',
             'email' => 'required|unique:users',
             'phone' => 'required|unique:users|numeric',
-            'password' => 'required',
+            'password' => 'required|confirmed|min:6',
             'address' => 'required',
             'status' => 'required',
             'group_id'=> 'required',
