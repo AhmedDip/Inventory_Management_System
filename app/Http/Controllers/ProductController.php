@@ -18,10 +18,17 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function __construct()
+    {
+        $this->menu['main_menu'] = 'product';
+        $this->menu['sub_menu'] = 'product';
+        
+    }
     public function index()
     {
         $product = Product::all();
-        return view('Products.product',['products'=>$product]);
+        return view('Products.product',['products'=>$product])->with($this->menu);
     }
 
     /**
@@ -32,7 +39,7 @@ class ProductController extends Controller
     public function create()
     {
         $category = Category::all();
-        return view('Products.create',['category'=>$category]);
+        return view('Products.create',['category'=>$category])->with($this->menu);;
     }
 
     /**
@@ -61,7 +68,7 @@ class ProductController extends Controller
         if ($save) {
             toast('Product Created Successfully!', 'success');
 
-            return redirect()->to(route('products.index'));
+            return redirect()->to(route('products.index'))->with($this->menu);
         }
 
         
@@ -78,7 +85,7 @@ class ProductController extends Controller
       
         $product = Product::findorFail($id);
         $category = Category::all();
-        return view('Products.show', ["products" => $product], ['category' => $category]);
+        return view('Products.show', ["products" => $product], $this->menu, ['category' => $category]);
     }
 
     /**
@@ -93,7 +100,8 @@ class ProductController extends Controller
         $category = Category::all();
 
        
-        return view('Products.edit', ["products" => $product], ['category' => $category]);
+        return view('Products.edit',["products" => $product], ['category' => $category])
+        ->with($this->menu);
     }
 
     /**
@@ -132,7 +140,7 @@ class ProductController extends Controller
       
          Alert::toast('Product Edited Successfully!', 'success');
 
-            return redirect()->to(route('products.index'));
+            return redirect()->to(route('products.index'))->with($this->menu);
     
     }
 
@@ -153,6 +161,6 @@ class ProductController extends Controller
             Session::flash('delete', 'Product deleted Successsfully');
         }
 
-      return redirect(route('products.index'));
+      return redirect(route('products.index'))->with($this->menu);;
     }
 }

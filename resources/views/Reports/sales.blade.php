@@ -58,23 +58,34 @@
 
                         @foreach ($sales as $sale)
                             <tr>
-                                @php
-                                $totalQuantity += $sale->items[0]->quantity;
-                                $grandTotal += $sale->items[0]->total;
+                                {{-- @php
+                                $totalQuantity += $sale->items->quantity;
+                                $grandTotal += $sale->items->total;
                             @endphp
                                 <td>{{ $loop->iteration }}</td>
-                                <td>{{ $sale->items[0]->product->title}}</td>
-                                <td><img style="height: 60px; width: 80px;" src="{{ asset(Storage::url($sale->items[0]->product->image )) }}">
-                                <td>{{ $sale->items[0]->quantity}}</td>
-                                <td>{{ $sale->items[0]->price}}</td>
-                                <td>{{ $sale->items[0]->total}}</td>
+                                <td>{{ $sale->items->product->title}}</td>
+                                <td><img style="height: 60px; width: 80px;" src="{{ asset(Storage::url($sale->items->product->image )) }}">
+                                <td>{{ $sale->items->quantity}}</td>
+                                <td>{{ $sale->items->price}}</td>
+                                <td>{{ $sale->items->total}}</td>
                                 <td>{{date('d-F-Y', strtotime( $sale->date))}}</td>
-                        
+                         --}}
+
+                         
+                         <td>{{ $loop->iteration }}</td>
+                         
+                         <td>{{2 }}</td>
+                      
+                         <td>{{2 }}</td>
+                         <td>{{ 2}}</td>
+                         <td>{{ 2}}</td>
+                         <td>{{date('d-F-Y', strtotime( $sale->date))}}</td>
+                 
 
 
         
                             </tr>
-                        @endforeach
+                        @endforeach 
 {{-- 
                     @foreach ($items as $item)
                     <tr>

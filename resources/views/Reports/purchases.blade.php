@@ -63,35 +63,18 @@
                                 $grandTotal += $purchase->items[0]->total;
                             @endphp
                                 <td>{{ $loop->iteration }}</td>
-                                <td>{{ $purchase->items[0]->product->title}}</td>
-                                <td><img style="height: 60px; width: 80px;" src="{{ asset(Storage::url($purchase->items[0]->product->image )) }}">
-                                <td>{{ $purchase->items[0]->quantity}}</td>
-                                <td>{{ $purchase->items[0]->price}}</td>
-                                <td>{{ $purchase->items[0]->total}}</td>
-                                <td>{{date('d-F-Y', strtotime( $purchase->date))}}</td>
+                                <td>{{ $purchase->items[0]->product->title  ?: '' }}</td>
+                                <td><img style="height: 60px; width: 80px;" src="{{ asset(Storage::url($purchase->items[0]->product->image )) ?: ''  }}">
+                                <td>{{ $purchase->items[0]->quantity ?: '' }}</td>
+                                <td>{{ $purchase->items[0]->price ?: '' }}</td>
+                                <td>{{ $purchase->items[0]->total ?: '' }}</td>
+                                <td>{{date('d-F-Y', strtotime( $purchase->date)) ?: '' }}</td>
                         
 
 
         
                             </tr>
                         @endforeach
-{{-- 
-                    @foreach ($items as $item)
-                    <tr>
-                        <td>{{ $loop->iteration }}</td>
-                        <td>{{ $sale->item}}</td>
-                        <td><img style="height: 60px; width: 80px;" src="{{ asset(Storage::url($sale->product->image )) }}">
-                        </td>
-                        <td>{{ $sale->quantity }}</td>
-                        <td>{{ $sale->price }}</td>
-                        <td>{{ $sale->total }}</td> 
-                         <td>{{date('d-M-Y', strtotime( $item->sales->date))}}</td>
-
-
-
-                    </tr>
-                    @endforeach --}}
-
 
                     </tbody>
 

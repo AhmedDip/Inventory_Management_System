@@ -13,21 +13,26 @@ use Illuminate\Http\Request;
 
 class UserPurchasesController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->menu['main_menu'] = 'user';
+        $this->menu['sub_menu'] = 'purchase';
+        
+    }
     public function index($id)
     {
         $users = User::findorFail($id);
         $tab = 'purchases';
 
-        return view('Users.purchases.purchases', ['users'=>$users])->with('tab',$tab);
+        return view('Users.purchases.purchases', ['users'=>$users])->with('tab',$tab)    
+                                                                                ->with($this->menu);
 
     }
 
 
     public function createInvoice(Request $request, $id)
     {
-
-  
-
 
         $purchase = new PurchaseInvoice();
 
@@ -41,7 +46,8 @@ class UserPurchasesController extends Controller
         if ($save) {
             toast('purchase Invoice Added Successfully!', 'success');
             // Alert::success('Success!', 'purchase Added Successfully!');
-            return redirect()->route( 'user.purchase.invoice_details', ['id' => $id , 'invoice_id' => $purchase->id]);
+            return redirect()->route( 'user.purchase.invoice_details', ['id' => $id , 'invoice_id' => $purchase->id])    
+            ->with($this->menu);
 
         }
     }
@@ -56,7 +62,8 @@ class UserPurchasesController extends Controller
         $tab = 'purchases';
         $product = Product::all();
 
-        return view('Users.purchases.invoice',['invoice'=>$invoice,'users'=>$user,'tab'=>$tab,'products'=>$product ]);
+        return view('Users.purchases.invoice',['invoice'=>$invoice,'users'=>$user,'tab'=>$tab,'products'=>$product ])    
+        ->with($this->menu);
 
     }
 
@@ -80,7 +87,8 @@ class UserPurchasesController extends Controller
             toast('Item Added Successfully!', 'success');
             // Alert::success('Success!', 'sale Added Successfully!');
 
-            return redirect()->to(route('user.purchase.invoice_details', ['id' => $user_id ,'invoice_id'=>$invoice_id]));
+            return redirect()->to(route('user.purchase.invoice_details', ['id' => $user_id ,'invoice_id'=>$invoice_id]))    
+            ->with($this->menu);
 
         }
 
@@ -101,6 +109,7 @@ class UserPurchasesController extends Controller
             toast('Item Deleted Successfully!', 'error');  
         }
 
-        return redirect()->route( 'user.purchase.invoice_details', ['id' => $user_id, 'invoice_id' => $invoice_id] );
+        return redirect()->route( 'user.purchase.invoice_details', ['id' => $user_id, 'invoice_id' => $invoice_id] )   
+        ->with($this->menu);
     }
 }

@@ -8,12 +8,16 @@ use Illuminate\Http\Request;
 
 class PaymentsReportController extends Controller
 {
-    // public function __construct()
-    // {
-    //     $main_menu = 'Reports'
-    // }
 
-    
+
+    public function __construct()
+    {
+        $this->menu['main_menu'] = 'reports';
+        $this->menu['sub_menu'] = 'Payments';
+        
+    }
+       
+
     public function index(Request $request)
     {
 
@@ -29,9 +33,10 @@ class PaymentsReportController extends Controller
 
   
 
-        return view('Reports.payments',  ['payments'=>$payment])
+        return view('Reports.payments', ['payments'=>$payment])
                                     ->with('start_date',$start_date)
-                                    ->with('end_date',$end_date);
+                                    ->with('end_date',$end_date)
+                                    ->with($this->menu);
                              
     }
 }

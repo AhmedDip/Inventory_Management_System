@@ -10,18 +10,25 @@ use Illuminate\Support\Facades\Session;
 
 class UserGroupsController extends Controller
 {
+
+  public function __construct()
+    {
+        $this->menu['main_menu'] = 'user';
+        $this->menu['sub_menu'] = '';
+        
+    }
     public function index()
     {
         $group = Group ::where('id','!=',1)->get();
 
        // dd($user);
-         return view('Groups.group',[ 'groups'=>$group ]);
+         return view('Groups.group',[ 'groups'=>$group ])->with($this->menu);
     }
 
     public function createGroup()
     {
 
-        return view('Groups.create');
+        return view('Groups.create')->with($this->menu);
 
     }
 
@@ -37,7 +44,7 @@ class UserGroupsController extends Controller
       {
         Session::flash('create', 'Group Created Successfully');
       }        
-        return redirect('groups');
+        return redirect('groups')->with($this->menu);
     }
 
     public function destroyGroup($id)
@@ -49,6 +56,6 @@ class UserGroupsController extends Controller
         Session::flash('delete', 'Group deleted Successsfully');
       }
 
-      return redirect('/groups');
+      return redirect('/groups')->with($this->menu);
     }
 }

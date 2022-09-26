@@ -9,6 +9,13 @@ use RealRashid\SweetAlert\Facades\Alert;
 
 class UserPaymentsController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->menu['main_menu'] = 'user';
+        $this->menu['sub_menu'] = 'payment';
+        
+    }
    
     
     public function index($id)
@@ -18,7 +25,7 @@ class UserPaymentsController extends Controller
 
         // dd($users->payments);
 
-        return view('Users.payments.payments', ['users'=>$users])->with('tab',$tab);
+        return view('Users.payments.payments', ['users'=>$users])->with('tab',$tab)->with($this->menu);;
 
     }
 
@@ -44,13 +51,13 @@ class UserPaymentsController extends Controller
 
             if($invoice_id)
             {
-                return redirect()->route('user.purchase.invoice_details', ['id' => $user_id,'invoice_id'=>$invoice_id]);
+                return redirect()->route('user.purchase.invoice_details', ['id' => $user_id,'invoice_id'=>$invoice_id])->with($this->menu);;
             }
 
             else
             {
                 
-                return redirect()->to(route('user.payment',['id'=>$user_id]));
+                return redirect()->to(route('user.payment',['id'=>$user_id]))->with($this->menu);;
             }
  
 
@@ -69,7 +76,7 @@ class UserPaymentsController extends Controller
             toast('Payment Deleted Successfully!', 'error');
             // Alert::error('Deleted!', 'Payment Deleted Successfully!');
 
-            return redirect()->to(route('user.payment',['id'=>$id]));
+            return redirect()->to(route('user.payment',['id'=>$id]))->with($this->menu);;
 
 
         }

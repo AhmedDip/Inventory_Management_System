@@ -16,12 +16,22 @@ class CategoriesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+
+    public function __construct()
+    {
+        $this->menu['main_menu'] = 'product';
+        $this->menu['sub_menu'] = 'product_category';
+        
+    }
+
+ 
     public function index()
     {
      
         $categories = Category::all();
 
-        return view('Categories.category',['category'=> $categories]);
+        return view('Categories.category',['category'=> $categories],$this->menu);
     }
 
     /**
@@ -31,7 +41,7 @@ class CategoriesController extends Controller
      */
     public function create()
     {
-        return view('Categories.create');
+        return view('Categories.create',$this->menu);
     }
 
     /**
@@ -50,7 +60,7 @@ class CategoriesController extends Controller
         {
           Session::flash('create', 'Category Created Successfully');
         }        
-          return redirect()-> to(route('categories.store'));
+          return redirect()-> to(route('categories.store',$this->menu));
     }
 
     /**
@@ -73,7 +83,7 @@ class CategoriesController extends Controller
     public function edit($id)
     {
         $categories = Category::findorFail($id);
-        return view('Categories.edit',["category"=>$categories]);
+        return view('Categories.edit',["category"=>$categories],$this->menu);
     }
 
     /**
@@ -94,7 +104,7 @@ class CategoriesController extends Controller
         {
           Session::flash('create', 'Category Updated Successfully');
         }    
-        return redirect()->route('categories.index');
+        return redirect()->route('categories.index',$this->menu);
     }
 
     /**

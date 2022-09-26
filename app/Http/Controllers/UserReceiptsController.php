@@ -8,12 +8,19 @@ use Illuminate\Http\Request;
 
 class UserReceiptsController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->menu['main_menu'] = 'user';
+        $this->menu['sub_menu'] = '';
+        
+    }
     public function index($id)
     {
         $users = User::findorFail($id);
         $tab = 'receipts';
 
-        return view('Users.receipts.receipts', ['users'=>$users])->with('tab',$tab);
+        return view('Users.receipts.receipts', ['users'=>$users])->with('tab',$tab)->with($this->menu);
 
     }
 
@@ -40,13 +47,13 @@ class UserReceiptsController extends Controller
 
             if($invoice_id)
             {
-                return redirect()->route('user.sales.invoice_details', ['id' => $id,'invoice_id'=>$invoice_id]);
+                return redirect()->route('user.sales.invoice_details', ['id' => $id,'invoice_id'=>$invoice_id])->with($this->menu);;
             }
 
             else
             {
                 
-            return redirect()->to(route('user.receipt',['id'=>$id]));
+            return redirect()->to(route('user.receipt',['id'=>$id]))->with($this->menu);;
             }
 
 
@@ -63,7 +70,7 @@ class UserReceiptsController extends Controller
             toast('Receipt Deleted Successfully!', 'error');
             // Alert::error('Deleted!', 'Receipt Deleted Successfully!');
 
-            return redirect()->to(route('user.receipt',['id'=>$id]));
+            return redirect()->to(route('user.receipt',['id'=>$id]))->with($this->menu);;
 
 
         }

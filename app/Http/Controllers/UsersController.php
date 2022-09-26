@@ -17,6 +17,13 @@ use RealRashid\SweetAlert\Facades\Alert as EditAlert;
 class UsersController extends Controller
 {
 
+    public function __construct()
+    {
+        $this->menu['main_menu'] = 'user';
+        $this->menu['sub_menu'] = 'user';
+        
+    }
+
     public function index()
     {
         $user = User::all()->except(1);
@@ -24,13 +31,13 @@ class UsersController extends Controller
 
         // dd($user);
 
-        return view('Users.user', ['users' => $user]);
+        return view('Users.user', ['users' => $user], $this->menu);
     }
 
     public function create()
     {
         $group = Group::all();
-        return view('Users.create', ['groups' => $group]);
+        return view('Users.create', ['groups' => $group], $this->menu);
     }
 
 
@@ -56,7 +63,7 @@ class UsersController extends Controller
         if ($save) {
             toast('User Created Successfully!', 'success');
 
-            return redirect()->to('users');
+            return redirect()->to('users')->with($this->menu);
         }
     }
 
@@ -67,7 +74,8 @@ class UsersController extends Controller
         $group = Group::all();
         $tab = 'show';
         return view('Users.show', ["users" => $user], ['groups' => $group])
-                ->with('tab',$tab);
+                ->with('tab',$tab)
+                ->with($this->menu);
     }
 
     public function edit($id)
@@ -75,7 +83,7 @@ class UsersController extends Controller
 
         $user = User::findorFail($id);
         $group = Group::all();
-        return view('Users.edit', ["users" => $user], ['groups' => $group]);
+        return view('Users.edit', ["users" => $user], ['groups' => $group])->with($this->menu);
     }
 
 
@@ -111,7 +119,8 @@ class UsersController extends Controller
         $user->update();
 
         EditAlert::toast('You\'ve Successfully Edited', 'success');
-        return redirect()->route('users.index');
+        return redirect()->route('users.index')   
+                         ->with($this->menu);;
     }
 
     public function destroy($id)
@@ -125,6 +134,7 @@ class UsersController extends Controller
             Session::flash('delete', 'User deleted Successsfully');
         }
 
-        return redirect('/users');
+        return redirect('/users')
+                 ->with($this->menu);;
     }
 }

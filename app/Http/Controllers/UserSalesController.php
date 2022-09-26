@@ -12,12 +12,20 @@ use Illuminate\Http\Request;
 
 class UserSalesController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->menu['main_menu'] = 'user';
+        $this->menu['sub_menu'] = '';
+        
+    }  
+    
     public function index($id)
     {
         $users = User::findorFail($id);
         $tab = 'sales';
 
-        return view('Users.sales.sales', ['users'=>$users])->with('tab',$tab);
+        return view('Users.sales.sales', ['users'=>$users])->with('tab',$tab)->with($this->menu);
 
     }
 
@@ -36,7 +44,7 @@ class UserSalesController extends Controller
             toast('Sale Invoice Added Successfully!', 'success');
             // Alert::success('Success!', 'sale Added Successfully!');
 
-            return redirect()->to(route('user.sales',['id'=>$id]));
+            return redirect()->to(route('user.sales',['id'=>$id], $this->menu));
 
         }
     }
@@ -50,7 +58,7 @@ class UserSalesController extends Controller
         $tab = 'sales';
         $product = Product::all();
 
-        return view('Users.sales.invoice',['invoice'=>$invoice,'users'=>$user,'tab'=>$tab,'products'=>$product ]);
+        return view('Users.sales.invoice',['invoice'=>$invoice,'users'=>$user,'tab'=>$tab,'products'=>$product])->with($this->menu);
 
     }
 
@@ -74,7 +82,7 @@ class UserSalesController extends Controller
             toast('Item Added Successfully!', 'success');
             // Alert::success('Success!', 'sale Added Successfully!');
 
-            return redirect()->to(route('user.sales.invoice_details', ['id' => $user_id ,'invoice_id'=>$sale->sale_invoice_id]));
+            return redirect()->to(route('user.sales.invoice_details', ['id' => $user_id ,'invoice_id'=>$sale->sale_invoice_id]))->with($this->menu);
 
         }
 
@@ -86,7 +94,7 @@ class UserSalesController extends Controller
             toast('Invoice Deleted Successfully!', 'error');  
         }
 
-        return redirect()->route( 'user.sales', ['id' => $user_id] );
+        return redirect()->route( 'user.sales', ['id' => $user_id])->with($this->menu);
     }
 
     public function destroyItem($user_id, $invoice_id, $item_id)
@@ -95,6 +103,6 @@ class UserSalesController extends Controller
             toast('Item Deleted Successfully!', 'error');  
         }
 
-        return redirect()->route( 'user.sales.invoice_details', ['id' => $user_id, 'invoice_id' => $invoice_id] );
+        return redirect()->route( 'user.sales.invoice_details', ['id' => $user_id, 'invoice_id' => $invoice_id] )->with($this->menu);;
     }
 }

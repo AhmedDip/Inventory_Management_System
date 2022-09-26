@@ -453,7 +453,7 @@
     </div>
 
 
-      {{-- Modal For Adding New Payment --}}
+      {{-- Modal For Adding New Purchase --}}
 
     <!-- Modal -->
     <div class="modal fade" id="PurchaseexampleModal" tabindex="-1" role="dialog"
