@@ -11,12 +11,12 @@ class PurchaseItem extends Model
 
     public function invoice()
     {
-        return $this->belongsTo(PurchaseInvoice::class);
+        return $this->belongsTo(PurchaseInvoice::class,'purchase_invoice_id','id');
     }
 
 
     public function product()
     {
-        return $this->belongsTo(Product::class);
+        return $this->belongsTo(Product::class,'product_id','id');
     }
 }

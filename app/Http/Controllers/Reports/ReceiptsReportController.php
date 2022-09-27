@@ -9,6 +9,8 @@ use Illuminate\Http\Request;
 class ReceiptsReportController extends Controller
 {
 
+    public $menu = [];
+
     public function __construct()
     {
         $this->menu['main_menu'] = 'reports';

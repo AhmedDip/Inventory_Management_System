@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 
 class PaymentsReportController extends Controller
 {
+    public $menu = [];
 
 
     public function __construct()
@@ -29,6 +30,7 @@ class PaymentsReportController extends Controller
 
 
         $payment= Payment::whereBetween('date', [$start_date, $end_date])->get();
+
 
 
   
