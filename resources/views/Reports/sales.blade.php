@@ -29,7 +29,7 @@
 
     <div class="card shadow mb-3">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Sales Report From- <b style="background-color: rgb(213, 216, 247) ">{{date('d-F-Y', strtotime( $start_date ))}} </b> To <b style="background-color: rgb(213, 216, 247)"> {{date('d-F-Y', strtotime( $end_date))}}</b></h6>
+            <h6 class="m-0 font-weight-bold text-primary">Sales Report From- <b style="background-color: rgb(213, 216, 247) ">{{date('d-F-Y', strtotime( $start_date ))}}</b> To <b style="background-color: rgb(213, 216, 247)"> {{date('d-F-Y', strtotime( $end_date))}}</b></h6>
         </div>
         <div class="card-body">
 

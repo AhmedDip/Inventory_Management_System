@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\CategoriesController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProductsStockController;
 use App\Http\Controllers\Reports\PaymentsReportController;
@@ -39,6 +40,8 @@ Route::group(['middleware'=>'auth'],function()
 Route::get('/', function () {
     return view('Layout/admin');
 });
+
+Route::get('dashboard',[DashboardController::class,'index'])->name('dashboard');
 
 Route::get('logout',[LoginController::class,'logout'])->name('logout');
 

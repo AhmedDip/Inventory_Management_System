@@ -4,7 +4,7 @@
 @section('user_card')
 
     
-<div class="row">
+<div class="row ">
     <div class="col-md-4">
         <a href="{{ route('users.index') }}" class="d-sm-inline-block btn btn-primary btn-sm"><i
                 class="fas fa-arrow-alt-circle-left"></i>
@@ -42,15 +42,17 @@
 </div>
 
 <!-- Cards -->
+
+
 <div class="row">
 
-   <div class="col-xl-4 col-md-4 mb-4">
-       <div class="card border-info border-left-info shadow h-100 py-2">
+   <div class="col-xl-4 col-md-4 mb-2">
+       <div class="card border-info bg-gradient-info border-left-info shadow h-100">
            <div class="card-body">
                <div class="row no-gutters align-items-center">
                    <div class="col mr-2">
-                       <div class="text-xs font-weight-bold text-dark text-uppercase mb-1">Total Sales</div>
-                       <div class="h5 mb-0 font-weight-bold text-gray-800"><b style="font-size: 30px">৳</b>
+                       <div class="text-xs font-weight-bold text-white text-uppercase mb-2">Total Sales</div>
+                       <div class="h5 mb-0 font-weight-bold text-white"><b style="font-size: 30px">৳</b>
                        
                            @php
 
@@ -75,14 +77,15 @@
        </div>
    </div>
 
-   <div class="col-xl-4 col-md-4 mb-4">
-       <div class="card border-warning border-left-warning shadow h-100 py-2">
+
+   <div class="col-xl-4 col-md-4 mb-2">
+       <div class="card border-warning bg-gradient-warning border-left-warning shadow h-100">
            <div class="card-body">
                <div class="row no-gutters align-items-center">
                    <div class="col mr-2">
-                       <div class="text-xs font-weight-bold text-dark text-uppercase mb-1">
+                       <div class="text-xs font-weight-bold text-white text-uppercase mb-2">
                         Total Purchases</div>
-                           <div class="h5 mb-0 font-weight-bold text-gray-800"><b style="font-size: 30px">৳</b>
+                           <div class="h5 mb-0 font-weight-bold text-white"><b style="font-size: 30px">৳</b>
                            
                            
                                @php
@@ -111,14 +114,14 @@
        </div>
    </div>
 
-   <div class="col-xl-4 col-md-4 mb-4"> 
-       <div class="card border-success border-left-success shadow h-100 py-2">
+   <div class="col-xl-4 col-md-4 mb-2"> 
+       <div class="card border-success bg-gradient-success border-left-success shadow h-100">
            <div class="card-body">
                <div class="row no-gutters align-items-center">
                    <div class="col mr-2">
-                       <div class="text-xs font-weight-bold text-dark text-uppercase mb-1">
+                       <div class="text-xs font-weight-bold text-white text-uppercase mb-2">
                         Total Payments</div>
-                           <div class="h5 mb-0 font-weight-bold text-gray-800"><b style="font-size: 30px">৳ </b>{{ $totalPayments =  $users->payments()->sum('amount') }}
+                           <div class="h5 mb-0 font-weight-bold text-white"><b style="font-size: 30px">৳ </b>{{ $totalPayments =  $users->payments()->sum('amount') }}
                         </div>
                         
                    </div>
@@ -135,14 +138,14 @@
        </div>
    </div>
 
-   <div class="col-xl-4 col-md-4 mb-4">
-       <div class="card border-dark border-left-dark shadow h-100 py-2">
+   <div class="col-xl-4 col-md-4 mb-3">
+       <div class="card border-dark bg-gradient-dark border-left-dark shadow h-100">
            <div class="card-body">
                <div class="row no-gutters align-items-center">
                    <div class="col mr-2">
-                       <div class="text-xs font-weight-bold text-dark text-uppercase mb-1">
+                       <div class="text-xs font-weight-bold text-white text-uppercase mb-2">
                         Total Receipts</div>
-                           <div class="h5 mb-0 font-weight-bold text-gray-800"><b style="font-size: 30px">৳ </b>{{ $totalReceipts = $users->receipts()->sum('amount')}} </div>
+                           <div class="h5 mb-0 font-weight-bold text-white"><b style="font-size: 30px">৳ </b>{{ $totalReceipts = $users->receipts()->sum('amount')}} </div>
                    </div>
 
                    <div class="col-auto">
@@ -164,16 +167,16 @@
    
 
 
-   <div class="col-xl-4 col-md-4 mb-4">
-    <div class="card border-primary border-left-primary shadow h-100 py-2">
+   <div class="col-xl-4 col-md-4 mb-3">
+    <div class="card border-primary bg-gradient-primary border-left-primary shadow h-100">
         <div class="card-body">
 
 
             <div class="row no-gutters align-items-center">
                 <div class="col mr-2">
-                    <div class="text-xs font-weight-bold text-dark text-uppercase mb-1">
+                    <div class="text-xs font-weight-bold text-white text-uppercase mb-2">
                       Total Balance</div>
-                        <div class="h5 mb-0 font-weight-bold text-gray-800"><b style="font-size: 30px">৳ </b>
+                        <div class="h5 mb-0 font-weight-bold text-white"><b style="font-size: 30px">৳ </b>
                             @if ($totalBalance >= 0)
                             {{ $totalBalance }}
                         @else
@@ -193,16 +196,16 @@
     </div>
 </div>
 
-<div class="col-xl-4 col-md-4 mb-4">
-    <div class="card border-danger border-left-danger shadow h-100 py-2">
+<div class="col-xl-4 col-md-4 mb-3">
+    <div class="card border-danger bg-gradient-danger border-left-danger shadow h-100">
         <div class="card-body">
 
 
             <div class="row no-gutters align-items-center">
                 <div class="col mr-2">
-                    <div class="text-xs font-weight-bold text-dark text-uppercase mb-1">
+                    <div class="text-xs font-weight-bold text-white text-uppercase mb-2">
                        Balance Due</div>
-                        <div class="h5 mb-0 font-weight-bold text-gray-800"><b style="font-size: 30px">৳ </b>
+                        <div class="h5 mb-0 font-weight-bold text-white"><b style="font-size: 30px">৳ </b>
                             @if ($totalBalance < 0)
                         {{ $totalBalance }}
                     @else
@@ -229,12 +232,13 @@
 @endsection
 
 
+
 @section('main_content')
 
     <div class="row">
         <div class="col-md-2">
 
-            <div class="nav flex-column nav-pills">
+            <div class="nav flex-column nav-pills bg-gradient-light">
 
                     <a class="nav-link @if($tab == 'show') active @endif "  href="{{ route('users.show', $users->id) }}" >User Details</a>
 
