@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class ProductsStockController extends Controller
@@ -12,6 +13,7 @@ class ProductsStockController extends Controller
     {
         $this->menu['main_menu'] = 'stock';
         $this->menu['sub_menu'] = 'p_stock';
+        $this->menu['user'] = User::find(1);
         
     }
     public function index()

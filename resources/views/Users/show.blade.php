@@ -36,6 +36,11 @@
                                 <li class="list-group-item"> <span
                                         class="font-weight-bold text-primary">Address:
                                     </span> {{ $users->address }}</li>
+
+                                    <li class="list-group-item"> <span
+                                        class="font-weight-bold text-primary">Created At:
+                                    </span> {{date('d-F-Y', strtotime($users->created_at))}}</li>
+
                                 <li class="list-group-item"> <span
                                         class="font-weight-bold text-primary">Status:</span>
                                     @if ($users->status == 0)

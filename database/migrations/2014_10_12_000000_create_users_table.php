@@ -22,7 +22,7 @@ class CreateUsersTable extends Migration
             $table->string('phone',15);
             $table->string('address',200)->nullable();
             $table->string('image')->nullable();
-            $table->integer('status')->default(0);
+            $table->integer('status')->default(2)->comment("0=suspend, 1=active, 2=pending");
             $table->foreignId('group_id');
             $table->rememberToken();
             $table->timestamps();

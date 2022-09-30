@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Reports;
 
 use App\Http\Controllers\Controller;
 use App\Models\Payment;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class PaymentsReportController extends Controller
@@ -15,6 +16,7 @@ class PaymentsReportController extends Controller
     {
         $this->menu['main_menu'] = 'reports';
         $this->menu['sub_menu'] = 'Payments';
+        $this->menu['user'] = User::find(1);
         
     }
        

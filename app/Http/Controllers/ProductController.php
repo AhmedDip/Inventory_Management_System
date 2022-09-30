@@ -6,7 +6,10 @@ use App\Http\Requests\ProductEditRequest;
 use App\Http\Requests\ProductRequest;
 use App\Models\Category;
 use App\Models\Product;
+use App\Models\User;
+use App\Notifications\productNotification;
 use Illuminate\Http\Request;
+use Notification;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Storage;
 use RealRashid\SweetAlert\Facades\Alert;
@@ -23,6 +26,11 @@ class ProductController extends Controller
     {
         $this->menu['main_menu'] = 'product';
         $this->menu['sub_menu'] = 'product';
+        $this->menu['user'] = User::find(1);
+
+        $this->menu['count']=  $this->menu['user']->unreadNotifications->count();
+        
+       
         
     }
     public function index()
@@ -58,6 +66,8 @@ class ProductController extends Controller
         $product->unit = $request->unit;
         $product->category_id = $request->category_id;
 
+        $user = User::all();
+
         if ($request->file('image')) {
             $file = $request->file('image')->store('Image', 'public');
             $product->image = $file;
@@ -67,6 +77,8 @@ class ProductController extends Controller
 
         if ($save) {
             toast('Product Created Successfully!', 'success');
+
+            Notification::send($user, new productNotification($request->title));
 
             return redirect()->to(route('products.index'))->with($this->menu);
         }

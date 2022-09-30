@@ -15,11 +15,14 @@ class DashboardController extends Controller
 
     public $data = [];
 
+
     public function __construct()
     {
        
         $this->menu['main_menu'] = 'dashboard';
         $this->menu['sub_menu'] = 'dashboard';
+        $this->menu['user'] = User::find(1);
+        $this->menu['count']=  $this->menu['user']->unreadNotifications->count();
         
     }
     public function index()
@@ -31,6 +34,8 @@ class DashboardController extends Controller
         $this->data['totalReceipts'] = Receipt::sum('amount');
         $this->data['totalPayments'] = Payment::sum('amount');
         $this->data['totalStocks'] = PurchaseItem::sum('quantity') - SaleItem::sum('quantity');
+        
+       
 
         return view('Dashboard.index', $this->menu, $this->data);
     }

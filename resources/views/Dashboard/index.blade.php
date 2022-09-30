@@ -1,9 +1,6 @@
 @extends('Layout.admin')
 
 @section('main_content')
-    <div class="d-sm-flex align-items-center justify-content-between mb-3">
-        <h3 class="h3 mb-0 text-gray-600"></h3>
-    </div>
 
     <div class="row">
 
@@ -83,7 +80,7 @@
                             <div class="text-xs font-weight-bold text-white text-uppercase mb-2">
                              Total Sales</div>
                                 <div class="h5 mb-0 font-weight-bold text-white">
-                                    {{$totalSales}}
+                                    <b style="font-size: 30px">৳ </b>{{$totalSales}}
                              </div>
                              
                         </div>
@@ -100,14 +97,14 @@
             </div>
         </div>
      
-        <div class="col-xl-3 col-md-4 mb-3">
+        <div class="col-xl-3 col-md-4 mb-2">
             <div class="card border-dark bg-gradient-dark border-left-dark shadow h-100">
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-white text-uppercase mb-2">
                              Total Purchases</div>
-                                <div class="h5 mb-0 font-weight-bold text-white">{{$totalPurchases}} </div>
+                                <div class="h5 mb-0 font-weight-bold text-white"><b style="font-size: 30px">৳ </b>{{$totalPurchases}} </div>
                         </div>
      
                         <div class="col-auto">
@@ -121,14 +118,14 @@
             </div>
         </div>
 
-        <div class="col-xl-3 col-md-4 mb-3">
+        <div class="col-xl-3 col-md-4 mb-2">
             <div class="card border-dark bg-gradient-dark border-left-dark shadow h-100">
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-white text-uppercase mb-2">
                              Total Receipts</div>
-                                <div class="h5 mb-0 font-weight-bold text-white">{{$totalReceipts}} </div>
+                                <div class="h5 mb-0 font-weight-bold text-white"><b style="font-size: 30px">৳ </b>{{$totalReceipts}} </div>
                         </div>
      
                         <div class="col-auto">
@@ -145,7 +142,7 @@
      
      
      
-        <div class="col-xl-3 col-md-4 mb-3">
+        <div class="col-xl-3 col-md-4 mb-2">
          <div class="card border-primary bg-gradient-primary border-left-primary shadow h-100">
              <div class="card-body">
      
@@ -155,7 +152,7 @@
                          <div class="text-xs font-weight-bold text-white text-uppercase mb-2">
                            Total Payments</div>
                              <div class="h5 mb-0 font-weight-bold text-white">
-                                {{$totalPayments}}
+                                <b style="font-size: 30px">৳ </b>{{$totalPayments}}
                                
                              </div>
                      </div>
@@ -172,14 +169,14 @@
          </div>
      </div>
 
-     <div class="col-xl-3 col-md-4 mb-3">
+     <div class="col-xl-3 col-md-4 mb-2">
         <div class="card border-dark bg-gradient-dark border-left-dark shadow h-100">
             <div class="card-body">
                 <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                         <div class="text-xs font-weight-bold text-white text-uppercase mb-2">
                          Cash In Hand</div>
-                            <div class="h5 mb-0 font-weight-bold text-white">{{$totalReceipts - $totalPayments}} </div>
+                            <div class="h5 mb-0 font-weight-bold text-white"><b style="font-size: 30px">৳ </b>{{$totalReceipts - $totalPayments}} </div>
                     </div>
  
                     <div class="col-auto">
@@ -209,9 +206,6 @@
     </div>
     
 
-    <div class="card shadow mb-3">
-      
-</div>
 
         <div class="card-body">
             <h4>This is Dashboard</h4>

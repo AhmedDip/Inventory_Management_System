@@ -48,10 +48,16 @@
     @endif" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Components:</h6>
-                <a class="collapse-item @if ($main_menu == 'user')
-                show
+                <a class="collapse-item @if ($sub_menu == 'user')
+                active
             @endif" href={{route('users.index')}}>Users</a>
-                <a class="collapse-item" href={{url('groups')}}>Groups</a>
+                <a class="collapse-item @if ($sub_menu == 'group')
+                active
+            @endif" href={{url('groups')}}>Groups</a>
+
+            <a class="collapse-item @if ($sub_menu == 'pending')
+            active
+        @endif" href={{route('pending')}}>Pending Users</a>
             </div>
         </div>
     </li>

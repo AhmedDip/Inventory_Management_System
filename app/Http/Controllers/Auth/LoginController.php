@@ -20,9 +20,26 @@ class LoginController extends Controller
         $email = $request->email;
         $password= $request->password;
         
-        if (Auth::attempt(['email' => $email, 'password' => $password, 'status' => 1, 'group_id'=>1])) {
+    
+
+        
+        if (Auth::attempt(['email' => $email, 'password' => $password, 'status' => 1])) {
             
-            return redirect()->to('/');
+            if('group_id'==1)
+            {
+                return redirect()->to(route('dashboard'));
+            }
+
+          else if ('group_id'!=1)
+            {
+                return redirect()->to(route('dashboard'));
+            }
+        }
+
+
+        else if (Auth::attempt(['email' => $email, 'password' => $password, 'status' => 2])) 
+        {
+            return redirect()->route('login')->with('invalid','Your Account is Suspended');
         }
 
         else

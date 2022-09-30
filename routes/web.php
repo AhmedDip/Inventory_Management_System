@@ -1,8 +1,10 @@
 <?php
 
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\RegistrationController;
 use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\NotificationController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProductsStockController;
 use App\Http\Controllers\Reports\PaymentsReportController;
@@ -33,18 +35,29 @@ use Illuminate\Support\Facades\Route;
 Route::get('login',[LoginController::class,'login'])->name('login');
 Route::post('login',[LoginController::class,'authenticate'])->name('login.confirm');
 
+Route::get('registration', [RegistrationController::class, 'index'])->name('registration');
+Route::post('registration', [RegistrationController::class, 'register'])->name('registration.store');
 
 Route::group(['middleware'=>'auth'],function()
 {
 
-Route::get('/', function () {
-    return view('Layout/admin');
-});
+// Route::get('/', function () {
+//     return view('Layout/admin');
+// });
+
+
 
 Route::get('dashboard',[DashboardController::class,'index'])->name('dashboard');
 
 Route::get('logout',[LoginController::class,'logout'])->name('logout');
 
+
+//Pending User Requests
+
+Route::get('users/pending', 	[UsersController::class,'pending'])->name('pending');
+Route::get('users/pending/notification', 	[UsersController::class,'notification'])->name('notification');
+
+Route::get('mark', 	[NotificationController::class,'index'])->name('mark');
 
 //Routes For Resource Routing
 Route::resource('users',UsersController::class); 
@@ -52,11 +65,15 @@ Route::resource('categories',CategoriesController::class);
 Route::resource('products',ProductController::class);
 
 
+
+
 //Routes For User Groups
 Route::get('create/groups',[UserGroupsController::class,'createGroup'])->name('create.groups');
-Route::get('groups',[UserGroupsController::class,'index']);
+Route::get('groups',[UserGroupsController::class,'index'])->name('groups');
 Route::post('groups',[UserGroupsController::class,'storeGroup'])->name('created.groups');
 Route::delete('groups/{id}',[UserGroupsController::class,'destroyGroup'])->name('destroy.groups');
+
+
 
 
 
@@ -93,7 +110,6 @@ Route::post('users/{id}/receipts/{invoice_id?}',[UserReceiptsController::class,'
 
 Route::delete('users/{id}/receipts/{payment_id}',[UserReceiptsController::class,'destroy'])->name('user.receipt.destroy');
 
-});
 
 
 // Routes For Stocks
@@ -105,3 +121,19 @@ Route::get('reports/sales', [SalesReportController::class,'index'])->name('repor
 Route::get('reports/purchases', [PurchasesReportController::class,'index'])->name('reports.purchases');
 Route::get('reports/payments', [PaymentsReportController::class,'index'])->name('reports.payments');
 Route::get('reports/receipts', [ReceiptsReportController::class,'index'])->name('reports.receipts');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+});
+

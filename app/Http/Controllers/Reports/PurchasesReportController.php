@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Reports;
 use App\Http\Controllers\Controller;
 use App\Models\PurchaseInvoice;
 use App\Models\PurchaseItem;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class PurchasesReportController extends Controller
@@ -16,6 +17,7 @@ class PurchasesReportController extends Controller
     {
         $this->menu['main_menu'] = 'reports';
         $this->menu['sub_menu'] = 'Purchases';
+        $this->menu['user'] = User::find(1);
         
     }
  

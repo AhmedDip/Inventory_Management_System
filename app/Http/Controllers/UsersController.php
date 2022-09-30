@@ -21,14 +21,15 @@ class UsersController extends Controller
     {
         $this->menu['main_menu'] = 'user';
         $this->menu['sub_menu'] = 'user';
+        $this->menu['user'] = User::find(1);
         
     }
 
     public function index()
     {
-        $user = User::all()->except(1);
+        // $user = User::all()->except(1);
 
-
+        $user = User::all();
         // dd($user);
 
         return view('Users.user', ['users' => $user], $this->menu);
@@ -47,7 +48,8 @@ class UsersController extends Controller
 
         $user->name = $request->name;
         $user->email = $request->email;
-        $user->password = Hash::make($request->password) ;
+        $user->password = Hash::make($request->password);
+        // $user->password = $request->password;
         $user->phone = $request->phone;
         $user->address = $request->address;
         $user->group_id = $request->group_id;
@@ -73,6 +75,7 @@ class UsersController extends Controller
         $user = User::findorFail($id);
         $group = Group::all();
         $tab = 'show';
+       
         return view('Users.show', ["users" => $user], ['groups' => $group])
                 ->with('tab',$tab)
                 ->with($this->menu);
@@ -80,6 +83,7 @@ class UsersController extends Controller
 
     public function edit($id)
     {
+        $this->menu['user'] = User::find(1);
 
         $user = User::findorFail($id);
         $group = Group::all();
@@ -89,13 +93,17 @@ class UsersController extends Controller
 
     public function update(UserEditRequest $request, $id)
     {
+
+        $this->menu['user'] = User::find(1);
+
         $id = $request->id;
         $user = User::find($id);
 
 
         $user->name = $request->name;
         $user->email = $request->email;
-        $user->password = Hash::make($request->password) ;
+        // $user->password = Hash::make($request->password) ;
+        // $user->password = $request->password;
         $user->phone = $request->phone;
         $user->address = $request->address;
         $user->group_id = $request->group_id;
@@ -125,6 +133,9 @@ class UsersController extends Controller
 
     public function destroy($id)
     {
+
+        $this->menu['user'] = User::find(1);
+
         $user = User::find($id);
         // $des= 'public/' . $destroy->image;
         if ($user) {
@@ -137,4 +148,24 @@ class UsersController extends Controller
         return redirect('/users')
                  ->with($this->menu);;
     }
+
+
+    public function pending()
+    {
+        $this->menu['user'] = User::find(1);
+
+
+        // $user = User::all()->except(1);
+
+        $user = User::where('status', 2)->get();
+        // dd($user);
+
+        $this->menu['sub_menu'] = 'pending';
+
+        return view('Users.requests.pending', ['users' => $user], $this->menu);
+    }
+
+   
+
+    
 }

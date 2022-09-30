@@ -14,6 +14,7 @@ class UserPaymentsController extends Controller
     {
         $this->menu['main_menu'] = 'user';
         $this->menu['sub_menu'] = 'payment';
+        $this->menu['user'] = User::find(1);
         
     }
    

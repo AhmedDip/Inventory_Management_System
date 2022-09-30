@@ -6,6 +6,7 @@ use App\Http\Requests\TitleRequest;
 use App\Http\Requests\UserRequest;
 use App\Models\Category;
 use App\Models\Product;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
@@ -22,6 +23,7 @@ class CategoriesController extends Controller
     {
         $this->menu['main_menu'] = 'product';
         $this->menu['sub_menu'] = 'product_category';
+        $this->menu['user'] = User::find(1);
         
     }
 
@@ -30,6 +32,7 @@ class CategoriesController extends Controller
     {
      
         $categories = Category::all();
+
 
         return view('Categories.category',['category'=> $categories],$this->menu);
     }
@@ -41,6 +44,7 @@ class CategoriesController extends Controller
      */
     public function create()
     {
+
         return view('Categories.create',$this->menu);
     }
 
@@ -52,6 +56,7 @@ class CategoriesController extends Controller
      */
     public function store(TitleRequest $request)
     {
+
         $category = new Category();
         $category->title = $request->title;
         $save = $category->save();
@@ -82,6 +87,7 @@ class CategoriesController extends Controller
      */
     public function edit($id)
     {
+
         $categories = Category::findorFail($id);
         return view('Categories.edit',["category"=>$categories],$this->menu);
     }
@@ -95,6 +101,7 @@ class CategoriesController extends Controller
      */
     public function update(TitleRequest $request, $id)
     {
+
         $id = $request->id;
 
         $category = Category::find($id);
@@ -115,6 +122,7 @@ class CategoriesController extends Controller
      */
     public function destroy($id)
     {
+
         $destroy = Category::find($id)->delete();
         if($destroy)
         {

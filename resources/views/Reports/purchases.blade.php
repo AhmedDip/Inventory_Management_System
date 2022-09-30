@@ -17,7 +17,7 @@
                   <input type="date" name="end_date" value="" class="form-control" id="inlineFormInputGroupUsername2" placeholder="End Date">
                 </div>
 
-                <button type="submit" class="btn btn-primary mb-1">Submit</button>
+                <button type="submit" class="btn btn-primary btn-sm mr-3">Submit</button>
               </form>
         </div>
 

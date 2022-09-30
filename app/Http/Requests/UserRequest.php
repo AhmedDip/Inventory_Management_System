@@ -28,10 +28,8 @@ class UserRequest extends FormRequest
             'email' => 'required|unique:users',
             'phone' => 'required|unique:users|numeric',
             'password' => 'required|confirmed|min:6',
-            'address' => 'required',
-            'status' => 'required',
             'group_id'=> 'required',
-            'image' =>  'mimes:jpeg,png,jpg,gif|max:3000|required'
+            'image' =>  'mimes:jpeg,png,jpg,gif|max:3000'
         
             
         ];

@@ -17,6 +17,7 @@ class UserSalesController extends Controller
     {
         $this->menu['main_menu'] = 'user';
         $this->menu['sub_menu'] = '';
+        $this->menu['user'] = User::find(1);
         
     }  
     
@@ -24,6 +25,8 @@ class UserSalesController extends Controller
     {
         $users = User::findorFail($id);
         $tab = 'sales';
+      
+
 
         return view('Users.sales.sales', ['users'=>$users])->with('tab',$tab)->with($this->menu);
 
@@ -33,7 +36,7 @@ class UserSalesController extends Controller
     {
 
         $sale = new SaleInvoice();
-
+      
         $sale->user_id = $id;
         $sale->invoice_no = $request->invoice_no;
         $sale->date = $request->date;
@@ -52,6 +55,7 @@ class UserSalesController extends Controller
 
     public function invoice($user_id , $invoice_id)
     {
+      
 
         $user = User::findOrFail($user_id );
         $invoice = SaleInvoice::findOrFail($invoice_id);
@@ -64,6 +68,7 @@ class UserSalesController extends Controller
 
     public function addItem(InvoiceProductRequest $request, $user_id , $invoice_id)
     {
+      
 
         // return $request->all();
 
@@ -90,6 +95,7 @@ class UserSalesController extends Controller
 
     public function destroy($user_id, $invoice_id)
     {
+      
         if( SaleInvoice::destroy($invoice_id) ) {
             toast('Invoice Deleted Successfully!', 'error');  
         }
@@ -99,6 +105,7 @@ class UserSalesController extends Controller
 
     public function destroyItem($user_id, $invoice_id, $item_id)
     {
+      
         if( SaleItem::destroy( $item_id ) ) {
             toast('Item Deleted Successfully!', 'error');  
         }

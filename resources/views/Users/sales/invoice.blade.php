@@ -183,7 +183,7 @@
                                    
 
                                       
-@endsection
+
 
    <!-- Modal -->
 
@@ -217,16 +217,16 @@
                                      
                                       </div>
 
-                                      <label for="price" class="col-sm-3 col-form-label">Unit Price</label>
+                                      <label for="price"  class="col-sm-3 col-form-label">Unit Price</label>
                                       <div class="col-sm-9">
-                                          <input type="text" required name="price" value="{{ old('price') }}"
+                                          <input type="text" onkeyup="getTotal()" required name="price" value="{{ old('price') }}"
                                               class="form-control mb-2" id="price" placeholder="Enter the price">
                                       </div>
 
 
                                       <label for="quantity" class="col-sm-3 col-form-label">Quantity</label>
                                       <div class="col-sm-9">
-                                        <input type="number" required name="quantity" value="{{ old('quantity') }}"
+                                        <input type="number" onkeyup="getTotal()" required name="quantity" value="{{ old('quantity') }}"
                                         class="form-control mb-2" id="quantity" placeholder="Enter the quantity">
                        
 
@@ -235,7 +235,7 @@
 
                                       <label for="total" class="col-sm-3 col-form-label">Total</label>
                                       <div class="col-sm-9">
-                                        <input type="number" required name="total" value="{{ old('total') }}"
+                                        <input type="number" onkeyup="getTotal()" required name="total" value="{{ old('total') }}"
                                         class="form-control mb-2" id="total" placeholder="Enter the total Amount">
                        
 
@@ -316,5 +316,34 @@
 
             </div>
         </div>
+
     </div>
 
+
+
+
+    <script type="text/javascript">
+
+       function getTotal()
+       {
+        var price = document.getElementById('price').value;
+        var quantity = document.getElementById('quantity').value;
+    
+        if (price && quantity)
+        {
+            total = price * quantity;
+         document.getElementById('total').value = total;
+           
+        }
+       }
+    
+    </script>
+
+
+
+
+
+    @endsection
+
+
+ 

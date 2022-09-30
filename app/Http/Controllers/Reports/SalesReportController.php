@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Reports;
 use App\Http\Controllers\Controller;
 use App\Models\SaleInvoice;
 use App\Models\SaleItem;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class SalesReportController extends Controller
@@ -16,6 +17,7 @@ class SalesReportController extends Controller
     {
         $this->menu['main_menu'] = 'reports';
         $this->menu['sub_menu'] = 'Sales';
+        $this->menu['user'] = User::find(1);
         
     }
 

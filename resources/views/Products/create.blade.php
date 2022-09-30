@@ -88,7 +88,7 @@
 
 
                         <div class=" text-right">
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="submit" class="btn btn-primary fa fa-paper-plane"> Submit</button>
                         </div>
 
                 </div>

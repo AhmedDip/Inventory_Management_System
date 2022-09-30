@@ -13,10 +13,12 @@ class UserReceiptsController extends Controller
     {
         $this->menu['main_menu'] = 'user';
         $this->menu['sub_menu'] = '';
+        $this->menu['user'] = User::find(1);
         
     }
     public function index($id)
     {
+       
         $users = User::findorFail($id);
         $tab = 'receipts';
 

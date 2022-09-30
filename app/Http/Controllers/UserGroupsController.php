@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\TitleRequest;
 use App\Http\Requests\UserRequest;
 use App\Models\Group;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
@@ -14,12 +15,14 @@ class UserGroupsController extends Controller
   public function __construct()
     {
         $this->menu['main_menu'] = 'user';
-        $this->menu['sub_menu'] = '';
+        $this->menu['sub_menu'] = 'group';
+        $this->menu['user'] = User::find(1);
         
     }
     public function index()
     {
-        $group = Group ::where('id','!=',1)->get();
+        $group = Group ::all();
+
 
        // dd($user);
          return view('Groups.group',[ 'groups'=>$group ])->with($this->menu);

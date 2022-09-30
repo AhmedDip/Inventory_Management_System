@@ -46,13 +46,13 @@
 
 <div class="row">
 
-   <div class="col-xl-4 col-md-4 mb-2">
+   <div class="col-xl-4 col-md-4 mb-2"  style="width: 18rem;">
        <div class="card border-info bg-gradient-info border-left-info shadow h-100">
            <div class="card-body">
                <div class="row no-gutters align-items-center">
                    <div class="col mr-2">
                        <div class="text-xs font-weight-bold text-white text-uppercase mb-2">Total Sales</div>
-                       <div class="h5 mb-0 font-weight-bold text-white"><b style="font-size: 30px">৳</b>
+                       <div class="h5 mb-0 font-weight-bold text-white"><b style="font-size: 25px">৳</b>
                        
                            @php
 
@@ -69,7 +69,7 @@
                    </div>
 
                    <div class="col-auto">
-                    <i class="fas fa-comment-dollar fa-4x text-gray-300"></i>
+                    <i class="fas fa-comment-dollar fa-2x text-gray-300"></i>
                 </div>
       
                </div>
@@ -85,7 +85,7 @@
                    <div class="col mr-2">
                        <div class="text-xs font-weight-bold text-white text-uppercase mb-2">
                         Total Purchases</div>
-                           <div class="h5 mb-0 font-weight-bold text-white"><b style="font-size: 30px">৳</b>
+                           <div class="h5 mb-0 font-weight-bold text-white"><b style="font-size: 25px">৳</b>
                            
                            
                                @php
@@ -105,7 +105,7 @@
                    
                         
                    <div class="col-auto">
-                    <i class="fas fa-comments-dollar fa-4x text-gray-300"></i>
+                    <i class="fas fa-comments-dollar fa-2x text-gray-300"></i>
                 </div>     
     
                
@@ -121,12 +121,12 @@
                    <div class="col mr-2">
                        <div class="text-xs font-weight-bold text-white text-uppercase mb-2">
                         Total Payments</div>
-                           <div class="h5 mb-0 font-weight-bold text-white"><b style="font-size: 30px">৳ </b>{{ $totalPayments =  $users->payments()->sum('amount') }}
+                           <div class="h5 mb-0 font-weight-bold text-white"><b style="font-size: 25px">৳ </b>{{ $totalPayments =  $users->payments()->sum('amount') }}
                         </div>
                         
                    </div>
                    <div class="col-auto">
-                    <i class="fas fa-hand-holding-usd fa-4x text-gray-300"></i>
+                    <i class="fas fa-money-check-alt fa-2x text-gray-300"></i>
                 </div>
       
                    
@@ -145,11 +145,11 @@
                    <div class="col mr-2">
                        <div class="text-xs font-weight-bold text-white text-uppercase mb-2">
                         Total Receipts</div>
-                           <div class="h5 mb-0 font-weight-bold text-white"><b style="font-size: 30px">৳ </b>{{ $totalReceipts = $users->receipts()->sum('amount')}} </div>
+                           <div class="h5 mb-0 font-weight-bold text-white"><b style="font-size: 25px">৳ </b>{{ $totalReceipts = $users->receipts()->sum('amount')}} </div>
                    </div>
 
                    <div class="col-auto">
-                    <i class="fas fa-file-invoice-dollar fa-4x text-gray-300"></i>
+                    <i class="fas fa-file-invoice-dollar fa-2x text-gray-300"></i>
                 </div>
       
                  
@@ -176,7 +176,7 @@
                 <div class="col mr-2">
                     <div class="text-xs font-weight-bold text-white text-uppercase mb-2">
                       Total Balance</div>
-                        <div class="h5 mb-0 font-weight-bold text-white"><b style="font-size: 30px">৳ </b>
+                        <div class="h5 mb-0 font-weight-bold text-white"><b style="font-size: 25px">৳ </b>
                             @if ($totalBalance >= 0)
                             {{ $totalBalance }}
                         @else
@@ -185,7 +185,7 @@
                 </div>
 
                 <div class="col-auto">
-                    <i class="fas fa-money-check-alt fa-4x text-gray-300"></i>
+                    <i class="fas fa-hand-holding-usd fa-2x text-gray-300"></i>
                 </div>
       
     
@@ -205,7 +205,7 @@
                 <div class="col mr-2">
                     <div class="text-xs font-weight-bold text-white text-uppercase mb-2">
                        Balance Due</div>
-                        <div class="h5 mb-0 font-weight-bold text-white"><b style="font-size: 30px">৳ </b>
+                        <div class="h5 mb-0 font-weight-bold text-white"><b style="font-size: 25px">৳ </b>
                             @if ($totalBalance < 0)
                         {{ $totalBalance }}
                     @else
@@ -214,7 +214,7 @@
                 </div>
 
                 <div class="col-auto">
-                    <i class="fas fa-donate fa-4x text-gray-300"></i>
+                    <i class="fas fa-donate fa-2x text-gray-300"></i>
                 </div>
       
     

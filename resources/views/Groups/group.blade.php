@@ -3,8 +3,7 @@
 
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
     <h1 class="h3 mb-0 text-gray-800">User Groups Page</h1>
-    <a href="{{route('create.groups')}}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-            class="fas fa-plus fa-sm text-white-50"></i> Create New Group</a>
+    <a href="{{route('create.groups')}}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-plus-circle fa-sm text-white-50"></i> Create New Group</a>
 </div>
     <div class="card shadow mb-4">
         <div class="card-body">
@@ -38,7 +37,11 @@
                                     @csrf
                                     @method('DELETE')
 
-                                <button onclick="return confirm('Are You Sure?')" type="submit" class="btn btn-outline-danger btn-sm"><i class="fa fa-trash"></i> Delete</button>
+                                    @if($group->id !=1)
+                                        <button onclick="return confirm('Are You Sure?')" type="submit" class="btn btn-outline-danger btn-sm"><i class="fa fa-trash"></i> Delete</button>
+
+                                    @endif
+
                                 
                                 </form>
                             </td>

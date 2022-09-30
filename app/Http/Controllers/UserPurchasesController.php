@@ -18,10 +18,12 @@ class UserPurchasesController extends Controller
     {
         $this->menu['main_menu'] = 'user';
         $this->menu['sub_menu'] = 'purchase';
+        $this->menu['user'] = User::find(1);
         
     }
     public function index($id)
     {
+    
         $users = User::findorFail($id);
         $tab = 'purchases';
 
@@ -33,6 +35,8 @@ class UserPurchasesController extends Controller
 
     public function createInvoice(Request $request, $id)
     {
+
+    
 
         $purchase = new PurchaseInvoice();
 
@@ -56,6 +60,7 @@ class UserPurchasesController extends Controller
     public function invoice($user_id , $invoice_id)
     {
      
+    
 
         $user = User::findOrFail($user_id );
         $invoice = PurchaseInvoice::findOrFail($invoice_id);
@@ -69,6 +74,8 @@ class UserPurchasesController extends Controller
 
     public function addItem(InvoiceProductRequest $request, $user_id , $invoice_id)
     {
+
+    
 
         // return $request->all();
 
@@ -96,6 +103,7 @@ class UserPurchasesController extends Controller
 
     public function destroy($user_id, $invoice_id)
     {
+    
         if( PurchaseInvoice::destroy($invoice_id) ) {
             toast('Invoice Deleted Successfully!', 'error');  
         }
@@ -105,6 +113,7 @@ class UserPurchasesController extends Controller
 
     public function destroyItem($user_id, $invoice_id, $item_id)
     {
+    
         if( PurchaseItem::destroy( $item_id ) ) {
             toast('Item Deleted Successfully!', 'error');  
         }

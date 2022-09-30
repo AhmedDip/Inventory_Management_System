@@ -17,7 +17,7 @@
                   <input type="date" name="end_date" value="" class="form-control" id="inlineFormInputGroupUsername2" placeholder="End Date">
                 </div>
               
-                <button type="submit" class="btn btn-primary mb-1">Submit</button>
+                <button type="submit" class="btn btn-primary btn-sm mr-3">Submit</button>
               </form>
         </div>
         
@@ -59,8 +59,8 @@
                                 <td>{{ $loop->iteration }}</td>
                                 <td>{{date('d-F-Y', strtotime( $receipt->date))}}</td>
                                 <td>{{ optional($receipt->user)->name}}</td>
-                                <td>{{ $receipt->user->email}}</td>
-                                <td><img style="height: 60px; width: 80px;" src="{{ asset(Storage::url($receipt->user->image )) }}">
+                                <td>{{ optional($receipt->user)->email}}</td>
+                                <td><img style="height: 60px; width: 80px;" src="{{ asset(Storage::url(optional($receipt->user)->image )) }}">
                                 <td>{{ $receipt->amount}}</td>
 
                             </tr>

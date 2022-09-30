@@ -80,12 +80,12 @@
 
                                                                 <div>
                                                                     @error('email')
-                                                                       <p class="text-danger">*{{$message}}</p> 
+                                                                       <p class="text-danger small">*{{$message}}</p> 
                                                                     @enderror
 
                                                                     @if (Session::has('invalid'))
                                                                  
-                                                                     <p class="text-danger">*{!! Session::get('invalid') !!}</p>
+                                                                     <p class="text-danger small">*{!! Session::get('invalid') !!}</p>
                                                                         
                                                                 @endif  
                                                                 </div>
@@ -97,7 +97,7 @@
 
                                                                 <div>
                                                                     @error('password')
-                                                                       <p class="text-danger">*{{$message}}</p> 
+                                                                       <p class="text-danger small">*{{$message}}</p> 
                                                                     @enderror
                                                                 </div>
                                                         </div>
@@ -129,7 +129,7 @@
                                                     </div>
                                                     </div>
                                                     <div class="text-center">
-                                                        <a class="small" href="register.html">Create an Account for
+                                                        <a class="small" href="{{route('registration')}}">Create an Account for
                                                             Users!</a>
                                                     </div>
                                                 </div>
@@ -186,8 +186,7 @@
 
     <!-- Page level custom scripts -->
     <script src="{{ asset('template/js/demo/datatables-demo.js') }}"></script>
-
-
+    
 
 
 </body>

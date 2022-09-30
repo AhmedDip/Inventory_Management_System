@@ -66,8 +66,9 @@
                                 <div class="col-sm-9">              
                                 <select class="form-control mb-2" name="status" id="status" >
                                   <option >Select An Option</option>
-                                  <option value="0" {{ old('status') == '0'? 'selected' : '' }}> Active</option>
-                                  <option value="1" {{ old('status') == '1'? 'selected' : '' }}> Suspend</option>                                 
+                                  <option value="1" {{ old('status') == '1'? 'selected' : '' }}> Active</option>
+                                  <option value="0" {{ old('status') == '0'? 'selected' : '' }}> Suspend</option> 
+                                  <option value="2" {{ old('status') == '2'? 'selected' : '' }}> Pending</option>                                              
                                 </select>
                               </div>
 
@@ -78,7 +79,7 @@
                               </div>
 
                           <div class=" text-right">
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="submit" class="btn btn-primary fa fa-paper-plane"> Submit</button>
                           </div>
 
                         
@@ -98,7 +99,7 @@
                           </ul>
                       </div>
                   @endif
-                        <img  style="visibility:hidden" class="img-fluid img-thumbnail" max-height="200px" id="prview" src=""/>   
+                        <img style="visibility:hidden" class="img-fluid img-thumbnail" max-height="200px" id="prview" src=""/>   
                         
                      
                     
