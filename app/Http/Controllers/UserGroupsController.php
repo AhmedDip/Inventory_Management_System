@@ -17,6 +17,7 @@ class UserGroupsController extends Controller
         $this->menu['main_menu'] = 'user';
         $this->menu['sub_menu'] = 'group';
         $this->menu['user'] = User::find(1);
+        $this->menu['count']=  $this->menu['user']->unreadNotifications->count();
         
     }
     public function index()

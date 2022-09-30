@@ -11,11 +11,10 @@
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-white text-uppercase mb-2">Total Users</div>
                             <div class="h5 mb-0 font-weight-bold text-white">
-                                {{$totalUsers}}
+                                {{$totalUsers}}           
                             </div>
-     
                         </div>
-     
+                     
                         <div class="col-auto">
                          <i class="fas fa-users fa-3x text-gray-300"></i>
                      </div>

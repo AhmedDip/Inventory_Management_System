@@ -12,6 +12,7 @@ class NotificationController extends Controller
             $this->menu['main_menu'] = 'product';
             $this->menu['sub_menu'] = 'product';
             $this->menu['user'] = User::find(1);
+            $this->menu['count']=  $this->menu['user']->unreadNotifications->count();
     
             
     }

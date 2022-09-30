@@ -18,6 +18,7 @@ class SalesReportController extends Controller
         $this->menu['main_menu'] = 'reports';
         $this->menu['sub_menu'] = 'Sales';
         $this->menu['user'] = User::find(1);
+        $this->menu['count']=  $this->menu['user']->unreadNotifications->count();
         
     }
 

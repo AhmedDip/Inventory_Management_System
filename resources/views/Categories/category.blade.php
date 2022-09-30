@@ -31,7 +31,7 @@
                         <tr>
                             <td>{{$loop->iteration}}</td>
                             <td>{{$categories->title}}</td>
-                            <td>{{date('d F, Y', strtotime($categories->created_at))}}</td>
+                            <td>{{date('d F, Y (h:i a)', strtotime($categories->created_at))}}</td>
                             <td class="text-right">
                                 <form action="/categories/{{$categories->id}}" method="post">
                                     <a href="{{ route('categories.edit', ['category' => $categories->id]) }}"

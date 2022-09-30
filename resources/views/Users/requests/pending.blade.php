@@ -2,8 +2,8 @@
 
 @section('main_content')
     <div class="d-sm-flex align-items-center justify-content-between mb-3">
-        <h3 class="h3 mb-0 text-gray-600">Users Page</h3>
-        <a href="{{ route('users.create') }}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-plus-circle fa-sm text-white-50"></i> Create New User</a>
+        <h3 class="h3 mb-0 text-gray-600">Pending Users</h3>
+
     </div>
 
     <div class="card shadow mb-3">
@@ -47,6 +47,8 @@
                                 <td>
                                     @if ($user->status == 1)
                                         <p class="badge badge-success"> Active </p>
+                                     
+                                      
                                     @elseif ($user->status == 0)
                                         <p class="badge badge-danger">Suspend</p>
    
@@ -58,36 +60,29 @@
                                
                                 <td>{{ $user->group->title }}</td>
                                 <td>
-                                   
-                                    <form action="/users/{{ $user->id }}" method="post">
-                                        <a href="{{ route('users.show', ['user' => $user->id]) }}"
-                                            class="btn btn-outline-primary btn-sm"><i class="fa fa-eye"></i></a>
 
                             
+                                           @if ($user->status == 2)
+                                            <a href="{{ route('update.status', ['user_id' => $user->id,'status_code'=> 0]) }}"
+                                                class="btn btn-danger btn-sm"><i class="fa fa-ban fa-spin"></i></a>
+                                                <a href="{{ route('update.status', ['user_id' => $user->id,'status_code'=> 1 ]) }}"
+                                                    class="btn btn-success btn-sm"><i class="fas fa-check"></i></a>
+                                            @elseif($user->status == 1)
+                                            <a href="{{ route('update.status', ['user_id' => $user->id,'status_code'=> 2 ]) }}"
+                                                class="btn btn-warning btn-sm"><i class=" 	fa fa fa-hourglass-half fa-spin"></i></a>
 
-                                        <a href="{{ route('users.edit', ['user' => $user->id]) }}"
-                                            class="btn btn-outline-info btn-sm"><i class="fa fa-edit"></i></a>
+                                                @elseif($user->status == 0)
+                                                <a href="{{ route('update.status', ['user_id' => $user->id,'status_code'=> 1 ]) }}"
+                                                    class="btn btn-success btn-sm"><i class="fa fa-check"></i></a>
 
-                                    @if($user->sales()->count()==0 && $user->purchases()->count()==0 && $user->payments()->count()==0 && $user->receipts()->count()==0)
+                                                    <a href="{{ route('update.status', ['user_id' => $user->id,'status_code'=> 2 ]) }}"
+                                                        class="btn btn-warning btn-sm"><i class=" 	fa fa fa-hourglass-half fa-spin"></i></a>
+                                         
+                                                
+                                            @endif 
 
-                                        @csrf
-                                        @method('DELETE')
-
-                                        @if ($user->group_id != 1)
-                                        <button onclick="return confirm('Are You Sure?')" type="submit"
-                                        class="btn btn-outline-danger btn-sm"><i class="fa fa-trash"></i></button>
-
-                                            
-                                        @endif
-                                        
-                                        
-
+                    
                                     
-                                        @endif 
-                             
-
-                                     
-                                    </form>
                                 </td>
                             </tr>
                         @endforeach

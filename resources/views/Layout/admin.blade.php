@@ -23,6 +23,8 @@
     <link href="{{asset('template/vendor/datatables/dataTables.bootstrap4.min.css')}}" rel="stylesheet">
     <link href="{{asset('template/css/sb-admin-2.min.css')}}" rel="stylesheet">
     <link href="{{asset('template/css/style.css')}}" rel="stylesheet">
+    <link rel="stylesheet" href="font-awesome-animation.min.css">
+
 
 </head>
 

@@ -31,7 +31,7 @@
                         <tr>
                             <td>{{$loop->iteration}}</td>
                             <td>{{$group->title}}</td>
-                            <td>{{date('d F, Y', strtotime($group->created_at))}}</td>
+                            <td>{{date('d F, Y (h:i a)', strtotime($group->created_at))}}</td>
                             <td class="text-right">
                                 <form action="/groups/{{$group->id}}" method="post">
                                     @csrf

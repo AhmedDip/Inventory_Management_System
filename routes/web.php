@@ -55,9 +55,10 @@ Route::get('logout',[LoginController::class,'logout'])->name('logout');
 //Pending User Requests
 
 Route::get('users/pending', 	[UsersController::class,'pending'])->name('pending');
-Route::get('users/pending/notification', 	[UsersController::class,'notification'])->name('notification');
 
-Route::get('mark', 	[NotificationController::class,'index'])->name('mark');
+Route::get('users/status/{user_id}/{status_code}', 	[UsersController::class,'updateStatus'])->name('update.status');
+
+Route::get('notification/clear', 	[NotificationController::class,'index'])->name('mark');
 
 //Routes For Resource Routing
 Route::resource('users',UsersController::class); 

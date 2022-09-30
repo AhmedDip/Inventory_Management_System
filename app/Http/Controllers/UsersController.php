@@ -22,6 +22,7 @@ class UsersController extends Controller
         $this->menu['main_menu'] = 'user';
         $this->menu['sub_menu'] = 'user';
         $this->menu['user'] = User::find(1);
+        $this->menu['count']=  $this->menu['user']->unreadNotifications->count();
         
     }
 
@@ -29,7 +30,7 @@ class UsersController extends Controller
     {
         // $user = User::all()->except(1);
 
-        $user = User::all();
+        $user = User::where('status', '=', 1)->get();
         // dd($user);
 
         return view('Users.user', ['users' => $user], $this->menu);
@@ -128,7 +129,7 @@ class UsersController extends Controller
 
         EditAlert::toast('You\'ve Successfully Edited', 'success');
         return redirect()->route('users.index')   
-                         ->with($this->menu);;
+                         ->with($this->menu);
     }
 
     public function destroy($id)
@@ -157,12 +158,37 @@ class UsersController extends Controller
 
         // $user = User::all()->except(1);
 
-        $user = User::where('status', 2)->get();
+        $user = User::where('status', '=', 0)->orWhere('status', '=', 2)->get();
+        
         // dd($user);
 
         $this->menu['sub_menu'] = 'pending';
 
         return view('Users.requests.pending', ['users' => $user], $this->menu);
+    }
+
+    public function updateStatus($user_id, $status_code)
+    {
+
+
+        try {
+           $update =  User::whereId($user_id)->update([
+                'status' => $status_code
+
+           ]);
+
+           if($update){
+
+    
+        return redirect()->route('pending') ;  
+
+           }
+
+           return redirect()->route('pending') ;  
+        } catch (\Throwable $e) {
+            throw $e;
+        }
+
     }
 
    

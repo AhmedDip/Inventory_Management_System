@@ -47,7 +47,9 @@
             </div>
         </li>
 
-        <li class="nav-item dropdown no-arrow mx-1">
+
+         <!-- Nav Item - Alerts -->
+         <li class="nav-item dropdown no-arrow mx-1">
             <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button"
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="fas fa-bell fa-fw"></i>
@@ -61,39 +63,36 @@
                     Alerts Center
                 </h6>
 
-                @forelse ( $user->notifications as $notification)
-                <a class="dropdown-item d-flex align-items-center" href="{{route('mark')}}">
-              
+                @forelse($user->notifications as $notification )
+
+                <a class="dropdown-item d-flex align-items-center" href="#">
                     <div class="mr-3">
-                        <div class="bg-info icon-circle">
-                            
-                       {{Str::limit($notification->data['title'],5)}}     
+                        <div class="icon-circle bg-info">
+                            {{Str::limit($notification->data['title'],5)}} 
                         </div>
                     </div>
                     <div>
                         <div class="small text-danger">{{date('d-F-Y h:i a', strtotime($notification->created_at))}}</div>
-                        New Product: {{$notification->data['title']}}
-                        <p class="small text-gray-500" > Added By: {{$user->name}}  </p>
-                   
-                     
+                        <span class="font-weight-bold"> {{$notification->data['title']}} </span> 
+                        <p class="small text-gray-500"> Added By: {{$user->name}}</p>
                     </div>
-                    
                 </a>
+                     
+            @empty
+
+            <p class="p-3 text-center">There is no notification</p>
                 
+            @endforelse
 
-                <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
+            <a class="dropdown-item text-center text-gray-800" href="{{route('mark')}}">Mark As Read</a>
+
             </div>
-        </li>
- 
-                    
-                @empty
 
-                <p>There is no notification</p>
+        </li>
                     
-              
-                @endforelse
-             
-              
+                
+           
+
             
      
         <!-- Nav Item - Messages -->

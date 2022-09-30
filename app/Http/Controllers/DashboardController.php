@@ -24,6 +24,7 @@ class DashboardController extends Controller
         $this->menu['user'] = User::find(1);
         $this->menu['count']=  $this->menu['user']->unreadNotifications->count();
         
+        
     }
     public function index()
     {

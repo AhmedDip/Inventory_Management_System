@@ -50,14 +50,14 @@
                 <h6 class="collapse-header">Components:</h6>
                 <a class="collapse-item @if ($sub_menu == 'user')
                 active
-            @endif" href={{route('users.index')}}>Users</a>
+            @endif" href={{route('users.index')}}>Active Users</a>
                 <a class="collapse-item @if ($sub_menu == 'group')
                 active
             @endif" href={{url('groups')}}>Groups</a>
 
             <a class="collapse-item @if ($sub_menu == 'pending')
             active
-        @endif" href={{route('pending')}}>Pending Users</a>
+        @endif" href={{route('pending')}}>Pending Requests</a>
             </div>
         </div>
     </li>
