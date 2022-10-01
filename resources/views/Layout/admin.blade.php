@@ -120,6 +120,24 @@
       <!-- Page level custom scripts -->
       <script src="{{asset('template/js/demo/datatables-demo.js')}}"></script>
 
+       <!-- Page level plugins -->
+    <script src="{{asset('template/vendor/chart.js/Chart.min.js')}}"></script>
+
+    <!-- Page level custom scripts -->
+
+ <script type="text/javascript">
+
+    var total_sales = {!! json_encode($total_sales); !!}
+    var date = {!! json_encode($date); !!}
+    
+
+    </script> 
+
+    
+    <script src="{{asset('template/js/demo/chart-area-demo.js')}}"></script>
+    <script src="{{asset('template/js/demo/chart-pie-demo.js')}}"></script>
+    <script src="{{asset('template/js/demo/chart-bar-demo.js')}}"></script>
+
       <script>             //JS for Image Preview
         img.onchange = evt => {
           const [file] = img.files
