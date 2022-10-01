@@ -1,11 +1,11 @@
 @extends('Layout.admin')
 
 @section('main_content')
-<h1 class="h3 mb-2 text-gray-800">Dashboard</h1>
+<h1 class="h3 mb-2 text-gray-800"><i class="fas fa-cube" style='font-size:24px'></i> Dashboard</h1>
     <div class="row">
         
         <div class="col-xl-3 col-md-4 mb-2">
-            <div class="card border-info bg-gradient-info border-left-info shadow h-100">
+            <div style=" background: linear-gradient(to right, #2d2f35, #4286f4);"class="card text-white shadow">
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
@@ -26,7 +26,7 @@
 
 
         <div class="col-xl-3 col-md-4 mb-2">
-            <div class="card border-info bg-gradient-info border-left-info shadow h-100">
+            <div style=" background: linear-gradient(to right, #2d2f35, #19aec2);"class="card text-white shadow">
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
@@ -38,7 +38,7 @@
                         </div>
      
                         <div class="col-auto">
-                         <i class="fas fa-users fa-3x text-gray-300"></i>
+                         <i class="fas fa-asterisk fa-spin fa-3x text-gray-300"></i>
                      </div>
            
                     </div>
@@ -48,7 +48,7 @@
      
      
         <div class="col-xl-3 col-md-4 mb-2">
-            <div class="card border-warning bg-gradient-warning border-left-warning shadow h-100">
+            <div style=" background: linear-gradient(to right, #2d2f35, #22c473);;"class="card text-white shadow">
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
@@ -62,7 +62,7 @@
                         
                              
                         <div class="col-auto">
-                         <i class="fas fa-comments-dollar fa-3x text-gray-300"></i>
+                         <i class="fas fa-box fa-3x text-gray-300"></i>
                      </div>     
          
                     
@@ -72,59 +72,53 @@
         </div>
      
         <div class="col-xl-3 col-md-4 mb-2"> 
-            <div class="card border-success bg-gradient-success border-left-success shadow h-100">
+            <div style=" background: linear-gradient(to right, #2d2f35, #d319da);"class="card text-white shadow">
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-white text-uppercase mb-2">
                              Total Sales</div>
                                 <div class="h5 mb-0 font-weight-bold text-white">
-                                    <b style="font-size: 30px">৳ </b>{{$totalSales}}
+                                    ৳{{$totalSales}}
                              </div>
                              
                         </div>
                         <div class="col-auto">
-                         <i class="fas fa-hand-holding-usd fa-3x text-gray-300"></i>
+                         <i class="fas fa-shopping-cart fa-3x text-gray-300"></i>
                      </div>
-           
-                        
-                                  
-         
-                    
+                   
                     </div>
                 </div>
             </div>
         </div>
      
         <div class="col-xl-3 col-md-4 mb-2">
-            <div class="card border-dark bg-gradient-dark border-left-dark shadow h-100">
+            <div style=" background: linear-gradient(to right, #2d2f35, #b60a43);"class="card text-white shadow">
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-white text-uppercase mb-2">
                              Total Purchases</div>
-                                <div class="h5 mb-0 font-weight-bold text-white"><b style="font-size: 30px">৳ </b>{{$totalPurchases}} </div>
+                                <div class="h5 mb-0 font-weight-bold text-white">৳{{$totalPurchases}} </div>
                         </div>
      
                         <div class="col-auto">
-                         <i class="fas fa-file-invoice-dollar fa-3x text-gray-300"></i>
+                         <i class="fas fa-shopping-bag fa-3x text-gray-300"></i>
                      </div>
-           
-                      
-             
+
                     </div>
                 </div>
             </div>
         </div>
 
         <div class="col-xl-3 col-md-4 mb-2">
-            <div class="card border-dark bg-gradient-dark border-left-dark shadow h-100">
+            <div style=" background: linear-gradient(to right, #2d2f35, #eccf27);"class="card text-white shadow">
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-white text-uppercase mb-2">
                              Total Receipts</div>
-                                <div class="h5 mb-0 font-weight-bold text-white"><b style="font-size: 30px">৳ </b>{{$totalReceipts}} </div>
+                                <div class="h5 mb-0 font-weight-bold text-white">৳{{$totalReceipts}} </div>
                         </div>
      
                         <div class="col-auto">
@@ -142,16 +136,14 @@
      
      
         <div class="col-xl-3 col-md-4 mb-2">
-         <div class="card border-primary bg-gradient-primary border-left-primary shadow h-100">
+            <div style=" background: linear-gradient(to right, #2d2f35, #abafb1);"class="card text-white shadow">
              <div class="card-body">
-     
-     
                  <div class="row no-gutters align-items-center">
                      <div class="col mr-2">
                          <div class="text-xs font-weight-bold text-white text-uppercase mb-2">
                            Total Payments</div>
                              <div class="h5 mb-0 font-weight-bold text-white">
-                                <b style="font-size: 30px">৳ </b>{{$totalPayments}}
+                                ৳{{$totalPayments}}
                                
                              </div>
                      </div>
@@ -169,17 +161,17 @@
      </div>
 
      <div class="col-xl-3 col-md-4 mb-2">
-        <div class="card border-dark bg-gradient-dark border-left-dark shadow h-100">
+        <div style=" background: linear-gradient(to right, #2d2f35, #e66225);"class="card text-white shadow">
             <div class="card-body">
                 <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                         <div class="text-xs font-weight-bold text-white text-uppercase mb-2">
                          Cash In Hand</div>
-                            <div class="h5 mb-0 font-weight-bold text-white"><b style="font-size: 30px">৳ </b>{{$totalReceipts - $totalPayments}} </div>
+                            <div class="h5 mb-0 font-weight-bold text-white">৳{{$totalReceipts - $totalPayments}} </div>
                     </div>
  
                     <div class="col-auto">
-                     <i class="fas fa-file-invoice-dollar fa-3x text-gray-300"></i>
+                     <i class="fas fa-hand-holding-usd fa-3x text-gray-300"></i>
                  </div>
        
                   
@@ -205,13 +197,9 @@
     </div>
     
 
-
-        <div class="card-body">
-            <h1 class="h3 mb-2 text-gray-800">Charts</h1>
-            <p class="mb-4">Chart.js is a third party plugin that is used to generate the charts in this theme.
-                The charts below have been customized - for further customization options, please visit the <a
-                    target="_blank" href="https://www.chartjs.org/docs/latest/">official Chart.js
-                    documentation</a>.</p>
+            <h1 class="h3 mb-2 pt-4 text-gray-800">
+                <i class='fas fa-chart-bar' style='font-size:24px'></i> Charts</h1>
+         
 
             <!-- Content Row -->
             <div class="row">
@@ -221,32 +209,17 @@
                     <!-- Area Chart -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Area Chart</h6>
+                            <h6 class="m-0 font-weight-bold text-primary"><i class="fas fa-chart-line"></i> Sale Invoices Overview</h6>
                         </div>
                         <div class="card-body">
                             <div class="chart-area">
                                 <canvas id="myAreaChart"></canvas>
                             </div>
                             <hr>
-                            Styling for the area chart can be found in the
-                            <code>/js/demo/chart-area-demo.js</code> file.
                         </div>
                     </div>
 
-                    <!-- Bar Chart -->
-                    <div class="card shadow mb-4">
-                        <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Bar Chart</h6>
-                        </div>
-                        <div class="card-body">
-                            <div class="chart-bar">
-                                <canvas id="myBarChart"></canvas>
-                            </div>
-                            <hr>
-                            Styling for the bar chart can be found in the
-                            <code>/js/demo/chart-bar-demo.js</code> file.
-                        </div>
-                    </div>
+
 
                 </div>
 
@@ -255,16 +228,37 @@
                     <div class="card shadow mb-4">
                         <!-- Card Header - Dropdown -->
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Donut Chart</h6>
+        
+                            <h6 class="m-0 font-weight-bold text-primary"><i class="fas fa-chart-pie"></i> User Status Overview</h6>
                         </div>
                         <!-- Card Body -->
-                        <div class="card-body">
+                        <div class="card-body mb-2">
                             <div class="chart-pie pt-4">
                                 <canvas id="myPieChart"></canvas>
                             </div>
                             <hr>
-                            Styling for the donut chart can be found in the
-                            <code>/js/demo/chart-pie-demo.js</code> file.
+                            <div class="mt-4 text-center small">
+                            @foreach ($status as $stat )
+
+                         
+                                <span class="mr-2">
+                                    @if($stat == 1)
+                                        <i class="fas fa-circle text-success"><span style="font-family:Verdana, Geneva, Tahoma, sans-serif"> Active</span></i>
+
+                                    @elseif ($stat == 2)
+                                    <i class="fas fa-circle text-warning"><span style="font-family:Verdana, Geneva, Tahoma, sans-serif"> Pending</span></i>
+                                  
+
+                                    @elseif ($stat == 0)
+                                    <i class="fas fa-circle text-danger"><span style="font-family:Verdana, Geneva, Tahoma, sans-serif"> Suspend</span></i>
+                                
+                                    @endif
+                                
+                                  
+                                </span>
+                                
+                            @endforeach
+                        
                         </div>
                     </div>
                 </div>
@@ -272,6 +266,6 @@
                 
             </div>
                
-    </div>
+
 
 @endsection

@@ -21,12 +21,14 @@ class CategoriesController extends Controller
 
     public function __construct()
     {
-        $this->menu['main_menu'] = 'product';
-        $this->menu['sub_menu'] = 'product_category';
+        Parent::__construct();
+        $this->menu['main_menu'] = 'reports';
+        $this->menu['sub_menu'] = 'Payments';
+   
         $this->menu['user'] = User::find(1);
         $this->menu['count']=  $this->menu['user']->unreadNotifications->count();
-        
     }
+
 
  
     public function index()

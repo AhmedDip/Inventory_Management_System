@@ -16,6 +16,7 @@ class UserPurchasesController extends Controller
 
     public function __construct()
     {
+        Parent::__construct();
         $this->menu['main_menu'] = 'user';
         $this->menu['sub_menu'] = 'purchase';
         $this->menu['user'] = User::find(1);

@@ -11,6 +11,7 @@ class ProductsStockController extends Controller
 
     public function __construct()
     {
+        Parent::__construct();
         $this->menu['main_menu'] = 'stock';
         $this->menu['sub_menu'] = 'p_stock';
         $this->menu['user'] = User::find(1);

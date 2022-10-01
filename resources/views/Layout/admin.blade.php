@@ -129,6 +129,9 @@
 
     var total_sales = {!! json_encode($total_sales); !!}
     var date = {!! json_encode($date); !!}
+
+    var total = {!! json_encode($total); !!}
+    var stat = {!! json_encode($status); !!}
     
 
     </script> 

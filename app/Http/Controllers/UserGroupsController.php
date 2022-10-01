@@ -14,6 +14,7 @@ class UserGroupsController extends Controller
 
   public function __construct()
     {
+      Parent::__construct();
         $this->menu['main_menu'] = 'user';
         $this->menu['sub_menu'] = 'group';
         $this->menu['user'] = User::find(1);

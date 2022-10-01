@@ -22,11 +22,15 @@ class DashboardController extends Controller
 
     public function __construct()
     {
-       
         $this->menu['main_menu'] = 'dashboard';
         $this->menu['sub_menu'] = 'dashboard';
         $this->menu['user'] = User::find(1);
         $this->menu['count']=  $this->menu['user']->unreadNotifications->count();
+        $this->data['total_sales']=[];
+        $this->data['date']=[];
+        $this->data['total']=[];
+        $this->data['status']=[];      
+
         
         
     }
@@ -46,7 +50,7 @@ class DashboardController extends Controller
 
         // $sale= SaleInvoice::whereBetween('date', [$start_date, $end_date])->get();
 
-        $items = SaleInvoice::selectRaw('count(id) as total_sales, date')
+        $items = SaleInvoice::selectRaw('count(id) as total_sales, DATE_FORMAT(date, "%d-%M-%Y") as date')
                 ->groupBy('date')
                 ->get();
                 
@@ -69,6 +73,19 @@ class DashboardController extends Controller
         //     $date[]= $item['date'];
 
         // }
+
+        $users_status = User::selectRaw('count(id) as total , status')
+                                    ->groupBy('status')
+                                    ->get();
+
+        $this->data['total']=[];
+        $this->data['status']=[];                           
+
+          foreach ($users_status as $users_status)
+           {
+                $this->data['total'][] = $users_status['total'];
+                $this->data['status'][] = $users_status['status'];
+           }
 
         return view('Dashboard.index', $this->menu, $this->data);
 

@@ -63,10 +63,10 @@
 
                             
                                            @if ($user->status == 2)
+                                           <a href="{{ route('update.status', ['user_id' => $user->id,'status_code'=> 1 ]) }}"
+                                            class="btn btn-success btn-sm"><i class="fas fa-check"></i></a>
                                             <a href="{{ route('update.status', ['user_id' => $user->id,'status_code'=> 0]) }}"
                                                 class="btn btn-danger btn-sm"><i class="fa fa-ban fa-spin"></i></a>
-                                                <a href="{{ route('update.status', ['user_id' => $user->id,'status_code'=> 1 ]) }}"
-                                                    class="btn btn-success btn-sm"><i class="fas fa-check"></i></a>
                                             @elseif($user->status == 1)
                                             <a href="{{ route('update.status', ['user_id' => $user->id,'status_code'=> 2 ]) }}"
                                                 class="btn btn-warning btn-sm"><i class=" 	fa fa fa-hourglass-half fa-spin"></i></a>

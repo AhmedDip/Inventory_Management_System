@@ -9,6 +9,7 @@ class NotificationController extends Controller
 {
     public function __construct()
         {
+            Parent::__construct();
             $this->menu['main_menu'] = 'product';
             $this->menu['sub_menu'] = 'product';
             $this->menu['user'] = User::find(1);

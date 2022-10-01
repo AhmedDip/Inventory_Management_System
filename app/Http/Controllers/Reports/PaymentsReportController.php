@@ -11,15 +11,17 @@ class PaymentsReportController extends Controller
 {
     public $menu = [];
 
-
     public function __construct()
     {
+        Parent::__construct();
         $this->menu['main_menu'] = 'reports';
         $this->menu['sub_menu'] = 'Payments';
+   
         $this->menu['user'] = User::find(1);
         $this->menu['count']=  $this->menu['user']->unreadNotifications->count();
-        
     }
+
+
        
 
     public function index(Request $request)
