@@ -50,7 +50,14 @@ class DashboardController extends Controller
 
         // $sale= SaleInvoice::whereBetween('date', [$start_date, $end_date])->get();
 
-        $items = SaleInvoice::selectRaw('count(id) as total_sales, DATE_FORMAT(date, "%d-%M-%Y") as date')
+        // $items = SaleInvoice::selectRaw('count(id) as total_sales, DATE_FORMAT(date, "%d-%M-%Y") as date')
+        //         ->groupBy('date')
+        //         ->get();
+
+
+        
+        $items = SaleItem::selectRaw('sum(sale_items.quantity) as total_sales, DATE_FORMAT(sale_invoices.date, "%d-%M-%Y") as date')
+        ->join('sale_invoices','sale_items.sale_invoice_id', '=', 'sale_invoices.id')
                 ->groupBy('date')
                 ->get();
                 
