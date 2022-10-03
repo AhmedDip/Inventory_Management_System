@@ -8,6 +8,7 @@ use App\Models\Product;
 use App\Models\SaleInvoice;
 use App\Models\SaleItem;
 use App\Models\User;
+use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
 
 class UserSalesController extends Controller
@@ -68,6 +69,31 @@ class UserSalesController extends Controller
         return view('Users.sales.invoice',['invoice'=>$invoice,'users'=>$user,'tab'=>$tab,'products'=>$product])->with($this->menu);
 
     }
+
+    
+    public function generate_pdf($user_id , $invoice_id)
+    {
+        $users = User::findOrFail($user_id );
+        $invoice = SaleInvoice::findOrFail($invoice_id);
+        $tab = 'sales';
+        $product = Product::all();
+        $data = 'Ahmed Rasidun Bari Dip';
+        $pdf = Pdf::loadView('Users.sales.invoice_pdf',['invoice'=>$invoice,'users'=>$users,'tab'=>$tab,'products'=>$product,'data'=>$data]);
+        return $pdf->stream('Sale Invoice Details',['invoice'=>$invoice,'users'=>$users,'tab'=>$tab,'products'=>$product]);
+    }
+
+
+
+    // public function download_pdf($user_id , $invoice_id)
+    // {
+    //     $user = User::findOrFail($user_id );
+    //     $invoice = SaleInvoice::findOrFail($invoice_id);
+    //     $tab = 'sales';
+    //     $product = Product::all();
+    //     $data = 'webjourney.dev';
+    //     $pdf = Pdf::loadView('Users.sales.invoice',compact('data'));
+    //     return $pdf->download('billing-invoice.pdf');
+    // }
 
     public function addItem(InvoiceProductRequest $request, $user_id , $invoice_id)
     {

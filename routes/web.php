@@ -5,6 +5,7 @@ use App\Http\Controllers\Auth\RegistrationController;
 use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\NotificationController;
+use App\Http\Controllers\PdfController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProductsStockController;
 use App\Http\Controllers\Reports\PaymentsReportController;
@@ -79,6 +80,9 @@ Route::delete('groups/{id}',[UserGroupsController::class,'destroyGroup'])->name(
 
 
 //Routes For User Sales 
+
+Route::get('/generate-pdf/{id}/invoices/{invoice_id}',[UserSalesController::class,'generate_pdf'])->name('sales.invoice.pdf');
+Route::get('/download-pdf/{id}/invoices/{invoice_id}',[UserSalesController::class,'download_pdf']);
 Route::get('users/{id}/sales', 	[UserSalesController::class,'index'])->name('user.sales');
 Route::post('users/{id}/invoices',	[UserSalesController::class,'createInvoice'])->name('user.sales.store');
 Route::get('users/{id}/invoices/{invoice_id}',	[UserSalesController::class,'invoice'])->name('user.sales.invoice_details');
@@ -86,12 +90,15 @@ Route::delete('users/{id}/invoices/{invoice_id}',[UserSalesController::class,'de
 Route::post('users/{id}/invoices/{invoice_id}',	[UserSalesController::class,'addItem'])->name('user.sales.invoices.add_item');
 Route::delete('users/{id}/invoices/{invoice_id}/{item_id}', [UserSalesController::class,'destroyItem'])->name('user.sales.invoices.delete_item');
 
+// Route::get('/download-pdf',[PdfController::class,'download_pdf']);
+
 
 
 // Routes For Purchase
 Route::get('users/{id}/purchases',[UserPurchasesController::class,'index'])->name('user.purchase');
 Route::post('users/{id}/purchases',	[UserPurchasesController::class,'createInvoice'])->name('user.purchase.store');
 Route::get('users/{id}/purchases/{invoice_id}',	[UserPurchasesController::class,'invoice'])->name('user.purchase.invoice_details');
+Route::get('/generate-pdf/{id}/invoices/{invoice_id}',[UserPurchasesController::class,'generate_pdf'])->name('purchases.invoice.pdf');
 Route::delete('users/{id}/purchases/{invoice_id}',[UserPurchasesController::class,'destroy'])->name('user.purchase.destroy');
 Route::post('users/{id}/purchases/{invoice_id}',	[UserPurchasesController::class,'addItem'])->name('user.purchase.add_item');
 Route::delete('users/{id}/purchases/{invoice_id}/{item_id}', [UserPurchasesController::class,'destroyItem'])->name('user.purchase.delete_item');

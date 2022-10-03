@@ -9,6 +9,7 @@ use App\Models\PurchaseInvoice;
 use App\Models\PurchaseItem;
 use App\Models\SaleItem;
 use App\Models\User;
+use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
 
 class UserPurchasesController extends Controller
@@ -73,6 +74,19 @@ class UserPurchasesController extends Controller
         ->with($this->menu);
 
     }
+
+
+    public function generate_pdf($user_id , $invoice_id)
+    {
+        $users = User::findOrFail($user_id );
+        $invoice = PurchaseInvoice::findOrFail($invoice_id);
+        $tab = 'purchases';
+        $product = Product::all();
+        $data = 'Ahmed Rasidun Bari Dip';
+        $pdf = Pdf::loadView('Users.purchases.invoice_pdf',['invoice'=>$invoice,'users'=>$users,'tab'=>$tab,'products'=>$product,'data'=>$data]);
+        return $pdf->stream('Purchase Invoice Details',['invoice'=>$invoice,'users'=>$users,'tab'=>$tab,'products'=>$product]);
+    }
+
 
     public function addItem(InvoiceProductRequest $request, $user_id , $invoice_id)
     {
