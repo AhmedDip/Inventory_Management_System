@@ -39,7 +39,7 @@
 
 
     <li class="nav-item">
-        <a class="nav-link <a class="nav-link href="{{route('user.profile',Auth::user()->id)}}">
+        <a class="nav-link" href="{{route('user.profile',Auth::user()->id)}}">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>My Profile</span></a>
     </li>
@@ -47,35 +47,40 @@
 
 
     <li class="nav-item">
-        <a class="nav-link <a class="nav-link href="{{route('profile.sales', Auth::user()->id)}}">
+        <a class="nav-link" href="{{route('profile.sales', Auth::user()->id)}}">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Sales</span></a>
     </li>
 
     <li class="nav-item">
-        <a class="nav-link <a class="nav-link href="{{route('profile.purchases', Auth::user()->id)}}">
+        <a class="nav-link" href="{{route('profile.purchases', Auth::user()->id)}}">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>purchases</span></a>
     </li>
 
     <li class="nav-item">
-        <a class="nav-link <a class="nav-link href="{{route('profile.payments', Auth::user()->id)}}">
+        <a class="nav-link" href="{{route('profile.payments', Auth::user()->id)}}">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>payments</span></a>
     </li>
 
 
     <li class="nav-item">
-        <a class="nav-link <a class="nav-link href="{{route('profile.receipts', Auth::user()->id)}}">
+        <a class="nav-link" href="{{route('profile.receipts', Auth::user()->id)}}">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>receipts</span></a>
     </li>
 
-   
-    
-
-
     <hr class="sidebar-divider">
+
+
+    <li class="nav-item">
+    <a class="nav-link" href="{{route('logout')}}">
+        <i class="fas fa-sign-out-alt"></i>
+       <span>Logout</span>
+    </a>
+
+</li>
 
 
 

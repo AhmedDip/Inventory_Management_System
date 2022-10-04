@@ -34,13 +34,13 @@ class CustomerController extends Controller
         $id = Auth::user()->id;
         $user = User::findorFail($id);
 
-          $this->data['totalUsers'] = User::count('id');
-        $this->data['totalProducts'] = Product::count('id');
-        $this->data['totalSales'] = SaleItem::sum('total');
-        $this->data['totalPurchases'] = PurchaseItem::sum('total');
-        $this->data['totalReceipts'] = Receipt::sum('amount');
-        $this->data['totalPayments'] = Payment::sum('amount');
-        $this->data['totalStocks'] = PurchaseItem::sum('quantity') - SaleItem::sum('quantity');
+        //   $this->data['totalUsers'] = User::count('id');
+        // $this->data['totalProducts'] = Product::count('id');
+        // $this->data['totalSales'] = SaleItem::sum('total');
+        // $this->data['totalPurchases'] = PurchaseItem::sum('total');
+        // $this->data['totalReceipts'] = Receipt::sum('amount');
+        // $this->data['totalPayments'] = Payment::sum('amount');
+        // $this->data['totalStocks'] = PurchaseItem::sum('quantity') - SaleItem::sum('quantity');
 
       
 

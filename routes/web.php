@@ -44,15 +44,18 @@ Route::post('registration', [RegistrationController::class, 'register'])->name('
 Route::group(['middleware'=>'auth'],function()
 {
 
-    Route::get('myprofile/{user}',[ProfileController::class,'show'])->name('profile.show');
-
     Route::get('logout',[LoginController::class,'logout'])->name('logout');
 // Route::get('/', function () {
 //     return view('Layout/admin');
 // });
 
+
+Route::get('notification/clear', 	[NotificationController::class,'index'])->name('mark');
+
 Route::group(['middleware'=>'checkAdmin'],function()
 {
+
+    Route::get('myprofile/{user}',[ProfileController::class,'show'])->name('profile.show');
 
 Route::get('dashboard',[DashboardController::class,'index'])->name('dashboard');
 
@@ -63,7 +66,6 @@ Route::get('users/pending', 	[UsersController::class,'pending'])->name('pending'
 
 Route::get('users/status/{user_id}/{status_code}', 	[UsersController::class,'updateStatus'])->name('update.status');
 
-Route::get('notification/clear', 	[NotificationController::class,'index'])->name('mark');
 
 //Routes For Resource Routing
 Route::resource('users',UsersController::class); 

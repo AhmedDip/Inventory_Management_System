@@ -1,4 +1,4 @@
-@extends('Users.layout_customer')
+@extends('Layout.user')
 @section('main_content')
   
 <div class="d-sm-flex align-items-center justify-content-between mb-3">
