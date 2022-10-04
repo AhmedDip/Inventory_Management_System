@@ -2,24 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Group;
 use App\Models\Payment;
 use App\Models\Product;
 use App\Models\PurchaseItem;
 use App\Models\Receipt;
-use App\Models\SaleInvoice;
 use App\Models\SaleItem;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
 
-class DashboardController extends Controller
+class CustomerController extends Controller
 {
-
-    public $data = [];
-
-    
-
 
     public function __construct()
     {
@@ -31,13 +25,16 @@ class DashboardController extends Controller
         $this->data['date']=[];
         $this->data['total']=[];
         $this->data['status']=[];      
-
-        
+   
         
     }
-    public function index()
+    public function user()
     {
-        $this->data['totalUsers'] = User::count('id');
+
+        $id = Auth::user()->id;
+        $user = User::findorFail($id);
+
+          $this->data['totalUsers'] = User::count('id');
         $this->data['totalProducts'] = Product::count('id');
         $this->data['totalSales'] = SaleItem::sum('total');
         $this->data['totalPurchases'] = PurchaseItem::sum('total');
@@ -45,9 +42,7 @@ class DashboardController extends Controller
         $this->data['totalPayments'] = Payment::sum('amount');
         $this->data['totalStocks'] = PurchaseItem::sum('quantity') - SaleItem::sum('quantity');
 
-
-    
-
+      
 
         // $sale= SaleInvoice::whereBetween('date', [$start_date, $end_date])->get();
 
@@ -95,10 +90,72 @@ class DashboardController extends Controller
                 $this->data['status'][] = $users_status['status'];
            }
 
-        return view('Dashboard.index', $this->menu, $this->data);
+        return view('Dashboard.user',['users'=>$user])->with($this->menu)->with($this->data);
 
     }
 
 
+    public function profile()
+    {
+        
+        $id = Auth::user()->id;
+        $user = User::findorFail($id);
+        $group = Group::all();
+        $tab = 'profile';
+        return view('Profile.show', ["users" => $user], ['groups' => $group])->with('tab',$tab)->with($this->menu);
+    }
+
+
+    public function sales($id)
+    {
+        $id = Auth::user()->id;
+        $users = User::findorFail($id);
+        $tab = 'sales';
+      
+
+
+        return view('Customer.sales', ['users'=>$users])->with('tab',$tab)->with($this->menu);
+
+    }
+
     
+    public function purchases($id)
+    {
+        $id = Auth::user()->id;
+        $users = User::findorFail($id);
+        $tab = 'purchases';
+      
+
+
+        return view('Customer.purchases', ['users'=>$users])->with('tab',$tab)->with($this->menu);
+
+    }
+
+
+    public function payments($id)
+    {
+        $id = Auth::user()->id;
+        $users = User::findorFail($id);
+        $tab = 'payments';
+      
+
+
+        return view('Customer.payments', ['users'=>$users])->with('tab',$tab)->with($this->menu);
+
+    }
+
+
+    public function receipts($id)
+    {
+        $id = Auth::user()->id;
+        $users = User::findorFail($id);
+        $tab = 'receipts';
+      
+
+
+        return view('Customer.receipts', ['users'=>$users])->with('tab',$tab)->with($this->menu);
+
+    }
+
+
 }

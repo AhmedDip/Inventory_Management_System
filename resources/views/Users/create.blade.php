@@ -36,7 +36,7 @@
 
                                 <label for="password" class="col-sm-3 col-form-label">Confirm Password</label>
                                 <div class="col-sm-9">
-                                  <input id="password" value="{{old('password')}}" class="form-control mb-2" type="password" name="password_confirmation" placeholder="Enter the Confirm password" required>
+                                  <input id="password" value="{{old('password')}}" class="form-control mb-2" type="password" name="password_confirmation" placeholder="Enter the Confirm password">
                                 </div>
 
                                 <label for="Phone" class="col-sm-3 col-form-label">Phone</label>

@@ -5,9 +5,9 @@
 
 
 <div class="card shadow mb-4">
-    <a class="btn btn-sm btn-primary shadow-sm float-right" href="{{ route('sales.invoice.pdf', ['id' => $users->id,'invoice_id'=>$invoice->id])}}"><i
-        class="fas fa-download fa-sm text-white-50"></i> Download As PDF</a>
     <div class="card-header py-3">
+        <a class="btn btn-sm btn-primary shadow-sm float-right" href="{{ route('sales.invoice.pdf', ['id' => $users->id,'invoice_id'=>$invoice->id])}}"><i
+            class="fas fa-download fa-sm text-white-50"></i> Download As PDF</a>
         <h5 class="m-0 font-weight-bold text-primary">Sale Invoice Details </h5>
     </div>
     <div class="card-body">

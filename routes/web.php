@@ -1,8 +1,10 @@
 <?php
 
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\ProfileController;
 use App\Http\Controllers\Auth\RegistrationController;
 use App\Http\Controllers\CategoriesController;
+use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\NotificationController;
 use App\Http\Controllers\PdfController;
@@ -42,15 +44,17 @@ Route::post('registration', [RegistrationController::class, 'register'])->name('
 Route::group(['middleware'=>'auth'],function()
 {
 
+    Route::get('myprofile/{user}',[ProfileController::class,'show'])->name('profile.show');
+
+    Route::get('logout',[LoginController::class,'logout'])->name('logout');
 // Route::get('/', function () {
 //     return view('Layout/admin');
 // });
 
-
+Route::group(['middleware'=>'checkAdmin'],function()
+{
 
 Route::get('dashboard',[DashboardController::class,'index'])->name('dashboard');
-
-Route::get('logout',[LoginController::class,'logout'])->name('logout');
 
 
 //Pending User Requests
@@ -97,8 +101,8 @@ Route::delete('users/{id}/invoices/{invoice_id}/{item_id}', [UserSalesController
 // Routes For Purchase
 Route::get('users/{id}/purchases',[UserPurchasesController::class,'index'])->name('user.purchase');
 Route::post('users/{id}/purchases',	[UserPurchasesController::class,'createInvoice'])->name('user.purchase.store');
+Route::get('/generate-pdf/{id}/purchases/{invoice_id}',[UserPurchasesController::class,'generate_pdf'])->name('purchases.invoice.pdf');
 Route::get('users/{id}/purchases/{invoice_id}',	[UserPurchasesController::class,'invoice'])->name('user.purchase.invoice_details');
-Route::get('/generate-pdf/{id}/invoices/{invoice_id}',[UserPurchasesController::class,'generate_pdf'])->name('purchases.invoice.pdf');
 Route::delete('users/{id}/purchases/{invoice_id}',[UserPurchasesController::class,'destroy'])->name('user.purchase.destroy');
 Route::post('users/{id}/purchases/{invoice_id}',	[UserPurchasesController::class,'addItem'])->name('user.purchase.add_item');
 Route::delete('users/{id}/purchases/{invoice_id}/{item_id}', [UserPurchasesController::class,'destroyItem'])->name('user.purchase.delete_item');
@@ -133,14 +137,27 @@ Route::get('reports/receipts', [ReceiptsReportController::class,'index'])->name(
 
 
 
+});
+
+Route::group(['middleware'=>'checkUser'],function()
+{
+
+    Route::get('dashboard/user',[CustomerController::class,'user'])->name('user.dashboard');
+
+    Route::get('profile/{user}',[CustomerController::class,'profile'])->name('user.profile');
+
+    Route::get('profile/{id}/sales', 	[CustomerController::class,'sales'])->name('profile.sales');
+
+    Route::get('profile/{id}/purchases', 	[CustomerController::class,'purchases'])->name('profile.purchases');
+
+    Route::get('profile/{id}/payments', 	[CustomerController::class,'payments'])->name('profile.payments');
+
+    Route::get('profile/{id}/receipts', 	[CustomerController::class,'receipts'])->name('profile.receipts');
 
 
 
 
-
-
-
-
+});
 
 
 });

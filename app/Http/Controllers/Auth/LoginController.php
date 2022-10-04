@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\LoginRequest;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -25,16 +26,24 @@ class LoginController extends Controller
         
         if (Auth::attempt(['email' => $email, 'password' => $password, 'status' => 1])) {
             
-            if('group_id'==1)
-            {
+            if (Auth::user()->group_id==1) {
                 return redirect()->to(route('dashboard'));
+
             }
 
-          else if ('group_id'!=1)
+            elseif (Auth::user()->group_id!=1)
             {
-                return redirect()->to(route('dashboard'));
+                $id = Auth::user()->id;
+                $user = User::findorFail($id);
+        
+                return redirect()->to(route('user.dashboard'));
             }
-        }
+                
+            }
+           
+ 
+         
+        
 
 
         else if (Auth::attempt(['email' => $email, 'password' => $password, 'status' => 2])) 

@@ -79,8 +79,9 @@
                             <div class="col-sm-9">
                                 <select class="form-control mb-2" name="status" id="status">
                                     <option>Select An Option</option>
-                                    <option value="1" {{ $users->status == '1' ? 'selected' : '' }}>Active</option>
-                                    <option value="0" {{ $users->status == '0' ? 'selected' : '' }}>Suspend</option>
+                                    <option value="1" {{ old('status') == '1'? 'selected' : '' }}> Active</option>
+                                    <option value="0" {{ old('status') == '0'? 'selected' : '' }}> Suspend</option> 
+                                    <option value="2" {{ old('status') == '2'? 'selected' : '' }}> Pending</option> 
                                 </select>
                             </div>
                                 

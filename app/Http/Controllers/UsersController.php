@@ -23,9 +23,7 @@ class UsersController extends Controller
         $this->menu['main_menu'] = 'user';
         $this->menu['sub_menu'] = 'user';
         $this->menu['user'] = User::find(1);
-        $this->menu['count']=  $this->menu['user']->unreadNotifications->count();
-
-        
+        $this->menu['count'] =  $this->menu['user']->unreadNotifications->count();
     }
 
     public function index()
@@ -68,7 +66,11 @@ class UsersController extends Controller
         if ($save) {
             toast('User Created Successfully!', 'success');
 
-            return redirect()->to('users')->with($this->menu);
+            if ($request->status == 1) {
+                return redirect()->to('users')->with($this->menu);
+            } else {
+                return redirect(route('pending'))->with($this->menu);
+            }
         }
     }
 
@@ -78,10 +80,10 @@ class UsersController extends Controller
         $user = User::findorFail($id);
         $group = Group::all();
         $tab = 'show';
-       
+
         return view('Users.show', ["users" => $user], ['groups' => $group])
-                ->with('tab',$tab)
-                ->with($this->menu);
+            ->with('tab', $tab)
+            ->with($this->menu);
     }
 
     public function edit($id)
@@ -130,8 +132,8 @@ class UsersController extends Controller
         $user->update();
 
         EditAlert::toast('You\'ve Successfully Edited', 'success');
-        return redirect()->route('users.index')   
-                         ->with($this->menu);
+        return redirect()->route('users.index')
+            ->with($this->menu);
     }
 
     public function destroy($id)
@@ -149,7 +151,7 @@ class UsersController extends Controller
         }
 
         return redirect('/users')
-                 ->with($this->menu);;
+            ->with($this->menu);;
     }
 
 
@@ -161,7 +163,7 @@ class UsersController extends Controller
         // $user = User::all()->except(1);
 
         $user = User::where('status', '=', 0)->orWhere('status', '=', 2)->get();
-        
+
         // dd($user);
 
         $this->menu['sub_menu'] = 'pending';
@@ -174,26 +176,21 @@ class UsersController extends Controller
 
 
         try {
-           $update =  User::whereId($user_id)->update([
+            $update =  User::whereId($user_id)->update([
                 'status' => $status_code
 
-           ]);
+            ]);
 
-           if($update){
+            if ($update) {
 
-    
-        return redirect()->route('pending') ;  
+                toast('Status Changed Successfully!', 'success');
 
-           }
+                return redirect()->route('pending');
+            }
 
-           return redirect()->route('pending') ;  
+            return redirect()->route('pending');
         } catch (\Throwable $e) {
             throw $e;
         }
-
     }
-
-   
-
-    
 }

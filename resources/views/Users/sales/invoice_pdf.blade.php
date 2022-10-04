@@ -98,7 +98,7 @@
                                 @if (!empty($item))
                                     {{ $total }} Taka
                                 @elseif (empty($item))
-                                    {{ 0 }} Taka
+                                    {{ 0 }}
                                 @endif
 
                             </th>
@@ -116,7 +116,7 @@
                                 @if (!empty($amount))
                                     {{ $amount }} Taka
                                 @elseif (empty($amount))
-                                    {{ 0 }} Taka
+                                    {{ 0 }}
                                 @endif
 
                             </th>
@@ -139,7 +139,7 @@
                                 @if (!empty($amount))
                                     {{ $total - $amount }} Taka
                                 @elseif (empty($amount))
-                                    {{ 0 }} Taka
+                                    {{ 0 }}
                                 @endif
 
                             </th>

@@ -79,21 +79,21 @@ class UserSalesController extends Controller
         $product = Product::all();
         $data = 'Ahmed Rasidun Bari Dip';
         $pdf = Pdf::loadView('Users.sales.invoice_pdf',['invoice'=>$invoice,'users'=>$users,'tab'=>$tab,'products'=>$product,'data'=>$data]);
-        return $pdf->stream('Sale Invoice Details',['invoice'=>$invoice,'users'=>$users,'tab'=>$tab,'products'=>$product]);
+        return $pdf->stream('Sales-Invoice',['invoice'=>$invoice,'users'=>$users,'tab'=>$tab,'products'=>$product]);
     }
 
 
 
-    // public function download_pdf($user_id , $invoice_id)
-    // {
-    //     $user = User::findOrFail($user_id );
-    //     $invoice = SaleInvoice::findOrFail($invoice_id);
-    //     $tab = 'sales';
-    //     $product = Product::all();
-    //     $data = 'webjourney.dev';
-    //     $pdf = Pdf::loadView('Users.sales.invoice',compact('data'));
-    //     return $pdf->download('billing-invoice.pdf');
-    // }
+    public function download_pdf($user_id , $invoice_id)
+    {
+        $user = User::findOrFail($user_id );
+        $invoice = SaleInvoice::findOrFail($invoice_id);
+        $tab = 'sales';
+        $product = Product::all();
+        $data = 'Ahmed Rasidun Bari Dip';
+        $pdf = Pdf::loadView('Users.sales.invoice',compact('data'));
+        return $pdf->download('sales-invoice.pdf');
+    }
 
     public function addItem(InvoiceProductRequest $request, $user_id , $invoice_id)
     {
