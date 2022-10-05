@@ -2,15 +2,11 @@
  <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
     <!-- Sidebar - Brand -->
-    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{url('/')}}">
-        {{-- <div class="sidebar-brand-icon rotate-n-15">
-            <i class="fas fa-home"></i>
-        </div> --}}
-
-        <div class="sidebar-brand-icon rotate-n-15">
-            <i class="fas fa-laugh-wink"></i>
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{route('dashboard')}}">
+     <div class="sidebar-brand-icon">
+        <img src="{{asset('template/img/main_logo_yl.png')}}"  style="width: 100%" alt="">
         </div>
-        <div class="sidebar-brand-text mx-3">Hisab Kitab</div>
+  
      
     </a>
 

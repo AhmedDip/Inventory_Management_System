@@ -24,21 +24,87 @@
             </div>
         </div>
 
+     
+
 
         <div class="col-xl-3 col-md-4 mb-2">
-            <div style=" background: linear-gradient(to right, #2d2f35, #19aec2);"class="card text-white shadow">
+            <div style=" background: linear-gradient(to right, #18171a, #7336c2);"class="card text-white shadow">
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-white text-uppercase mb-2">Total Stocks</div>
+                            <div class="text-xs font-weight-bold text-white text-uppercase mb-2">Total Admin</div>
                             <div class="h5 mb-0 font-weight-bold text-white">
-                                {{$totalStocks}}
+                                {{$totalAdmin}}           
                             </div>
-     
                         </div>
-     
+                     
                         <div class="col-auto">
-                         <i class="fas fa-asterisk fa-spin fa-3x text-gray-300"></i>
+                         <i class="fas fa-chalkboard-teacher fa-3x text-gray-300"></i>
+                     </div>
+           
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-xl-3 col-md-4 mb-2">
+            <div style=" background: linear-gradient(to right, #db7da1, #ad8327);"class="card text-white shadow">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-white text-uppercase mb-2">Active Users</div>
+                            <div class="h5 mb-0 font-weight-bold text-white">
+                                {{$ActiveUsers}}           
+                            </div>
+                        </div>
+                     
+                        <div class="col-auto">
+                         <i class="fas fa-user-check fa-3x text-gray-300"></i>
+                     </div>
+           
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="col-xl-3 col-md-4 mb-2">
+            <div style=" background: linear-gradient(to right, #44cbd4, #e22976);"class="card text-white shadow">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-white text-uppercase mb-2">Pending Users</div>
+                            <div class="h5 mb-0 font-weight-bold text-white">
+                                {{$PendingUsers}}           
+                            </div>
+                        </div>
+                     
+                        <div class="col-auto">
+                         <i class="fas fa-user-clock fa-3x text-gray-300"></i>
+                     </div>
+           
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    
+
+
+        <div class="col-xl-3 col-md-4 mb-2">
+            <div style=" background: linear-gradient(to right, #36081a, #d1e293);"class="card text-white shadow">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-white text-uppercase mb-2">Suspend Users</div>
+                            <div class="h5 mb-0 font-weight-bold text-white">
+                                {{$SuspendUsers}}           
+                            </div>
+                        </div>
+                     
+                        <div class="col-auto">
+                         <i class="fas fa-user-alt-slash fa-3x text-gray-300"></i>
                      </div>
            
                     </div>
@@ -66,6 +132,28 @@
                      </div>     
          
                     
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-xl-3 col-md-4 mb-2">
+            <div style=" background: linear-gradient(to right, #2d2f35, #19aec2);"class="card text-white shadow">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-white text-uppercase mb-2">Total Stocks</div>
+                            <div class="h5 mb-0 font-weight-bold text-white">
+                                {{$totalStocks}}
+                            </div>
+     
+                        </div>
+     
+                        <div class="col-auto">
+                         <i class="fas fa-asterisk fa-spin fa-3x text-gray-300"></i>
+                     </div>
+           
                     </div>
                 </div>
             </div>

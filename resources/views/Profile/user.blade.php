@@ -1,4 +1,4 @@
-@extends('Layout.admin')
+@extends('Layout.user')
 @section('main_content')
   
 <div class="d-sm-flex align-items-center justify-content-between mb-3">
@@ -45,7 +45,7 @@
     
                                     <li class="list-group-item"> <span
                                             class="font-weight-bold text-primary">Status:</span>
-                                        @if ($users->status == 1)
+                                            @if ($users->status == 1)
                                             <p class="badge badge-success">Active</p>
                                         @elseif ($users->status == 0)
                                             <p class="badge badge-danger">Suspend</p>

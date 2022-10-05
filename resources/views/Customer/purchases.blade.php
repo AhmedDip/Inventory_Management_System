@@ -4,7 +4,7 @@
 
     <div class="card shadow mb-3">
         <div class="card-header py-3">
-            <h5 class="m-0 font-weight-bold text-primary">Purchases of - {{ $users->name }}</h5>
+            <h5 class="m-0 font-weight-bold text-primary">Sales of - {{ $users->name }}</h5>
         </div>
 
         <div class="card-body">
@@ -15,11 +15,9 @@
                     
                             <th>SL No.</th>
                             <th>Invoice No.</th>
-                            <th>User</th>
                             <th>Items</th>
                             <th>Date</th>                           
                             <th>Total</th>
-                            <th>Action</th>
                         </tr>
                     </thead>
                
@@ -33,7 +31,6 @@
                         <tr>      
                             <td>{{$loop->iteration}}</td>              
                             <td>{{ $purchase->invoice_no }}</td>
-                            <td>{{ $users->name}}</td>
                             <td> 
                                 @php
                                     $itemQty = $purchase->items()->sum('quantity');
@@ -41,7 +38,7 @@
                                  @endphp
                                  {{ $itemQty}}
                             </td>
-                            <td>{{date('d-M-Y', strtotime($purchase->date))}}</td>
+                            <td>{{date('d-F-Y', strtotime($purchase->date))}}</td>
                             <td>
 
                                 @php
@@ -54,29 +51,7 @@
 
 
                             </td>
-                            <td>
-
-                         
-
-                                <form method="POST" action=" {{ route('user.purchase.destroy', ['id' => $users->id, 'invoice_id' => $purchase->id ]) }} ">
-                                    <a href="{{ route('user.purchase.invoice_details', ['id' => $users->id,'invoice_id'=>$purchase->id]) }}"
-                                        class="btn btn-outline-primary btn-sm"><i class="fa fa-eye"></i></a>
-
-                                    @csrf
-                                    @method('DELETE')
-                                    
-
-                                    @if ($purchase->items()->sum('total')==0 && $users->id!=1)
-
-                                    <button onclick="return confirm('Are You Sure?')" type="submit"
-                                    class="btn btn-outline-danger btn-sm"><i class="fa fa-trash"></i></button>
-
-                                        
-                                    @endif
-
-                                 
-                                </form>
-                            </td>
+                    
                         </tr>
                             
                         @endforeach
@@ -85,10 +60,10 @@
 
                     <tfoot class="thead-light" >
                         <tr>       
-                            <th class="text-right" colspan="3">Total Items =</th>
-                            <th colspan="1"> {{$totalItem}} </th>
-                            <th class="text-right">Grand Total = </th>         
-                            <th colspan="2">{{$grandTotal}} Taka</th>
+                            <th class="text-right" colspan="2" style="color:blue">Total Items =</th>
+                            <th colspan="1" style="color:blue"> {{$totalItem}} </th>
+                            <th class="text-right" style="color:blue">Grand Total = </th>         
+                            <th colspan="2" style="color:blue">{{$grandTotal}} Taka</th>
                         </tr>
                     </tfoot>
                 </table>

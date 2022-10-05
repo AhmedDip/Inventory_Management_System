@@ -38,6 +38,10 @@ class DashboardController extends Controller
     public function index()
     {
         $this->data['totalUsers'] = User::count('id');
+        $this->data['totalAdmin'] = User::where('group_id', '=', '1')->count('id');
+        $this->data['ActiveUsers'] = User::where('status', '=', '1')->count('id');
+        $this->data['PendingUsers'] = User::where('status', '=', '2')->count('id');
+        $this->data['SuspendUsers'] = User::where('status', '=', '0')->count('id');
         $this->data['totalProducts'] = Product::count('id');
         $this->data['totalSales'] = SaleItem::sum('total');
         $this->data['totalPurchases'] = PurchaseItem::sum('total');

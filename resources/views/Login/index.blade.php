@@ -11,7 +11,8 @@
 
 
 
-    <title>Inventory Management System</title>
+    <title>Login - হিসাব কিতাব </title>
+
 
     <!-- Custom fonts for this template-->
     <link href="{{ asset('template/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
@@ -69,7 +70,7 @@
                                                 <div class="p-5">
                                                     <div class="text-center">
                                                         
-                                                        <img src="{{asset('template/img/main_logo.png')}}" alt="" width="105%">
+                                                        <img src="{{asset('template/img/main_logo_bl.png')}}" alt="" width="105%">
                                                     </div>
                                                     <form action="{{route('login.confirm')}}" method="post">
                                                         @csrf
@@ -120,11 +121,11 @@
 
                                                     <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
                                                     <div class="modal-dialog modal-sm">
-                                                        <div class="modal-content p-3">
+                                                        <div class="modal-content p-4">
                                                            
-                                                                <h3 class="btn btn-dark">Admin Login Info</h3>         
-                                                                <p class="badge badge-primary">Email: admin@gmail.com</p>
-                                                                <p class="badge badge-primary">Password: 123456</p>                     
+                                                                <h3 style="background-color:rgb(77, 136, 224); color:black">Admin Login Info</h3>         
+                                                                <p>Email: admin@gmail.com</p>
+                                                                <p>Password: 123456</p>                     
                                                         </div>
                                                     </div>
                                                     </div>

@@ -43,10 +43,12 @@
 
                                 <li class="list-group-item"> <span
                                         class="font-weight-bold text-primary">Status:</span>
-                                    @if ($users->status == 0)
+                                    @if ($users->status == 1)
                                         <p class="badge badge-success">Active</p>
-                                    @elseif ($users->status == 1)
+                                    @elseif ($users->status == 0)
                                         <p class="badge badge-danger">Suspend</p>
+                                    @elseif ($users->status == 2)
+                                        <p class="badge badge-warning">Pending</p>
                                     @endif
                                 </li>
                             </ul>

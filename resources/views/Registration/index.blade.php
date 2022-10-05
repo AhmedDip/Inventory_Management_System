@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Register</title>
+    <title>Registration - হিসাব কিতাব </title>
 
     <!-- Custom fonts for this template-->
     <link href="{{asset('template/vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
@@ -39,7 +39,7 @@
                             <div class="text-center">
                               <div class="text-center">
                                                         
-                                <img src="{{asset('template/img/main_logo.png')}}" alt="" width="50%">
+                                <img src="{{asset('template/img/main_logo_bl.png')}}" alt="" width="50%">
                             </div>
                                 <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
                             </div>

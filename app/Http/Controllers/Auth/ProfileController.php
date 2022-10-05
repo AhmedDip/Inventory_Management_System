@@ -16,7 +16,7 @@ class ProfileController extends Controller
     public function __construct()
     {
         Parent::__construct();
-        $this->menu['main_menu'] = 'profile';
+        $this->menu['main_menu'] = '';
         $this->menu['sub_menu'] = '';
         $this->menu['user'] = User::find(1);
         $this->menu['count']=  $this->menu['user']->unreadNotifications->count();

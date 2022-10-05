@@ -33,24 +33,6 @@ class CustomerController extends Controller
 
         $id = Auth::user()->id;
         $user = User::findorFail($id);
-
-        //   $this->data['totalUsers'] = User::count('id');
-        // $this->data['totalProducts'] = Product::count('id');
-        // $this->data['totalSales'] = SaleItem::sum('total');
-        // $this->data['totalPurchases'] = PurchaseItem::sum('total');
-        // $this->data['totalReceipts'] = Receipt::sum('amount');
-        // $this->data['totalPayments'] = Payment::sum('amount');
-        // $this->data['totalStocks'] = PurchaseItem::sum('quantity') - SaleItem::sum('quantity');
-
-      
-
-        // $sale= SaleInvoice::whereBetween('date', [$start_date, $end_date])->get();
-
-        // $items = SaleInvoice::selectRaw('count(id) as total_sales, DATE_FORMAT(date, "%d-%M-%Y") as date')
-        //         ->groupBy('date')
-        //         ->get();
-
-
         
         $items = SaleItem::selectRaw('sum(sale_items.quantity) as total_sales, DATE_FORMAT(sale_invoices.date, "%d-%M-%Y") as date')
         ->join('sale_invoices','sale_items.sale_invoice_id', '=', 'sale_invoices.id')
@@ -102,7 +84,7 @@ class CustomerController extends Controller
         $user = User::findorFail($id);
         $group = Group::all();
         $tab = 'profile';
-        return view('Profile.show', ["users" => $user], ['groups' => $group])->with('tab',$tab)->with($this->menu);
+        return view('Profile.user', ["users" => $user], ['groups' => $group])->with('tab',$tab)->with($this->menu);
     }
 
 

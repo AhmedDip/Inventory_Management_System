@@ -48,7 +48,12 @@ class LoginController extends Controller
 
         else if (Auth::attempt(['email' => $email, 'password' => $password, 'status' => 2])) 
         {
-            return redirect()->route('login')->with('invalid','Your Account is Suspended');
+            return redirect()->route('login')->with('invalid','Your Account is Pending, Please Contact with Admin');
+        }
+
+        else if (Auth::attempt(['email' => $email, 'password' => $password, 'status' => 0])) 
+        {
+            return redirect()->route('login')->with('invalid','Sorry, Your Account is Suspend');
         }
 
         else

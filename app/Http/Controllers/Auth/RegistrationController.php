@@ -22,7 +22,7 @@ class RegistrationController extends Controller
     }
     public function index()
     {
-        $group = Group::all();
+        $group = Group::all()->except(1);
         return view('Registration.index', ['groups' => $group], $this->menu);
     }
 

@@ -84,10 +84,10 @@
 
                     <tfoot class="thead-light" >
                         <tr>       
-                            <th class="text-right" colspan="3">Total Items =</th>
-                            <th colspan="1"> {{$totalItem}} </th>
-                            <th class="text-right">Grand Total = </th>         
-                            <th colspan="2">{{$grandTotal}} Taka</th>
+                            <th class="text-right" colspan="3" style="color: blue;" >Total Items =</th>
+                            <th colspan="1" style="color: blue;"> {{$totalItem}} </th>
+                            <th class="text-right" style="color: blue;">Total = </th>         
+                            <th colspan="2" style="color: blue;">{{$grandTotal}} Taka</th>
                         </tr>
                     </tfoot>
                 </table>

@@ -56,6 +56,9 @@
                                                     <li class="list-group-item"><span
                                                             class="font-weight-bold text-primary">Description:</span>
                                                         {{ $products->description }}</li>
+                                                    <li class="list-group-item"><span
+                                                            class="font-weight-bold text-primary">Weight:</span>
+                                                     {{ $products->unit }}</li>
                                                     <li class="list-group-item"> <span
                                                             class="font-weight-bold text-primary">Cost Price:</span> 
                                                             ৳{{ $products->cost_price }}</li>

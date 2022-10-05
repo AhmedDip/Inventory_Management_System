@@ -129,12 +129,14 @@
            
             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                 aria-labelledby="userDropdown">
-                @if ($main_menu != 'reports')
-                <a class="dropdown-item" href="myprofile/{{ Auth::user()->id}}">
+
+                <a class="dropdown-item" href="{{route('profile.show', Auth::user()->id)}}">
+                    {{-- <a class="dropdown-item" href="myprofile/{{ Auth::user()->id}}"> --}}
+               
                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                   My Profile
                 </a>
-            @endif
+
         
                 <a class="dropdown-item" href="{{route('logout')}}" data-toggle="modal" data-target="#logoutModal">
                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>

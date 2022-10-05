@@ -77,11 +77,14 @@
 
                             <label for="status" class="col-sm-3 col-form-label">Status</label>
                             <div class="col-sm-9">
-                                <select class="form-control mb-2" name="status" id="status">
-                                    <option>Select An Option</option>
-                                    <option value="1" {{ old('status') == '1'? 'selected' : '' }}> Active</option>
-                                    <option value="0" {{ old('status') == '0'? 'selected' : '' }}> Suspend</option> 
-                                    <option value="2" {{ old('status') == '2'? 'selected' : '' }}> Pending</option> 
+                                <select class="form-control mb-2" name="status" id="status" >
+                                    <option value="" selected>Select An Option</option>
+                                    
+                                    <option value=1 @if (($users->status) == 1) ? selected="selected" @endif > Active</option>
+                                    <option value=0 @if (($users->status) == 0) ? selected="selected" @endif > Pending</option>
+                                    <option value=2 @if (($users->status) == 2) ? selected="selected" @endif > Pending</option>
+
+                               
                                 </select>
                             </div>
                                 

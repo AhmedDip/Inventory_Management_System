@@ -201,28 +201,8 @@
 @section('main_content')
 
     <div class="row">
-        <div class="col-md-2">
-
-            <div class="nav flex-column nav-pills bg-gradient-light">
-
-                    {{-- <a class="nav-link @if($tab == 'show') active @endif "  href="{{ route('profile.show', $users->id) }}" >User Details</a> --}}
-
-                    <a class="nav-link @if($tab == 'sales') active @endif"  href="{{route('profile.sales',$users->id)}}" 
-                        >Sales</a>
-
-  
-                    <a class="nav-link @if($tab == 'purchases') active @endif"  href="{{route('profile.purchases',$users->id)}}" >Purchases</a>
-
-                    
-                    <a class="nav-link @if($tab == 'payments') active @endif"  href="{{route('profile.payments',$users->id)}}"  >Payments</a>
-
-
-                    <a class="nav-link @if($tab == 'receipts') active @endif"  href="{{route('profile.receipts',$users->id)}}" >Receipts</a> 
-
-            </div>
-        </div>
-
-        <div class="col-md-10">
+     
+        <div class="col-md-12">
 
             <div>
                @yield('user_content')

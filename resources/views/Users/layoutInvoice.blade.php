@@ -2,7 +2,7 @@
 @section('main_content')
     <div class="row">
         <div class="col-md-4">
-            <a href="{{  url()->previous()  }}" class="d-sm-inline-block btn btn-primary btn-sm"><i
+            <a href="{{  route('users.show', $users->id) }}" class="d-sm-inline-block btn btn-primary btn-sm"><i
                     class="fas fa-arrow-alt-circle-left"></i>
                 Back </a>
             </div>
