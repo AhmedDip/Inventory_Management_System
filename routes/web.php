@@ -6,6 +6,7 @@ use App\Http\Controllers\Auth\RegistrationController;
 use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\NotificationController;
 use App\Http\Controllers\PdfController;
 use App\Http\Controllers\ProductController;
@@ -34,6 +35,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+ Route::get('/',[LandingPageController::class,'index']);
+
 // Routes For Login
 Route::get('login', [LoginController::class, 'login'])->name('login');
 Route::post('login', [LoginController::class, 'authenticate'])->name('login.confirm');
@@ -44,10 +47,7 @@ Route::post('registration', [RegistrationController::class, 'register'])->name('
 Route::group(['middleware' => 'auth'], function () {
 
     Route::get('logout', [LoginController::class, 'logout'])->name('logout');
-    // Route::get('/', function () {
-    //     return view('Layout/admin');
-    // });
-
+   
 
     Route::get('notification/clear',     [NotificationController::class, 'index'])->name('mark');
 
