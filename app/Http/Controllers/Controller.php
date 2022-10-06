@@ -13,7 +13,7 @@ class Controller extends BaseController
 
     public $menu = [];
     public $data= [];
-    
+
 
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 

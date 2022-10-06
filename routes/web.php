@@ -15,6 +15,7 @@ use App\Http\Controllers\Reports\PaymentsReportController;
 use App\Http\Controllers\Reports\PurchasesReportController;
 use App\Http\Controllers\Reports\ReceiptsReportController;
 use App\Http\Controllers\Reports\SalesReportController;
+use App\Http\Controllers\StrategicPartnerController;
 use App\Http\Controllers\UserGroupsController;
 use App\Http\Controllers\UserPaymentsController;
 use App\Http\Controllers\UserProfileController;
@@ -58,6 +59,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
 
+
         //Pending User Requests
 
         Route::get('users/pending',     [UsersController::class, 'pending'])->name('pending');
@@ -69,6 +71,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::resource('users', UsersController::class);
         Route::resource('categories', CategoriesController::class);
         Route::resource('products', ProductController::class);
+        Route::resource('partners', StrategicPartnerController::class);
 
 
 

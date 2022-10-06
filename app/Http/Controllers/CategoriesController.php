@@ -68,7 +68,7 @@ class CategoriesController extends Controller
         {
           Session::flash('create', 'Category Created Successfully');
         }        
-          return redirect()-> to(route('categories.store',$this->menu));
+          return redirect()-> to(route('categories.store'));
     }
 
     /**
@@ -77,10 +77,7 @@ class CategoriesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
-        //
-    }
+ 
 
     /**
      * Show the form for editing the specified resource.

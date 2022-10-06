@@ -123,8 +123,6 @@ class UsersController extends Controller
                 Storage::delete($des);
                 // File::delete($des);
 
-
-
             }
             $users = $request->file('image')->store('Image', 'public');
             $user->image = $users;

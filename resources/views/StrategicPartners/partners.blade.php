@@ -2,8 +2,8 @@
 @section('main_content')
 
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
-    <h1 class="h3 mb-0 text-gray-800">Categories Page</h1>
-    <a href="{{route('categories.create')}}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-plus-circle fa-sm text-white-50"></i> Create New Categories</a>
+    <h1 class="h3 mb-0 text-gray-800">Strategic Partners</h1>
+    <a href="{{route('partners.create')}}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-plus-circle fa-sm text-white-50"></i> Create New Partners</a>
 </div>
     <div class="card shadow mb-4">
         <div class="card-body">
@@ -12,7 +12,8 @@
                     <thead>
                         <tr>
                             <th>Id</th>
-                            <th>Title</th>
+                            <th>Name</th>
+                            <th>Logo</th>
                             <th>Created At</th>
                             <th>Updated At</th>
                             <th class="text-right">Action</th>
@@ -21,7 +22,8 @@
                     <tfoot>
                         <tr>
                             <th>Id</th>
-                            <th>Title</th>
+                            <th>Name</th>
+                            <th>Logo</th>
                             <th>Created At</th>
                             <th>Updated At</th>
                             <th class="text-right">Action</th>
@@ -29,15 +31,17 @@
                     </tfoot>
                     <tbody>
 
-                        @foreach ($category as $categories)
+                        @foreach ($partner as $partners)
                         <tr>
                             <td>{{$loop->iteration}}</td>
-                            <td>{{$categories->title}}</td>
-                            <td>{{date('d F, Y (h:i a)', strtotime($categories->created_at))}}</td>
-                            <td>{{date('d F, Y (h:i a)', strtotime($categories->updated_at))}}</td>
+                            <td>{{$partners->name}}</td>
+                            <td><img style="height: 60px; width: 80px;" src="{{ asset(Storage::url($partners->image)) }}">
+                            </td>
+                            <td>{{date('d F, Y (h:i a)', strtotime($partners->created_at))}}</td>
+                            <td>{{date('d F, Y (h:i a)', strtotime($partners->updated_at))}}</td>
                             <td class="text-right">
-                                <form action="/categories/{{$categories->id}}" method="post">
-                                    <a href="{{ route('categories.edit', ['category' => $categories->id]) }}"
+                                <form action="/partners/{{$partners->id}}" method="post">
+                                    <a href="{{ route('partners.edit', ['partner' => $partners->id]) }}"
                                         class="btn btn-outline-info btn-sm"><i class="fa fa-edit"></i> Edit</a>
 
                                     @csrf

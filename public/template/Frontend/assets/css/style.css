@@ -202,7 +202,7 @@ h6 {
   border-radius: 50px;
   color: #fff;
   font-size: 14px;
-  border: 2px solid #aebe16;
+  border: 2px solid #04fc9d;
   font-weight: 600;
 }
 
@@ -226,7 +226,7 @@ h6 {
 .navbar .getstarted:hover,
 .navbar .getstarted:focus:hover {
   color: #fff;
-  background: #b5b80e;
+  background: #0fe220e3;
 }
 
 
@@ -371,7 +371,7 @@ h6 {
 .navbar-mobile .getstarted,
 .navbar-mobile .getstarted:focus {
   margin: 15px;
-  color: #eed64c;
+  color: #23e933;
 }
 
 .navbar-mobile .register,

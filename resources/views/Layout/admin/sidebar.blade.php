@@ -142,7 +142,23 @@
         </div>
     </li>
 
+    
 
+    <li class="nav-item">
+        <a class="nav-link @if ($main_menu == 'landingPage')
+            active
+        @endif" href="#" data-toggle="collapse" data-target="#collapsefive"
+            aria-expanded="true" aria-controls="collapsefive">
+            <i class="fas fa-cart-arrow-down"></i>
+            <span>Landing Page</span>
+        </a>
+        <div id="collapsefive" class="collapse @if ($main_menu == 'landingPage') show @endif" aria-labelledby="headingfive" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">Components:</h6>
+                <a class="collapse-item @if ($sub_menu == 'partner') active @endif" href={{route('partners.index')}}>Strategic Partners</a>
+            </div>
+        </div>
+    </li>
 
 
     <!-- Divider -->
