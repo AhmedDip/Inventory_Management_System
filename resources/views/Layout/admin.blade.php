@@ -11,7 +11,11 @@
     
 
 
-    <title>Inventory Management System </title>
+    <title>হিসাব কিতাব </title>
+
+  
+    <!-- Favicons -->
+    <link href="{{asset('template/img/taka.jpg')}}" rel="icon">
 
     <!-- Custom fonts for this template-->
     <link href="{{ asset('template/vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
@@ -24,6 +28,8 @@
     <link href="{{asset('template/css/sb-admin-2.min.css')}}" rel="stylesheet">
     <link href="{{asset('template/css/style.css')}}" rel="stylesheet">
     <link rel="stylesheet" href="font-awesome-animation.min.css">
+
+  
 
 
 </head>

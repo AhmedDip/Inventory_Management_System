@@ -11,7 +11,10 @@
     
 
 
-    <title>Inventory Management System</title>
+    <title>হিসাব কিতাব </title>
+  
+    <!-- Favicons -->
+    <link href="{{asset('template/img/taka.jpg')}}" rel="icon">
 
     <!-- Custom fonts for this template-->
     <link href="{{ asset('template/vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
@@ -77,6 +80,8 @@
                    
 
                     @yield('main_content')
+
+                    @yield('user_content')
 
                 </div>
                 <!-- /.container-fluid -->

@@ -125,7 +125,7 @@
        @endif">
         <a class="nav-link"  href="#" data-toggle="collapse" data-target="#collapsefour"
             aria-expanded="true" aria-controls="collapsefour">
-            <i class="fas fa-file-alt"></i>
+            <i class="fas fa-chart-line"></i>
             <span>Reports</span>
         </a>
         <div id="collapsefour" class="collapse @if ( $main_menu == 'reports') 
@@ -149,7 +149,7 @@
             active
         @endif" href="#" data-toggle="collapse" data-target="#collapsefive"
             aria-expanded="true" aria-controls="collapsefive">
-            <i class="fas fa-cart-arrow-down"></i>
+            <i class="fas fa-landmark"></i>
             <span>Landing Page</span>
         </a>
         <div id="collapsefive" class="collapse @if ($main_menu == 'landingPage') show @endif" aria-labelledby="headingfive" data-parent="#accordionSidebar">

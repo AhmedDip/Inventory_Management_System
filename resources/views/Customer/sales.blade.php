@@ -1,4 +1,4 @@
-@extends('Users.layout_customer')
+@extends('Layout.user')
 
 @section('user_content')
     <div class="card shadow mb-3">

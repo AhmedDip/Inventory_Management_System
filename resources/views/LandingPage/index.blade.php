@@ -5,13 +5,13 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title></title>
+  <title>হিসাব কিতাব </title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="{{asset('template/img/main_logo_yl.png')}}" rel="icon">
-  <link href="{{asset('template/img/main_logo_yl.png')}}" rel="">
+  <link href="{{asset('template/img/taka.jpg')}}" rel="icon">
+
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
@@ -50,8 +50,8 @@
           <li><a class="nav-link scrollto" href="#services">Products</a></li>
 
           <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-          <li><a class="getstarted" href="#about">Login</a></li>
-          <li><a class="register scrollto" href="#about">Register</a></li>
+          <li><a class="getstarted" href="{{route('login')}}">Login</a></li>
+          <li><a class="register scrollto" href="{{route('registration')}}">Register</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -68,7 +68,7 @@
           <h1>Inventory <span style="color:yellow">Management</span> System</h1>
           <h2 style="color:rgb(255, 255, 255)"><span style="color:yellow">হিসাব কিতাব</span> ইনভেন্টরি ম্যানেজমেন্ট সফ্টওয়্যার আপনাকে আপনার ব্যবসার রিয়েল-টাইম ডেটা বিশ্লেষণ করতে সহায়তা করবে ।</h2>
           <div class="d-flex justify-content-center justify-content-lg-start">
-            <a href="#about" class="btn-get-started scrollto">Get Started</a>
+            <a href="{{route('login')}}" class="btn-get-started scrollto">Get Started</a>
             <a href="https://www.youtube.com/watch?v=-9341fFCxUU" class="glightbox btn-watch-video"><i class="bi bi-play-circle"></i><span>Watch Video</span></a>
           </div>
         </div>
