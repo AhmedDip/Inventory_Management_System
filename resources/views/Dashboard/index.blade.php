@@ -28,7 +28,7 @@
 
 
         <div class="col-xl-3 col-md-4 mb-2">
-            <div style=" background: linear-gradient(to right, #18171a, #7336c2);"class="card text-white shadow">
+            <div style=" background: linear-gradient(to right, #392b46, #8041c9);"class="card text-white shadow">
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
@@ -49,7 +49,7 @@
 
 
         <div class="col-xl-3 col-md-4 mb-2">
-            <div style=" background: linear-gradient(to right, #db7da1, #ad8327);"class="card text-white shadow">
+            <div style=" background: linear-gradient(to right, #08857a, #54c0b2);"class="card text-white shadow">
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
@@ -70,7 +70,7 @@
 
         
         <div class="col-xl-3 col-md-4 mb-2">
-            <div style=" background: linear-gradient(to right, #44cbd4, #e22976);"class="card text-white shadow">
+            <div style=" background: linear-gradient(to right, #db0eb9, #9099ec);"class="card text-white shadow">
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
@@ -93,7 +93,7 @@
 
 
         <div class="col-xl-3 col-md-4 mb-2">
-            <div style=" background: linear-gradient(to right, #36081a, #d1e293);"class="card text-white shadow">
+            <div style=" background: linear-gradient(to right, #d30a25, #020203);"class="card text-white shadow">
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
@@ -114,7 +114,7 @@
      
      
         <div class="col-xl-3 col-md-4 mb-2">
-            <div style=" background: linear-gradient(to right, #2d2f35, #22c473);;"class="card text-white shadow">
+            <div style=" background: linear-gradient(to right, #d36a24, #d81616);;"class="card text-white shadow">
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
@@ -139,7 +139,7 @@
 
 
         <div class="col-xl-3 col-md-4 mb-2">
-            <div style=" background: linear-gradient(to right, #2d2f35, #19aec2);"class="card text-white shadow">
+            <div style=" background: linear-gradient(to right, #000000, #20cde4);"class="card text-white shadow">
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
@@ -160,7 +160,7 @@
         </div>
      
         <div class="col-xl-3 col-md-4 mb-2"> 
-            <div style=" background: linear-gradient(to right, #2d2f35, #d319da);"class="card text-white shadow">
+            <div style=" background: linear-gradient(to right, #280d8a, #ceace6);"class="card text-white shadow">
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
@@ -181,7 +181,7 @@
         </div>
      
         <div class="col-xl-3 col-md-4 mb-2">
-            <div style=" background: linear-gradient(to right, #2d2f35, #b60a43);"class="card text-white shadow">
+            <div style=" background: linear-gradient(to right, #000000, #ff009d);"class="card text-white shadow">
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
@@ -200,7 +200,7 @@
         </div>
 
         <div class="col-xl-3 col-md-4 mb-2">
-            <div style=" background: linear-gradient(to right, #2d2f35, #eccf27);"class="card text-white shadow">
+            <div style=" background: linear-gradient(to right, #000000, #eccf27);"class="card text-white shadow">
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
@@ -224,7 +224,7 @@
      
      
         <div class="col-xl-3 col-md-4 mb-2">
-            <div style=" background: linear-gradient(to right, #2d2f35, #abafb1);"class="card text-white shadow">
+            <div style=" background: linear-gradient(to right, #111214, #abafb1);"class="card text-white shadow">
              <div class="card-body">
                  <div class="row no-gutters align-items-center">
                      <div class="col mr-2">
@@ -249,7 +249,7 @@
      </div>
 
      <div class="col-xl-3 col-md-4 mb-2">
-        <div style=" background: linear-gradient(to right, #2d2f35, #e66225);"class="card text-white shadow">
+        <div style=" background: linear-gradient(to right, #000000, #e66225);"class="card text-white shadow">
             <div class="card-body">
                 <div class="row no-gutters align-items-center">
                     <div class="col mr-2">

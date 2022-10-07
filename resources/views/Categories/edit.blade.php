@@ -6,15 +6,15 @@
             class="fas fa-arrow-alt-circle-left"></i>
         Go Back </a>
     </div>
-    <div class="card shadow mb-4  col-lg-7 col-md-12 col-sm-12">
+    <div class="card shadow mb-4 col-lg-7 col-md-12 col-sm-12">
         <div class="card-header py-3">
             <h4 class="m-0 font-weight-bold text-primary">Edit Category - {{$category->title}}</h4>
             <div class="card-body">
                 <div class="row">
-                    <div class="col-md-4">
-                        <img src="{{asset('template/img/pencil.gif')}}" alt="" height="150px">
+                    <div class="col-md-5">
+                        <img src="{{asset('template/img/Analytics.gif')}}" alt="" height="190px">
                     </div>
-                    <div class="col-md-8">
+                    <div class="col-md-7">
                         <form action="/categories/{{$category->id}}" method="post">
                             {{ csrf_field() }}
                             @method('PUT')

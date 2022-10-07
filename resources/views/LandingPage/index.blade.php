@@ -32,6 +32,7 @@
 
 <body>
 
+
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top ">
     <div class="container d-flex align-items-center">
@@ -87,10 +88,10 @@
 
         <div class="row" data-aos="zoom-in">
 
-          @foreach ($products as $product)
+          @foreach ($partners as $partner)
 
           <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-            <img src="{{ asset(Storage::url($product->image)) }}" class="img-fluid" alt="">
+            <img src="{{ asset(Storage::url($partner->image)) }}" class="img-fluid" alt="">
           </div>
             
           @endforeach
@@ -178,7 +179,7 @@
 
         <div class="row">
 
-          <div class="col-lg-5 d-flex align-items-stretch">
+          <div class="col-lg-6 d-flex align-items-stretch">
             <div class="info">
               <div class="address">
                 <i class="bi bi-geo-alt"></i>
@@ -205,33 +206,33 @@
 
           </div>
 
-          <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
-              <div class="row">
-                <div class="form-group col-md-6">
-                  <label for="name">Your Name</label>
-                  <input type="text" name="name" class="form-control" id="name" required>
+          <div class="col-lg-6 mt-5 mt-lg-0 d-flex align-items-stretch">
+            <div class="info">
+              <form action="{{url('/')}}" method="post" role="form" enctype="multipart/form-data">
+                @csrf
+                <div class="row">
+                  <div class="form-group col-md-6">
+                    <label for="name">Your Name</label>
+                    <input type="text" name="name" class="form-control" id="name" required>
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="name">Your Email</label>
+                    <input type="email" class="form-control" name="email" id="email" required>
+                  </div>
                 </div>
-                <div class="form-group col-md-6">
-                  <label for="name">Your Email</label>
-                  <input type="email" class="form-control" name="email" id="email" required>
+                <div class="form-group">
+                  <label for="name">Subject</label>
+                  <input type="text" class="form-control" name="subject" id="subject" required>
                 </div>
-              </div>
-              <div class="form-group">
-                <label for="name">Subject</label>
-                <input type="text" class="form-control" name="subject" id="subject" required>
-              </div>
-              <div class="form-group">
-                <label for="name">Message</label>
-                <textarea class="form-control" name="message" rows="10" required></textarea>
-              </div>
-              <div class="my-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
-              </div>
-              <div class="text-center"><button type="submit">Send Message</button></div>
-            </form>
+                <div class="form-group">
+                  <label for="name">Message</label>
+                  <textarea class="form-control" name="message" rows="10" required></textarea>
+                </div>
+               
+                <div class="text-center mt-3"><button type="submit" class="btn btn-outline-info">Send Message</button></div>
+              </form>
+            </div>
+     
           </div>
 
         </div>
@@ -244,20 +245,6 @@
   <!-- ======= Footer ======= -->
   <footer id="footer">
 
-    <div class="footer-newsletter">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-lg-6">
-            <h4>Join Our Newsletter</h4>
-            <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
-            <form action="" method="post">
-              <input type="email" name="email"><input type="submit" value="Subscribe">
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-
     <div class="footer-top">
       <div class="container">
         <div class="row">
@@ -265,18 +252,18 @@
           <div class="col-lg-3 col-md-6 footer-contact">
             <img src="{{asset('template/img/main_logo_bl.png')}}" alt="" style="width: 150px;">
             <p>
-              <strong>Address:</strong>{{$user->address}}<br>
-              <strong>Phone:</strong>{{$user->phone}}<br>
-              <strong>Email:</strong>{{$user->email}}<br>
+              <strong>ঠিকানা:</strong>{{$user->address}}<br>
+              <strong>ফোন:</strong>{{$user->phone}}<br>
+              <strong>ই-মেইল:</strong>{{$user->email}}<br>
             </p>
           </div>
 
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>Useful Links</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#hero">Home</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#about">About us</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#services">Products</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#hero">হোম </a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#about">এই অ্যাপ্লিকেশন সম্পর্কে</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#services">প্রোডাক্টস </a></li>
             </ul>
           </div>
 
@@ -292,13 +279,12 @@
 
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>Our Social Networks</h4>
-            <p>Cras fermentum odio eu feugiat lide par naso tierra videa magna derita valies</p>
+            <p></p>
             <div class="social-links mt-3">
-              <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-              <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-              <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-              <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-              <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+              <a href="https://www.facebook.com/medipahmed/" class="facebook"><i class="bx bxl-facebook"></i></a>
+              <a href="https://github.com/AhmedDip/" class="github"><i class="bx bxl-github"></i></a>
+              <a href="https://www.youtube.com/channel/UCR5UBWd5dt4NuUxX08yBxCA" class="google-plus"><i class="bx bxl-youtube"></i></a>
+              <a href="https://www.linkedin.com/in/rasidun/" class="linkedin"><i class="bx bxl-linkedin"></i></a>
             </div>
           </div>
 

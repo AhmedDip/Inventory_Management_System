@@ -36,8 +36,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
- Route::get('/',[LandingPageController::class,'index']);
 
+Route::get('/',[LandingPageController::class,'index']);
+Route::post('/',[LandingPageController::class,'mail']);
 // Routes For Login
 Route::get('login', [LoginController::class, 'login'])->name('login');
 Route::post('login', [LoginController::class, 'authenticate'])->name('login.confirm');
