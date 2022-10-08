@@ -51,13 +51,13 @@
                                                     <li class="list-group-item list-group-item-dark"><b>Category:</b>
                                                         {{ $products->category->title }}</li>
                                                     <li class="list-group-item"><span
-                                                            class="font-weight-bold text-primary">Brand:</span>
+                                                            class="font-weight-bold text-primary">Product Name:</span>
                                                         {{ $products->title }}</li>
                                                     <li class="list-group-item"><span
                                                             class="font-weight-bold text-primary">Description:</span>
                                                         {{ $products->description }}</li>
                                                     <li class="list-group-item"><span
-                                                            class="font-weight-bold text-primary">Weight:</span>
+                                                            class="font-weight-bold text-primary">Size:</span>
                                                      {{ $products->unit }}</li>
                                                     <li class="list-group-item"> <span
                                                             class="font-weight-bold text-primary">Cost Price:</span> 

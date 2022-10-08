@@ -81,7 +81,7 @@
                                     <option value="" selected>Select An Option</option>
                                     
                                     <option value=1 @if (($users->status) == 1) ? selected="selected" @endif > Active</option>
-                                    <option value=0 @if (($users->status) == 0) ? selected="selected" @endif > Pending</option>
+                                    <option value=0 @if (($users->status) == 0) ? selected="selected" @endif > Suspend</option>
                                     <option value=2 @if (($users->status) == 2) ? selected="selected" @endif > Pending</option>
 
                                

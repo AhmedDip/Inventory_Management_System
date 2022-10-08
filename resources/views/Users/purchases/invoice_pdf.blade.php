@@ -22,7 +22,7 @@
         </div>
 
         <div class="col-md-6 pb-4">
-            <div><b>Customer:</b> {{ $users->name }}</div>
+            <div><b>Supplier:</b> {{ $users->name }}</div>
             <div><b>Email:</b> {{ $users->email }}</div>
             <div><b>Phone:</b> {{ $users->phone }}</div>
 

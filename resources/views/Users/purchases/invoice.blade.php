@@ -14,7 +14,7 @@
         <div class="row">
             <div class="col-md-6">
                 <div><b>Supplier:</b>  {{$users->name}}</div>
-                <div><b>Customer Image: </b>
+                <div><b>Supplier Image: </b>
                     <br>
                   
                         <img class="img-fluid img-thumbnail" max-height=" 80px" width="100px"

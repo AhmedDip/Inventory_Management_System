@@ -10,12 +10,12 @@
 
         <div class="card-body">
             <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <table class="table table-bordered table-sm" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
                             <th>Id</th>
                             <th>Category</th>
-                            <th>Brand</th>
+                            <th>Product Name</th>
                             <th>Image</th>
                             <th>Cost Price (৳)</th>
                             <th>Sale Price (৳)</th>
@@ -26,7 +26,7 @@
                         <tr>
                             <th>Id</th>
                             <th>Category</th>
-                            <th>Brand</th>
+                            <th>Product Name</th>
                             <th>Image</th>
                             <th>Cost Price</th>
                             <th>Sale Price</th>

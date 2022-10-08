@@ -34,7 +34,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="title" class="col-sm-3 col-form-label">Brand Name</label>
+                            <label for="title" class="col-sm-3 col-form-label">Product Name</label>
                             <div class="col-sm-9">
                                 <input type="text" name="title" value="{{ old('title') }}" class="form-control mb-2"
                                     id="title" placeholder="Enter The Brand Name">
@@ -53,10 +53,10 @@
                        
 
                         <div class="form-group row">
-                            <label for="unit" class="col-sm-3 col-form-label">Weight</label>
+                            <label for="unit" class="col-sm-3 col-form-label">Size</label>
                             <div class="col-sm-9">
                                 <input type="text" name="unit" value="{{ old('unit') }}"
-                                    class="form-control mb-2" id="unit" placeholder="Enter The Unit">
+                                    class="form-control mb-2" id="unit" placeholder="Enter The Size">
 
                             </div>
                         </div>

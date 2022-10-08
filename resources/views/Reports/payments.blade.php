@@ -39,7 +39,7 @@
                         <tr>
                             <th>Id</th>
                             <th>Date</th>
-                            <th>User</th>
+                            <th>Supplier</th>
                             <th>Email</th>
                             <th>Image</th>
                             <th>Amount</th>

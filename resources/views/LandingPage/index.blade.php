@@ -50,7 +50,7 @@
           <li><a class="nav-link scrollto" href="#services">Products</a></li>
 
           <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-          <li><a class="getstarted" href="{{route('login')}}">Login</a></li>
+          <li><a class="getstarted login" href="{{route('login')}}">Login</a></li>
           <li><a class="register scrollto" href="{{route('registration')}}">Register</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
@@ -151,8 +151,7 @@
             <div class="card-body" style="background-color:  #000000
 
             ">
-              <h4 class="card-title" style="color:#ffffff">Brand Name: {{$product->title}}</h4>
-              <p class="card-text" style="color:#ffffff">Description: {{$product->description}}</p>
+              <h6 class="card-title" style="color:#ffffff">Product Name: {{$product->title}}</h6>
 
             </div>
           </div>

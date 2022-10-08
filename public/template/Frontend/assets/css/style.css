@@ -229,6 +229,11 @@ h6 {
   background: #e65c91e3;
 }
 
+.login:hover {
+  box-shadow: 0 0 10px 0 #00d7c3 inset, 0 0 20px 1px #00d7c3;
+  border: 2px solid #00d7c3;
+}
+
 
 .navbar .dropdown ul {
   display: block;
