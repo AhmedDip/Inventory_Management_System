@@ -69,7 +69,7 @@
           <h2 style="color:rgb(255, 255, 255)"><span style="color:yellow">হিসাব কিতাব</span> ইনভেন্টরি ম্যানেজমেন্ট সফ্টওয়্যার আপনাকে আপনার ব্যবসার রিয়েল-টাইম ডেটা বিশ্লেষণ করতে সহায়তা করবে ।</h2>
           <div class="d-flex justify-content-center justify-content-lg-start">
             <a href="{{route('login')}}" class="btn-get-started scrollto">Get Started</a>
-            <a href="https://www.youtube.com/watch?v=-9341fFCxUU" class="glightbox btn-watch-video"><i class="bi bi-play-circle"></i><span>Watch Video</span></a>
+            <a href="https://www.youtube.com/watch?v=phcyuakEMDg" class="glightbox btn-watch-video"><i class="bi bi-play-circle"></i><span>Watch Video</span></a>
           </div>
         </div>
         <div class="col-lg-4 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="100">
