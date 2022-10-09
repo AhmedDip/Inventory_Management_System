@@ -36,10 +36,12 @@
                                 <form action="/groups/{{$group->id}}" method="post">
                                     @csrf
                                     @method('DELETE')
-
-                                    @if($group->id !=1)
+                                    @if (count($group->users)> 0)
+                                    @elseif($group->id !=1)
                                         <button onclick="return confirm('Are You Sure?')" type="submit" class="btn btn-outline-danger btn-sm"><i class="fa fa-trash"></i> Delete</button>
 
+                                
+                                    
                                     @endif
 
                                 
