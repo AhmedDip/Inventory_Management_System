@@ -139,7 +139,7 @@
                                 @if (!empty($amount))
                                     {{ $total - $amount }} Taka
                                 @elseif (empty($amount))
-                                    {{ 0 }} Taka
+                                {{$total - $amount}} Taka
                                 @endif
 
                             </th>

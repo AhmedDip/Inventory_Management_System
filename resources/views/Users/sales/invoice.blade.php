@@ -159,7 +159,7 @@
 
 
                                 @elseif (empty($amount))
-                                {{0}}
+                                {{$total - $amount}}
                                     
                                 @endif
                                 
