@@ -8,7 +8,7 @@
         </div>
 
         <div class="card-body">
-            <div class="table-responsive">
+            <div class="table-responsive table-sm">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
@@ -35,7 +35,7 @@
                                 <td>{{ $users->name }}</td>
                         <td>{{date('d-M-Y', strtotime($receipt->date))}}</td>
                                 <td>{{ $receipt->amount }}</td>
-                                <td>{{ Str::substr($receipt->note , 0, 10) }}</td>
+                                <td>{{ $receipt->note }}</td>
                                 <td>
                                     <form action="/users/{{ $users->id }}/receipts/{{$receipt->id}}" method="post">
 
