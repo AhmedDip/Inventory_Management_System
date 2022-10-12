@@ -7,10 +7,10 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-# [হিসাব কিতাব - Live Application](http://hisabkitab.epizy.com/)
+#✨ [হিসাব কিতাব - Live Application](http://hisabkitab.epizy.com/)
 
 
-## How to Run
+##✨ How to Run
 -  Clone the project in your local repository.
 -  Create a file and name it <b>.env</b> and paste the contents of <b>.env.example</b> file. 
 -  Run <b>php artisan key:generate</b> in the terminal
@@ -25,7 +25,7 @@
 
 
 
-## Few Screen-Shots of the Project
+##✨ Few Screen-Shots of the Project
 
 ![2](https://user-images.githubusercontent.com/67531074/195457916-f25999b7-e84c-4010-8b36-889df8112838.PNG)
 
@@ -44,24 +44,6 @@
 ![9](https://user-images.githubusercontent.com/67531074/195457908-e5a3c596-4a7b-4866-ab4a-07ce1ad088c5.PNG)
 
 ![10](https://user-images.githubusercontent.com/67531074/195457910-69d3560b-b8f6-4d1e-a0f0-4d78f6401359.PNG)
-
-
-
-## ✨Features
-- Fully functional Cart
-- Product Details, user review and ratings
-- JWT authentication
-- Product Search
-- User profile create/update
-- User order management
-- Admin role with authorization
-- Admin product management
-- Admin Order management
-- Admin user management
-- Admin Order details page
-- Mark order as delivered option
-- Checkout feature
-- Payment gateway integration
 
 
 
