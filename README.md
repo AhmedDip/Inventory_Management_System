@@ -17,8 +17,14 @@
 -  Go to http://127.0.0.1:8000/.
 -  Now you can preview the project .
 
+
+## [ER Diagram]([http://hisabkitab.epizy.com/](https://drawsql.app/teams/ahmed-rasidun-bari-dip/diagrams/inventory-management-system))
+![drawSQL-export-2022-10-13_03 36](https://user-images.githubusercontent.com/67531074/195453073-b69baf55-272a-48dc-9603-6bd297311ff5.png)
+
 ## [Live Application](http://hisabkitab.epizy.com/)
 ![Capture](https://user-images.githubusercontent.com/67531074/195452027-76e781a3-cf74-478c-ba97-a0c368596809.PNG)
+
+
 
 
 
