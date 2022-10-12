@@ -14,10 +14,10 @@
 -  Clone the project in your local repository.
 -  Create a file and name it <b>.env</b> and paste the contents of <b>.env.example</b> file. 
 -  Run <b>php artisan key:generate</b> in the terminal
--  Run composer update into the terminal where you cloned the project [<i>You need composer to do it , if you dont have composer install on your computer download composer </i>].
+-  Run composer update into the terminal where you cloned the project [<i>You need composer to do it , if you dont have composer install on your computer then download the composer </i>].
 -  Create an empty database for our application
 -  In the .env file, add database information to allow Laravel to connect to the database
--  Migrate the database
+-  Run <b>php artisan migrate</b> to migrate the database
 -  Run <b>php artisan serve</b> to turn on php local server.
 -  Go to http://127.0.0.1:8000/.
 -  Now you can preview the project .
