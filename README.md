@@ -7,6 +7,9 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
+# [Live Application](http://hisabkitab.epizy.com/)
+
+
 ## How to Run
 -  Clone the project in your local repository.
 -  Get the project database form databse/project db folder and import it into your php myAdmin local host. Make sure you name the database as <b>e-banking-system</b>.
@@ -18,7 +21,7 @@
 -  Now you can preview the project .
 
 
-# [Live Application](http://hisabkitab.epizy.com/)
+
 
 ## Few Screen-Shots of the Project
 
