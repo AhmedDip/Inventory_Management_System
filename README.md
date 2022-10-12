@@ -19,7 +19,17 @@
 
 
 ## [Live Application](http://hisabkitab.epizy.com/)
-![Capture](https://user-images.githubusercontent.com/67531074/195452027-76e781a3-cf74-478c-ba97-a0c368596809.PNG)
+![1](https://user-images.githubusercontent.com/67531074/195457914-2a16f83f-2487-4c9e-bec9-0afbf908e70d.PNG)
+![2](https://user-images.githubusercontent.com/67531074/195457916-f25999b7-e84c-4010-8b36-889df8112838.PNG)
+![3](https://user-images.githubusercontent.com/67531074/195457918-7ad1071f-8cf0-4392-8dc9-658f20b8327a.PNG)
+![4](https://user-images.githubusercontent.com/67531074/195457920-776026c9-0950-48bb-aa07-b7c66e049b2d.PNG)
+![5](https://user-images.githubusercontent.com/67531074/195457888-82c3028d-971d-4091-8124-6207fefea3f9.PNG)
+![6](https://user-images.githubusercontent.com/67531074/195457896-4e2ce112-d9e8-4b3f-9c61-2733ec98ee2a.PNG)
+![7](https://user-images.githubusercontent.com/67531074/195457902-569cc357-b62f-45d7-aa3f-04687537320e.PNG)
+![8](https://user-images.githubusercontent.com/67531074/195457906-4f665f0e-824a-4477-9f19-1632b8fed2c9.PNG)
+![9](https://user-images.githubusercontent.com/67531074/195457908-e5a3c596-4a7b-4866-ab4a-07ce1ad088c5.PNG)
+![10](https://user-images.githubusercontent.com/67531074/195457910-69d3560b-b8f6-4d1e-a0f0-4d78f6401359.PNG)
+
 
 
 ## ✨Features
