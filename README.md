@@ -7,20 +7,35 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## About Laravel
-
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
-
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
-
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## How to Run
+-  Clone the project in your local repository.
+-  Get the project database form databse/project db folder and import it into your php myAdmin local host. Make sure you name the database as <b>e-banking-system</b>.
+-  Create a file and name it <b>.env</b> and paste the contents of <b>.env.example</b> file. 
+-  Run <b>php artisan key:generate</b> in the terminal
+-  Run composer update into the terminal where you cloned the project [<i>You need composer to do it , if you dont have composer install on your computer download composer </i>].
+-  Run <b>php artisan serve</b> to turn on php local server.
+-  Go to http://127.0.0.1:8000/.
+-  Now you can preview the project .
 
 ## [Live Application](http://hisabkitab.epizy.com/)
 
 
+
+
+## ✨Features
+- Fully functional Cart
+- Product Details, user review and ratings
+- JWT authentication
+- Product Search
+- User profile create/update
+- User order management
+- Admin role with authorization
+- Admin product management
+- Admin Order management
+- Admin user management
+- Admin Order details page
+- Mark order as delivered option
+- Checkout feature
+- Payment gateway integration
+
+## Few Screen-Shots of the Project
