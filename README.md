@@ -7,7 +7,7 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-# [হিসাব কিতাব](http://hisabkitab.epizy.com/)
+# [হিসাব কিতাব - Live Application](http://hisabkitab.epizy.com/)
 
 
 ## How to Run
