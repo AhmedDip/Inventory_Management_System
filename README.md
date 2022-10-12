@@ -40,5 +40,5 @@
 
 
 
-## ✨ER Diagram (https://drawsql.app/teams/ahmed-rasidun-bari-dip/diagrams/inventory-management-system)
+## ✨ [ER_Diagram](https://drawsql.app/teams/ahmed-rasidun-bari-dip/diagrams/inventory-management-system)
 ![drawSQL-export-2022-10-13_03 36](https://user-images.githubusercontent.com/67531074/195453073-b69baf55-272a-48dc-9603-6bd297311ff5.png)
