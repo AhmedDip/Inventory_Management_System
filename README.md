@@ -7,10 +7,10 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-#✨ [হিসাব কিতাব - Live Application](http://hisabkitab.epizy.com/)
+# ✨[হিসাব কিতাব - Live Application](http://hisabkitab.epizy.com/)
 
 
-##✨ How to Run
+## ✨How to Run
 -  Clone the project in your local repository.
 -  Create a file and name it <b>.env</b> and paste the contents of <b>.env.example</b> file. 
 -  Run <b>php artisan key:generate</b> in the terminal
@@ -25,7 +25,7 @@
 
 
 
-##✨ Few Screen-Shots of the Project
+## ✨Few Screen-Shots of the Project
 
 ![2](https://user-images.githubusercontent.com/67531074/195457916-f25999b7-e84c-4010-8b36-889df8112838.PNG)
 
@@ -47,5 +47,5 @@
 
 
 
-## ✨ [ER_Diagram](https://drawsql.app/teams/ahmed-rasidun-bari-dip/diagrams/inventory-management-system)
+## ✨[ER_Diagram](https://drawsql.app/teams/ahmed-rasidun-bari-dip/diagrams/inventory-management-system)
 ![drawSQL-export-2022-10-13_03 36](https://user-images.githubusercontent.com/67531074/195453073-b69baf55-272a-48dc-9603-6bd297311ff5.png)
