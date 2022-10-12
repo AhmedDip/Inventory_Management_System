@@ -18,8 +18,9 @@
 -  Now you can preview the project .
 
 
-## [Live Application](http://hisabkitab.epizy.com/)
-![1](https://user-images.githubusercontent.com/67531074/195457914-2a16f83f-2487-4c9e-bec9-0afbf908e70d.PNG)
+# [Live Application](http://hisabkitab.epizy.com/)
+
+##Few Screen-Shots of the Project
 
 ![2](https://user-images.githubusercontent.com/67531074/195457916-f25999b7-e84c-4010-8b36-889df8112838.PNG)
 
