@@ -8,6 +8,14 @@
 </p>
 
 # ✨[হিসাব কিতাব - Live Application](http://hisabkitab.epizy.com/)
+## Live Demo
+
+Link: [http://hisabkitab.epizy.com/](http://hisabkitab.epizy.com/)
+
+```
+    Email: admin@gmail.com
+    Password: 123456
+```
 
 
 ## ✨How to Run
