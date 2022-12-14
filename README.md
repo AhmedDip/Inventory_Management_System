@@ -7,9 +7,7 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-# ✨[হিসাব কিতাব - Live Application](http://hisabkitab.epizy.com/)
-## Live Demo
-
+# ✨[হিসাব কিতাব - Live Demo](http://hisabkitab.epizy.com/)
 Link: [http://hisabkitab.epizy.com/](http://hisabkitab.epizy.com/)
 
 ```
